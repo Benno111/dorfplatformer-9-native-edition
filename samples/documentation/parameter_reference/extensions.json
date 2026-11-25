@@ -1,0 +1,17 @@
+{
+  "extensions": [
+    "dtbyxeroname",
+    "runtimeoptions",
+    "lmsTempVars2",
+    "Gamepad",
+    "pen",
+    "obviousalexsensing"
+  ],
+  "urls": {
+    "dtbyxeroname": "https://extensions.turbowarp.org/XeroName/Deltatime.js",
+    "runtimeoptions": "https://extensions.turbowarp.org/runtime-options.js",
+    "lmsTempVars2": "https://extensions.turbowarp.org/Lily/TempVariables2.js",
+    "Gamepad": "https://extensions.turbowarp.org/gamepad.js",
+    "obviousalexsensing": "https://extensions.turbowarp.org/obviousAlexC/SensingPlus.js"
+  }
+}

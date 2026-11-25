@@ -1,0 +1,8812 @@
+[
+  {
+    "target": "Stage",
+    "id": "W1cir]R0=MPuyc7~;;8v",
+    "name": "Teme",
+    "value": "1",
+    "extra": [],
+    "references": [
+      {
+        "target": "Boss",
+        "id": "MF",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "OZ",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "QF",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "f,",
+        "opcode": "looks_switchbackdropto",
+        "input": "BACKDROP"
+      },
+      {
+        "target": "Teme Day",
+        "id": "sa",
+        "opcode": "sound_playuntildone",
+        "input": "SOUND_MENU"
+      },
+      {
+        "target": "Teme Day",
+        "id": "f-",
+        "opcode": "looks_switchbackdropto",
+        "input": "BACKDROP"
+      },
+      {
+        "target": "Teme Day",
+        "id": "f;",
+        "opcode": "sound_playuntildone",
+        "input": "SOUND_MENU"
+      },
+      {
+        "target": "Teme Day",
+        "id": "SE",
+        "opcode": "operator_add",
+        "input": "NUM1"
+      },
+      {
+        "target": "Teme Day",
+        "id": "SS",
+        "opcode": "looks_say",
+        "input": "MESSAGE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "sH",
+        "opcode": "sound_playuntildone",
+        "input": "SOUND_MENU"
+      },
+      {
+        "target": "Levels",
+        "id": "sT",
+        "opcode": "looks_switchbackdropto",
+        "input": "BACKDROP"
+      },
+      {
+        "target": "Levels",
+        "id": "sV",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "Ty",
+        "opcode": "data_showvariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "uJ",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "U|",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "uR",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "h=",
+        "opcode": "looks_switchbackdropto",
+        "input": "BACKDROP"
+      },
+      {
+        "target": "Teme N",
+        "id": "xX",
+        "opcode": "sound_playuntildone",
+        "input": "SOUND_MENU"
+      },
+      {
+        "target": "Teme N",
+        "id": "h?",
+        "opcode": "looks_switchbackdropto",
+        "input": "BACKDROP"
+      },
+      {
+        "target": "Teme N",
+        "id": "h]",
+        "opcode": "sound_playuntildone",
+        "input": "SOUND_MENU"
+      },
+      {
+        "target": "Teme N",
+        "id": "x*",
+        "opcode": "sound_playuntildone",
+        "input": "SOUND_MENU"
+      },
+      {
+        "target": "Teme N",
+        "id": "Y}",
+        "opcode": "looks_say",
+        "input": "MESSAGE"
+      },
+      {
+        "target": "Teme N",
+        "id": "yh",
+        "opcode": "sound_playuntildone",
+        "input": "SOUND_MENU"
+      },
+      {
+        "target": "Player out",
+        "id": "%p",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player out",
+        "id": "%v",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player body",
+        "id": "(!",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Water",
+        "id": "+t",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",h",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Fade",
+        "id": "FT",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".H",
+        "opcode": "operator_join",
+        "input": "STRING2"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Hx",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "@iAYc2q;bIeDnoq73$s:",
+    "name": "Levels #",
+    "value": "1",
+    "extra": [],
+    "references": [
+      {
+        "target": "Tobo",
+        "id": "@o",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "^Nv(;}F!rqY.QLvq|+dF",
+    "name": "Cam x",
+    "value": 900,
+    "extra": [],
+    "references": [
+      {
+        "target": "Boss",
+        "id": "MY",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Boss",
+        "id": "Nn",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Enemy",
+        "id": "N^",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Enemy",
+        "id": "N`",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Player",
+        "id": "qZ",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "q@",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rw",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Player",
+        "id": "rz",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "Q^",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "TB",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "s)",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "s+",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "te",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Levels",
+        "id": "tl",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Levels",
+        "id": "t%",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Levels",
+        "id": "Uw",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Levels",
+        "id": "t@",
+        "opcode": "operator_add",
+        "input": "NUM1"
+      },
+      {
+        "target": "Levels",
+        "id": "t{",
+        "opcode": "operator_add",
+        "input": "NUM1"
+      },
+      {
+        "target": "Levels",
+        "id": "uL",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "VR",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Levels",
+        "id": "vM",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "?r",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "v/",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "v]",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Fane+",
+        "id": "w(",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Fane+",
+        "id": "w/",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Fane+",
+        "id": "XM",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Fane+",
+        "id": "XO",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "fane",
+        "id": "?%",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "fane",
+        "id": "xf",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "fane",
+        "id": "xm",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "fane",
+        "id": "X]",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "fane",
+        "id": "X^",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "fane",
+        "id": "Yi",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Dragon",
+        "id": "Z(",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "Z*",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "yw",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player out",
+        "id": "%B",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player out",
+        "id": "%C",
+        "opcode": "motion_changexby",
+        "input": "DX"
+      },
+      {
+        "target": "Player body",
+        "id": "Bq",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": ")x",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Ball",
+        "id": ")A",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Ball",
+        "id": ")L",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Ball",
+        "id": ")P",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Ball",
+        "id": ")]",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Ball",
+        "id": ")[",
+        "opcode": "data_changevariableby",
+        "input": "VALUE"
+      },
+      {
+        "target": "fane pos",
+        "id": "@H",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "fane pos",
+        "id": "*x",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "fane pos",
+        "id": "*y",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "j/",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",C",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",E",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": ",*20Kf1Nb!6-ssFb{)b!",
+    "name": "Win leve",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "qY",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "q*",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "q?",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "$,`euE+/QV8H-[[:mFVR",
+    "name": "my x pos",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "fu",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "fz",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rD",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "@a",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player out",
+        "id": "i)",
+        "opcode": "motion_gotoxy",
+        "input": "X"
+      },
+      {
+        "target": "Player out",
+        "id": "b/",
+        "opcode": "motion_gotoxy",
+        "input": "X"
+      },
+      {
+        "target": "Player body",
+        "id": "i~",
+        "opcode": "motion_gotoxy",
+        "input": "X"
+      },
+      {
+        "target": "Player body",
+        "id": "b/",
+        "opcode": "motion_gotoxy",
+        "input": "X"
+      },
+      {
+        "target": "Player body",
+        "id": "B^",
+        "opcode": "motion_gotoxy",
+        "input": "X"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "Zh7=0s5c`3vubrp)nmG=",
+    "name": "My y",
+    "value": 48,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "fv",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "fA",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player out",
+        "id": "%f",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Player out",
+        "id": "x",
+        "opcode": "operator_add",
+        "input": "NUM1"
+      },
+      {
+        "target": "Player body",
+        "id": "BI",
+        "opcode": "operator_add",
+        "input": "NUM1"
+      },
+      {
+        "target": "Player body",
+        "id": "x",
+        "opcode": "operator_add",
+        "input": "NUM1"
+      },
+      {
+        "target": "Player body",
+        "id": "B`",
+        "opcode": "operator_add",
+        "input": "NUM1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "}^W35(z5`(*:4s.LL;%Y",
+    "name": "Travel",
+    "value": "1",
+    "extra": [],
+    "references": [
+      {
+        "target": "Stage",
+        "id": "Lt",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "LJ",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "LO",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "LV",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "L%",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "L;",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "Mj",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "Mq",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "MA",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dynamick",
+        "id": "#u",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dynamick",
+        "id": "z-",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dynamick",
+        "id": "z[",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dynamick",
+        "id": "Aj",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Figur3",
+        "id": "/f",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "ER2gRE+djea_.a|?%7]x",
+    "name": "win",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Levels",
+        "id": "vH",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "wJ",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Fane+",
+        "id": "wS",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Fane+",
+        "id": "XR",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Fane+",
+        "id": "w_",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "fane",
+        "id": "X~",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "fane",
+        "id": "xt",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Menu",
+        "id": "zL",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player out",
+        "id": "A@",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Tobo",
+        "id": "Bf",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Tobo",
+        "id": "%*",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player body",
+        "id": "BC",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "fane pos",
+        "id": "*w",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "LuQ$oN$PbE}cUYjvU=:-",
+    "name": "Powerup",
+    "value": "F",
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "PM",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "P@",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Qp",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "q]",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "QY",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "=/",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "Rv",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "s!",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "VW",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "WT",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "Z,",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "Z^",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "!d",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "!o",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "!y",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "!+",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Power up",
+        "id": "!?",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Power up",
+        "id": "!]",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Power up",
+        "id": "!^",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Power up",
+        "id": "!_",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Power up",
+        "id": "!}",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Power up",
+        "id": "#a",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Power up",
+        "id": "#b",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Power up",
+        "id": "#c",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Power up",
+        "id": "#f",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Power up",
+        "id": "zD",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player out",
+        "id": "#]",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player out",
+        "id": "#`",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player out",
+        "id": "%q",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player out",
+        "id": "%w",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player body",
+        "id": "%:",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player body",
+        "id": "%[",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player body",
+        "id": "(T",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player body",
+        "id": "(#",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player body",
+        "id": "(.",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Ball",
+        "id": ");",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "*G",
+        "opcode": "operator_join",
+        "input": "STRING2"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "*S",
+        "opcode": "operator_join",
+        "input": "STRING2"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "*(",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "@M",
+        "opcode": "operator_join",
+        "input": "STRING2"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "@P",
+        "opcode": "operator_join",
+        "input": "STRING2"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "@Q",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "Ij",
+        "opcode": "procedures_call",
+        "input": "D`D:996P!3mqgp)88Y+c"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/Z",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Figur2",
+        "id": ":C",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Phone Controls",
+        "id": ";V",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Phone Controls",
+        "id": ";,",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": ").B0eMP]Jp`1|C:7LMTG",
+    "name": "DAMAGE",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Boss",
+        "id": "NR",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Boss",
+        "id": "oT",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "Oy",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "pr",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "WR",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "WW",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "vV",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "?N",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "!#",
+        "opcode": "operator_equals",
+        "input": "OPERAND2"
+      },
+      {
+        "target": "Power up",
+        "id": "zx",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Power up",
+        "id": "!@",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Power up",
+        "id": "!{",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Power up",
+        "id": "#d",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Power up",
+        "id": "zC",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player out",
+        "id": "@m",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player out",
+        "id": "@n",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player body",
+        "id": "Bs",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player body",
+        "id": "(h",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player body",
+        "id": "(,",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player body",
+        "id": "(:",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player body",
+        "id": "Bw",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player body",
+        "id": "({",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",+",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": "Fr",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite1",
+        "id": "GT",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "Qq6PIbakg^?jrs=jr4F?",
+    "name": "Plus",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Levels",
+        "id": "s-",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Fane+",
+        "id": "w#",
+        "opcode": "operator_add",
+        "input": "NUM2"
+      },
+      {
+        "target": "Fane+",
+        "id": "w.",
+        "opcode": "operator_add",
+        "input": "NUM2"
+      },
+      {
+        "target": "Fane+",
+        "id": "w?",
+        "opcode": "operator_add",
+        "input": "NUM2"
+      },
+      {
+        "target": "Fane+",
+        "id": "w]",
+        "opcode": "operator_add",
+        "input": "NUM2"
+      },
+      {
+        "target": "Fane+",
+        "id": "?Z",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "xFT@3qVSCzyqA|qiSGg5",
+    "name": "kill",
+    "value": "true",
+    "extra": [],
+    "references": [
+      {
+        "target": "Boss",
+        "id": "ol",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "oE",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "oR",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "oU",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "OS",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": "Cj",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": ")o",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Ball",
+        "id": "Cm",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": ")r",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Ball",
+        "id": "*b",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Ball",
+        "id": "C|",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": "*g",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": "-g",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "?}@H9K~pMv*vF4lS4]1.",
+    "name": "Mode",
+    "value": "Play",
+    "extra": [],
+    "references": [
+      {
+        "target": "Player body",
+        "id": "Bm",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "menu",
+        "id": "+z",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "menu",
+        "id": "+F",
+        "opcode": "operator_equals",
+        "input": "OPERAND2"
+      },
+      {
+        "target": "menu",
+        "id": "+M",
+        "opcode": "operator_equals",
+        "input": "OPERAND2"
+      },
+      {
+        "target": "menu",
+        "id": "+R",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "menu",
+        "id": "EE",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "menu",
+        "id": "EG",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "menu",
+        "id": "EJ",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "menu",
+        "id": "+-",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "CU;6/LV:h`a|q`I#_4=F",
+    "name": "Make",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Levels",
+        "id": "s,",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "TG",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "VX",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "V;",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "V?",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "?q",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "?w",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "?x",
+        "opcode": "data_showvariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "Wq",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "v,",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "v(",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "Wy",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "?z",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "Xg",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "Xi",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player body",
+        "id": "%}",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "menu",
+        "id": "ED",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "menu",
+        "id": "EI",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite1",
+        "id": "F+",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite1",
+        "id": "F;",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite1",
+        "id": "-.",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Sprite1",
+        "id": "@*",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite1",
+        "id": "GY",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "4@PJRkq|:XF:HtaKsA3y",
+    "name": "Hit",
+    "value": 3,
+    "extra": [],
+    "references": [
+      {
+        "target": "Levels",
+        "id": "gf",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "s`",
+        "opcode": "looks_switchcostumeto",
+        "input": "COSTUME"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "ubsAnZE^Idk.n#q4p[l%",
+    "name": "Play",
+    "value": "1",
+    "extra": [],
+    "references": [
+      {
+        "target": "Boss",
+        "id": "MI",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "O%",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "QW",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Q)",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Q=",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme Day",
+        "id": "SK",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "Tw",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "s;",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "TZ",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "T%",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "T.",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "UU",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "U*",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "U^",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "U`",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "?k",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "VY",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "V+",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "V/",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "V@",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "V{",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "Wa",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "?s",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "Wm",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "v:",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "hq",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "Ws",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Levels",
+        "id": "v^",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "hs",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "Wv",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Levels",
+        "id": "Xj",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "Xp",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Fane+",
+        "id": "XB",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "fane",
+        "id": "X-",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "Y=",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "Z#",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "Z)",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player out",
+        "id": "%a",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player body",
+        "id": "%~",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player body",
+        "id": "(E",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Water",
+        "id": "+w",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",k",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "n/r0_n(EOodfCN{rd7v+",
+    "name": "Pause",
+    "value": "1",
+    "extra": [],
+    "references": [
+      {
+        "target": "Stage",
+        "id": "Lv",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "LK",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "LP",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "LW",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "L(",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "L=",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "Mk",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "Mr",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "MB",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "q/",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rb",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "Q*",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Q{",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "s.",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "uM",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "?l",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "vk",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "vn",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "vo",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "vs",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "VZ",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "V^",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "V_",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "Wl",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "Xm",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "Xn",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Fane+",
+        "id": "wT",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player body",
+        "id": "Bn",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player body",
+        "id": "(p",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "DB",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "D:",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "D?",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "Eb",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "menu",
+        "id": "EB",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Figur3",
+        "id": "/g",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "w$3zxK~3j/hz[]KKAUX4",
+    "name": "MA",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Levels",
+        "id": "s]",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "T#",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "T-",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "Uz",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "UA",
+        "opcode": "data_deleteoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "t:",
+        "opcode": "data_deleteoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "UB",
+        "opcode": "data_deleteoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "UO",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "uh",
+        "opcode": "data_deleteoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "ui",
+        "opcode": "data_deleteoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "uj",
+        "opcode": "data_deleteoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "UP",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "UQ",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "UR",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "WL",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "WN",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "gF",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "t/",
+        "opcode": "data_replaceitemoflist",
+        "input": "INDEX"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "hV[y?w/IAyEM}IYOuU?)",
+    "name": "By",
+    "value": "1-1",
+    "extra": [],
+    "references": [
+      {
+        "target": "Dynamick",
+        "id": "z.",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dynamick",
+        "id": "Ap",
+        "opcode": "data_showvariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dynamick",
+        "id": "Ar",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "menu",
+        "id": "+.",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Fade",
+        "id": "-w",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Ho",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "SMxh!AEZ.8fV[k`qTI4#",
+    "name": "Trap X",
+    "value": 0,
+    "extra": [],
+    "references": []
+  },
+  {
+    "target": "Stage",
+    "id": "Z0Z)oSZie{_2[nI(DBpB",
+    "name": "Y world",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Boss",
+        "id": "nY",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Boss",
+        "id": "nZ",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Enemy",
+        "id": "pM",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Enemy",
+        "id": "pN",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Player",
+        "id": "QE",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "q{",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "SC",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme Day",
+        "id": "SR",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme Day",
+        "id": "sF",
+        "opcode": "operator_equals",
+        "input": "OPERAND2"
+      },
+      {
+        "target": "Teme Day",
+        "id": "sE",
+        "opcode": "lmsTempVars2_setThreadVariable",
+        "input": "STRING"
+      },
+      {
+        "target": "Levels",
+        "id": "Tt",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "Tx",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "s/",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "tf",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Levels",
+        "id": "t`",
+        "opcode": "operator_add",
+        "input": "NUM2"
+      },
+      {
+        "target": "Levels",
+        "id": "t|",
+        "opcode": "operator_add",
+        "input": "NUM2"
+      },
+      {
+        "target": "Levels",
+        "id": "V!",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "V~",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "vL",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "vS",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "Wf",
+        "opcode": "operator_divide",
+        "input": "NUM1"
+      },
+      {
+        "target": "Levels",
+        "id": "vT",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "hm",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "Wg",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Levels",
+        "id": "vU",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "Wh",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Levels",
+        "id": "v.",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "v[",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "hv",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "WA",
+        "opcode": "operator_divide",
+        "input": "NUM1"
+      },
+      {
+        "target": "Levels",
+        "id": "v}",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "hw",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "WB",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Levels",
+        "id": "v~",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "WC",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Levels",
+        "id": "wa",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Fane+",
+        "id": "w%",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Fane+",
+        "id": "XK",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "fane",
+        "id": "xe",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "fane",
+        "id": "X{",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "fane",
+        "id": "Yg",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "Y,",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "Y|",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "yf",
+        "opcode": "operator_equals",
+        "input": "OPERAND2"
+      },
+      {
+        "target": "Teme N",
+        "id": "ye",
+        "opcode": "lmsTempVars2_setThreadVariable",
+        "input": "STRING"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "D+",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "D,",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": "E-",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Final Boss",
+        "id": "E.",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "*bk:-ppHmMiu%jqpMD6g",
+    "name": "TRANZ",
+    "value": "1",
+    "extra": [],
+    "references": [
+      {
+        "target": "Levels",
+        "id": "s=",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "Vc",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "u)",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "?m",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "V*",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "V[",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "V]",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "?p",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "Xk",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "Xl",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "DA",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "Ea",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "@L",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "xApkNM4kMfC(uAg$U.o.",
+    "name": "teme",
+    "value": "2",
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "QG",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "f=",
+        "opcode": "sound_playuntildone",
+        "input": "SOUND_MENU"
+      },
+      {
+        "target": "Teme Day",
+        "id": "SH",
+        "opcode": "operator_add",
+        "input": "NUM1"
+      },
+      {
+        "target": "Teme Day",
+        "id": "ST",
+        "opcode": "looks_say",
+        "input": "MESSAGE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "sC",
+        "opcode": "operator_equals",
+        "input": "OPERAND2"
+      },
+      {
+        "target": "Teme Day",
+        "id": "sB",
+        "opcode": "lmsTempVars2_setThreadVariable",
+        "input": "STRING"
+      },
+      {
+        "target": "Teme Day",
+        "id": "sI",
+        "opcode": "sound_playuntildone",
+        "input": "SOUND_MENU"
+      },
+      {
+        "target": "Levels",
+        "id": "sU",
+        "opcode": "looks_switchbackdropto",
+        "input": "BACKDROP"
+      },
+      {
+        "target": "Levels",
+        "id": "sY",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "Tz",
+        "opcode": "data_showvariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "uK",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "h^",
+        "opcode": "sound_playuntildone",
+        "input": "SOUND_MENU"
+      },
+      {
+        "target": "Teme N",
+        "id": "x,",
+        "opcode": "sound_playuntildone",
+        "input": "SOUND_MENU"
+      },
+      {
+        "target": "Teme N",
+        "id": "Y~",
+        "opcode": "looks_say",
+        "input": "MESSAGE"
+      },
+      {
+        "target": "Teme N",
+        "id": "yc",
+        "opcode": "operator_equals",
+        "input": "OPERAND2"
+      },
+      {
+        "target": "Teme N",
+        "id": "yb",
+        "opcode": "lmsTempVars2_setThreadVariable",
+        "input": "STRING"
+      },
+      {
+        "target": "Teme N",
+        "id": "yi",
+        "opcode": "sound_playuntildone",
+        "input": "SOUND_MENU"
+      },
+      {
+        "target": "Teme N",
+        "id": "yr",
+        "opcode": "sound_playuntildone",
+        "input": "SOUND_MENU"
+      },
+      {
+        "target": "Fade",
+        "id": "FR",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".J",
+        "opcode": "operator_join",
+        "input": "STRING2"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Hz",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "+ogT}0{Y1ZNx2ti_(6:,",
+    "name": "PLAYER TEME",
+    "value": "2",
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "Pn",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "PF",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "PU",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "P]",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Qq",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "QB",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "QF",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "QG",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player out",
+        "id": "%j",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player body",
+        "id": "(L",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "wPfb]l~mcl5kN2wI!Bt#",
+    "name": "_PIE #",
+    "value": "",
+    "extra": [],
+    "references": [
+      {
+        "target": "Levels",
+        "id": "uX",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "sS",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "D%",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "*/",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "*;",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "*=",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "*?",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Phone Controls",
+        "id": ";U",
+        "opcode": "operator_equals",
+        "input": "OPERAND2"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "SyzXMl!^iJIw/fnd;K`w",
+    "name": "__COS",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Levels",
+        "id": "vl",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "vu",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "V,",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "hi",
+        "opcode": "looks_switchcostumeto",
+        "input": "COSTUME"
+      },
+      {
+        "target": "Levels",
+        "id": "V-",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "JfNjL4`+$/V_K.nh/E5:",
+    "name": "SaveLetter",
+    "value": 11119,
+    "extra": [],
+    "references": [
+      {
+        "target": "Save + Load",
+        "id": "G%",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".g",
+        "opcode": "operator_letter_of",
+        "input": "LETTER"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".h",
+        "opcode": "operator_letter_of",
+        "input": "LETTER"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".i",
+        "opcode": "operator_letter_of",
+        "input": "LETTER"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".k",
+        "opcode": "operator_letter_of",
+        "input": "LETTER"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".j",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".m",
+        "opcode": "operator_letter_of",
+        "input": "LETTER"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".o",
+        "opcode": "operator_letter_of",
+        "input": "LETTER"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Hl",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "H|",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/s",
+        "opcode": "operator_letter_of",
+        "input": "LETTER"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/t",
+        "opcode": "operator_letter_of",
+        "input": "LETTER"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/u",
+        "opcode": "operator_letter_of",
+        "input": "LETTER"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/w",
+        "opcode": "operator_letter_of",
+        "input": "LETTER"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/v",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/y",
+        "opcode": "operator_letter_of",
+        "input": "LETTER"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/A",
+        "opcode": "operator_letter_of",
+        "input": "LETTER"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "Il",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "u81rx-{.AVn7lXug!h)I",
+    "name": "SavePartExtracted",
+    "value": "2",
+    "extra": [],
+    "references": [
+      {
+        "target": "Save + Load",
+        "id": "G(",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k+",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "G-",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Ho",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".O",
+        "opcode": "data_addtolist",
+        "input": "ITEM"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".Q",
+        "opcode": "data_addtolist",
+        "input": "ITEM"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Hv",
+        "opcode": "data_addtolist",
+        "input": "ITEM"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Hx",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Hz",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".T",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".*",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "H}",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "lm",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "Id",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/F",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "Io",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "IK",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "IN",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "IQ",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "IT",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/Z",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": ".8+;N/djT7JbP9V|AjZ8",
+    "name": "SaveCode",
+    "value": "[code]|1-3|139|175|211|247|391|427|463|499|607|643|679|787|823|859|895|1579|1615|1651|1687|1723|1759|1795|1831|1939|1975|2011|2083|2119|2263|2407|2551|2695|2803|2947|2983|3019|3055|3091|3127|3163|3199|3235|3271|3307|3091|-221|-185|-149|-113|-77|-41|-113|-77|-77|-113|175|2947|-185|-41|-77|-5|-41|-77|-113|-149|-185|-221|-221|-185|-149|-113|-77|-41|-113|211|175|139|139|139|103|67|-77|-41|-5|31|67|103|139|175|211|175|175|175|211|211|211|211|175|139|103|67|31|-5|-41|-77|-77|-41|-5|31|67|103|139|-149|-185|-221|-221|-185|-149|-113|-113|-149|-185|-221>20|20|20|20|-16|-16|-16|-16|56|56|56|128|128|128|128|-16|-16|-16|-16|-16|-16|-16|-16|20|20|20|-16|-16|-88|-124|-160|-160|-160|-160|-160|-160|-160|-160|-160|-160|-160|-160|-160|-160|-124|-160|-160|-160|-160|-160|-160|-124|1048|1264|1264|1156|-124|-124|20|20|-16|56|56|56|56|56|56|-16|-16|-16|-16|-16|-16|1012|1120|1120|1120|1084|1048|1048|1048|940|940|940|940|940|940|940|940|940|976|1048|1084|1084|1048|976|1012|1012|1012|1012|1012|1012|1012|1012|1012|976|976|976|976|976|976|976|1012|1012|1012|976|976|976|976|940|940|940|940>3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|3|19|3|3|3|3|3|3|16|18|1|1|16|18|1|1|1|1|3|3|3|3|3|3|1|1|1|1|1|1|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29|29>1|3|[/code]",
+    "extra": [],
+    "references": [
+      {
+        "target": "Save + Load",
+        "id": ".g",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".h",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".i",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".k",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".m",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".o",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Save + Load",
+        "id": "G;",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k.",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".q",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k/",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".r",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k:",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "G?",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k=",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".u",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "G]",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "G^",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k;",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".w",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k?",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "G{",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k[",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".z",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "G~",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Ha",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k@",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".B",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k]",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Hd",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k_",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".E",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Hg",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Hh",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k^",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".G",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k`",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".H",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k{",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".I",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k|",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".J",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "k}",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".K",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Hi",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".L",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "lb",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "HE",
+        "opcode": "data_replaceitemoflist",
+        "input": "ITEM"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".%",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".(",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "HA",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/s",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/t",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/u",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/w",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/y",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/A",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "Ih",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "lq",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/O",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/P",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "lt",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "IA",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "Iz",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "IB",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "Iv",
+        "opcode": "data_addtolist",
+        "input": "ITEM"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "^5f*LbGzvwOD%uC*9K3Q",
+    "name": "Info 1",
+    "value": 889,
+    "extra": [],
+    "references": [
+      {
+        "target": "Save + Load",
+        "id": ".T",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".(",
+        "opcode": "operator_join",
+        "input": "STRING2"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/F",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/P",
+        "opcode": "operator_join",
+        "input": "STRING2"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "{0ckhY{w)}Qdp=0R^H7/",
+    "name": "Info 2",
+    "value": 688,
+    "extra": [],
+    "references": []
+  },
+  {
+    "target": "Stage",
+    "id": "2/^6K_LDr9I!={w9y8c[",
+    "name": "Info 3",
+    "value": 845,
+    "extra": [],
+    "references": []
+  },
+  {
+    "target": "Stage",
+    "id": "{w-^CBigK4`.w_LG1SpD",
+    "name": "Level #",
+    "value": "1",
+    "extra": [],
+    "references": [
+      {
+        "target": "Teme Day",
+        "id": "SU",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme Day",
+        "id": "SV",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "Vi",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Fane+",
+        "id": "XW",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "fane",
+        "id": "Yb",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Teme N",
+        "id": "Za",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "Zb",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "Z!",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Sprite1",
+        "id": "-G",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Sprite1",
+        "id": "-I",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Sprite1",
+        "id": "F_",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite1",
+        "id": "F|",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite1",
+        "id": "F{",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite1",
+        "id": "Gd",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite1",
+        "id": "Gc",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite1",
+        "id": "GS",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite1",
+        "id": "@.",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite1",
+        "id": "@/",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "G@",
+        "opcode": "operator_join",
+        "input": "STRING2"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".W",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Save + Load",
+        "id": "HE",
+        "opcode": "data_replaceitemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "@?",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "!hva2{7?mUfLvWM{Hc~a",
+    "name": "___LEVELs",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Teme Day",
+        "id": "Td",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "fane",
+        "id": "xu",
+        "opcode": "operator_equals",
+        "input": "OPERAND2"
+      },
+      {
+        "target": "fane",
+        "id": "Yc",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "fane",
+        "id": "Yd",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "ZI",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Menu",
+        "id": "zK",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite1",
+        "id": "-C",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Sprite1",
+        "id": "-O",
+        "opcode": "operator_add",
+        "input": "NUM1"
+      },
+      {
+        "target": "Sprite1",
+        "id": "-T",
+        "opcode": "operator_add",
+        "input": "NUM1"
+      },
+      {
+        "target": "Sprite1",
+        "id": "-#",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Sprite1",
+        "id": "-(",
+        "opcode": "operator_add",
+        "input": "NUM1"
+      },
+      {
+        "target": "Sprite1",
+        "id": "-*",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      },
+      {
+        "target": "Sprite1",
+        "id": "GD",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Sprite1",
+        "id": "-=",
+        "opcode": "operator_add",
+        "input": "NUM1"
+      },
+      {
+        "target": "Sprite1",
+        "id": "-_",
+        "opcode": "operator_add",
+        "input": "NUM1"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "IF",
+        "opcode": "procedures_call",
+        "input": "D`D:996P!3mqgp)88Y+c"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "IT",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "gY+pT-[?-CO#)ZJOZm}_",
+    "name": "Time",
+    "value": 999999999,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "ri",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "R[",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "Sw",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme Day",
+        "id": "SQ",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "sl",
+        "opcode": "data_showvariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "sn",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "SW",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "SY",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "sm",
+        "opcode": "data_showvariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "sr",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "SZ",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "S#",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "sk",
+        "opcode": "data_showvariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "sv",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "S%",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "S)",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "S/",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "Yx",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "Y(",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "Y{",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "x/",
+        "opcode": "data_showvariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "x;",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "Zc",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "Ze",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "x:",
+        "opcode": "data_showvariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "x[",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "Zf",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "Zh",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "x.",
+        "opcode": "data_showvariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "x`",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "Zi",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "Zk",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "Zq",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "e5kHgnw0TxH%jU21otKV",
+    "name": "E",
+    "value": "1",
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "p/",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Fane+",
+        "id": "wQ",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite1",
+        "id": "GS",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Sprite1",
+        "id": ".b",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite1",
+        "id": ".d",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Sprite1",
+        "id": "@-",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Figur1",
+        "id": ":m",
+        "opcode": "operator_divide",
+        "input": "NUM1"
+      },
+      {
+        "target": "Figur1",
+        "id": ":q",
+        "opcode": "operator_mod",
+        "input": "NUM1"
+      },
+      {
+        "target": "Figur1",
+        "id": ":u",
+        "opcode": "operator_mod",
+        "input": "NUM1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "5Hf_Uw[.2a#Q.9L^+k/g",
+    "name": "Day",
+    "value": "2/3",
+    "extra": [],
+    "references": [
+      {
+        "target": "Stage",
+        "id": "mq",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "Lr",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "mD",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "mG",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "dc",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "LE",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Stage",
+        "id": "LF",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "L!",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "L+",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "L@",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "=p",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "L_",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "L~",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "dx",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "Mc",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Stage",
+        "id": "Md",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "Mo",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "Mu",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "p.",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "S_",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Levels",
+        "id": "Vj",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Teme N",
+        "id": "Zz",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Figur8",
+        "id": "/#",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Figur8",
+        "id": "/,",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Figur7",
+        "id": ":;",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      },
+      {
+        "target": "Figur9",
+        "id": "[c",
+        "opcode": "operator_letter_of",
+        "input": "STRING"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "%S9C}rlJY=K+}XvGWJ4$",
+    "name": "N",
+    "value": "1",
+    "extra": [],
+    "references": [
+      {
+        "target": "Stage",
+        "id": "mN",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "mY",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "m[",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "ni",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "nj",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "nE",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "SM",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme Day",
+        "id": "Te",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme Day",
+        "id": "Tg",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme Day",
+        "id": "Tj",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "Y@",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "ZJ",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "ZL",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "ZO",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "?_",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "?`",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Figur7",
+        "id": ":)",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Figur7",
+        "id": ":[",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Figur9",
+        "id": ";d",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "9u4F!ZYt-oHC[?Hg?=6v",
+    "name": "%",
+    "value": 44.880952380952664,
+    "extra": [],
+    "references": [
+      {
+        "target": "Stage",
+        "id": "mr",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "=m",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "mL",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "mP",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "m#",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "dk",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "m]",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "dt",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "dz",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "nF",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "dI",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "nu",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "mE",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Figur7",
+        "id": "Kq",
+        "opcode": "operator_add",
+        "input": "NUM1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "NC*ANpQLI-!s^viT}J.w",
+    "name": "a____SS",
+    "value": "1",
+    "extra": [],
+    "references": [
+      {
+        "target": "Stage",
+        "id": "mp",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "LI",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "LN",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "LU",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "LZ",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "L)",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "L?",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "Mi",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "Mn",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "Ms",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Stage",
+        "id": "MC",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Boss",
+        "id": "Nx",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Boss",
+        "id": "d;",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "Ob",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "d;",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "O{",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme Day",
+        "id": "Sz",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme Day",
+        "id": "SA",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "?e",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "?f",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme Day",
+        "id": "S:",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme Day",
+        "id": "To",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Fane+",
+        "id": "XX",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Fane+",
+        "id": "wX",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "Y+",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "?=",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "??",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Teme N",
+        "id": "Zr",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "ZS",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "ZT",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "Z[",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "!b",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "!m",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "!w",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "!V",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Power up",
+        "id": "zE",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Power up",
+        "id": "#h",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player body",
+        "id": "%?",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "Dl",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "*@",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",M",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",#",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Figur3",
+        "id": ".}",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": ",PsGFzw?zVPgPaq;f:eq",
+    "name": "J B",
+    "value": -5142,
+    "extra": [],
+    "references": [
+      {
+        "target": "Boss",
+        "id": "NM",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Boss",
+        "id": "oL",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "Ou",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "pl",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "Pa",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "rq",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",%",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": "Fk",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "(zQe+WH#1!I~#q-q5a*G",
+    "name": "Timer",
+    "value": 463,
+    "extra": [],
+    "references": [
+      {
+        "target": "Stage",
+        "id": "do",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "m~",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "dD",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "nM",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Figur9",
+        "id": ";k",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Figur9",
+        "id": ";t",
+        "opcode": "operator_divide",
+        "input": "NUM1"
+      },
+      {
+        "target": "Figur9",
+        "id": ";A",
+        "opcode": "operator_divide",
+        "input": "NUM1"
+      },
+      {
+        "target": "Figur9",
+        "id": ";B",
+        "opcode": "operator_divide",
+        "input": "NUM1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": ",O=5-py)Xcc0C%pj9oTy",
+    "name": "ND",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Stage",
+        "id": "mR",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "mX",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "m%",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "m!",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "L#",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "=r",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "nw",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Stage",
+        "id": "Mp",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Figur7",
+        "id": ":+",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Figur7",
+        "id": ":?",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "bs5l}ds{5k*ZNdx%XYf)",
+    "name": "PIX",
+    "value": 16,
+    "extra": [],
+    "references": [
+      {
+        "target": "Levels",
+        "id": "g.",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "DD",
+        "opcode": "motion_setx",
+        "input": "X"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "czK^(#S;kYlsAup)A%Dr",
+    "name": "Speed Timer",
+    "value": 307.445999999998,
+    "extra": [],
+    "references": [
+      {
+        "target": "Figur5",
+        "id": "K*",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Figur5",
+        "id": "l.",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Figur5",
+        "id": ";G",
+        "opcode": "data_hidevariable",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Figur5",
+        "id": "K-",
+        "opcode": "data_showvariable",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "TzKMyTJTT}Xtwi0V`3Dz",
+    "name": "Final Boss",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "RQ",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "RR",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme Day",
+        "id": "Sv",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme Day",
+        "id": "Tl",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Levels",
+        "id": "Xq",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "Y#",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Teme N",
+        "id": "Y]",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "Z%",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "Z+",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "yt",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "y]",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "y`",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "?~",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "zu",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "zw",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "1Ije0gC3;|A;a::D{6,(",
+    "name": "Boss HP",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Dragon",
+        "id": "?|",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "yD",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "Z/",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "Z:",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "yI",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "Z]",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "Z{",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "yP",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "!c",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "y!",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "!g",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "!h",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "y*",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "!n",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "!r",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "y;",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "!x",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "y[",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "!B",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Dragon",
+        "id": "!L",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "zl",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "zq",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "zs",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Dragon",
+        "id": "!-",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      }
+    ]
+  },
+  {
+    "target": "Stage",
+    "id": "n`f=!SlD,i#x]l_jEu_`",
+    "name": "FPS",
+    "value": 60.24459580478124,
+    "extra": [],
+    "references": [
+      {
+        "target": "Intro/BadEnding",
+        "id": ":#",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Sprite6",
+        "id": "Lo",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Boss",
+    "id": "7X^zFEWIiYI{k_7XtBoa",
+    "name": "A",
+    "value": 976,
+    "extra": [],
+    "references": [
+      {
+        "target": "Boss",
+        "id": "nU",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "nX",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "MO",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Boss",
+        "id": "MQ",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Boss",
+        "id": "MR",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Boss",
+        "id": "MS",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Boss",
+        "id": "n#",
+        "opcode": "data_addtolist",
+        "input": "ITEM"
+      }
+    ]
+  },
+  {
+    "target": "Boss",
+    "id": "n#,T:g7_P-Ri3OFHjR2;",
+    "name": "IS CLONE",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Boss",
+        "id": "nV",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "Nc",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Boss",
+        "id": "Nf",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Boss",
+    "id": "[Tjf(@JpXccf9:Q{=[Es",
+    "name": "mx",
+    "value": 3816,
+    "extra": [],
+    "references": [
+      {
+        "target": "Boss",
+        "id": "nW",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "dQ",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "MY",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Boss",
+        "id": "os",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "Nn",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Boss",
+        "id": "d.",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Boss",
+    "id": "]KCngxXf4~-H=fOV1do=",
+    "name": "DIED",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Boss",
+        "id": "MZ",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Boss",
+        "id": "M@",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Boss",
+        "id": "M}",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Boss",
+        "id": "ok",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "=D",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "Nr",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Boss",
+        "id": "oD",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "NA",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Boss",
+        "id": "oF",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "NC",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Boss",
+        "id": "ND",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Boss",
+        "id": "oQ",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "ox",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Boss",
+    "id": "d2iuxERnGxOK6MrG^4Xf",
+    "name": "SX",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Boss",
+        "id": "or",
+        "opcode": "motion_changexby",
+        "input": "DX"
+      },
+      {
+        "target": "Boss",
+        "id": "os",
+        "opcode": "data_changevariableby",
+        "input": "VALUE"
+      },
+      {
+        "target": "Boss",
+        "id": "NG",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Boss",
+        "id": "NH",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Boss",
+        "id": "oJ",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "NJ",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      }
+    ]
+  },
+  {
+    "target": "Boss",
+    "id": ")9@jF@9uR]:rWXv^hqb]",
+    "name": "SY",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Boss",
+        "id": "oe",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "M+",
+        "opcode": "operator_mathop",
+        "input": "NUM"
+      },
+      {
+        "target": "Boss",
+        "id": "M,",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Boss",
+        "id": "M:",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Boss",
+        "id": "M[",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "M_",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "M]",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Boss",
+    "id": "T!8|lYzQH@n|:J;,oMcX",
+    "name": "START",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Boss",
+        "id": "M^",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Boss",
+        "id": "og",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "M`",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Boss",
+    "id": "qu4|XrU9CBOWET3/k$Mc",
+    "name": "______________s",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Boss",
+        "id": "n`",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "n{",
+        "opcode": "motion_changeyby",
+        "input": "DY"
+      },
+      {
+        "target": "Boss",
+        "id": "Na",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "Nz",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "oS",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Boss",
+        "id": "NT",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Enemy",
+    "id": "OQeYA$WiiG]gW/:Rv@gB",
+    "name": "mx",
+    "value": 3816,
+    "extra": [],
+    "references": [
+      {
+        "target": "Enemy",
+        "id": "N^",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Enemy",
+        "id": "N`",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Enemy",
+        "id": "ee",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "Or",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "pK",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "ew",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "=O",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "gH",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Enemy",
+    "id": "gj?_{n~dZahKvxKd_`#_",
+    "name": "IS CLONE",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Enemy",
+        "id": "OE",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "pw",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "pJ",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "O@",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Enemy",
+    "id": "mU4H!oHv.!AjC{51sqem",
+    "name": "Fall",
+    "value": 1,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "p?",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "Rs",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "rR",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Enemy",
+    "id": "XtC,Vn=kX|{cm-kif5KE",
+    "name": "sy",
+    "value": -0.7,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "p;",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PA",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PB",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PG",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "PH",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PJ",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "=!",
+        "opcode": "motion_changeyby",
+        "input": "DY"
+      },
+      {
+        "target": "Player",
+        "id": "q!",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "q[",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rc",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rn",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "Rd",
+        "opcode": "operator_mathop",
+        "input": "NUM"
+      },
+      {
+        "target": "Player",
+        "id": "Re",
+        "opcode": "operator_mathop",
+        "input": "NUM"
+      },
+      {
+        "target": "Player",
+        "id": "Rf",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Rg",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Rk",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Rl",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Rq",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Rr",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rT",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "=^",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Enemy",
+    "id": "br3)Gmc4CXRju(*7YC?z",
+    "name": "Set = 0",
+    "value": "0",
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "PE",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "p_",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PK",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "qa",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "P,",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "P:",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "QO",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rL",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "Rp",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Enemy",
+    "id": "$InH3rv+XW|ay)sd1gz?",
+    "name": "sx",
+    "value": -2,
+    "extra": [],
+    "references": [
+      {
+        "target": "Enemy",
+        "id": "=H",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Player",
+        "id": "Ph",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "eO",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PL",
+        "opcode": "operator_divide",
+        "input": "NUM1"
+      },
+      {
+        "target": "Player",
+        "id": "eR",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "p|",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "eS",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PQ",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Player",
+        "id": "PR",
+        "opcode": "operator_round",
+        "input": "NUM"
+      },
+      {
+        "target": "Player",
+        "id": "PS",
+        "opcode": "operator_round",
+        "input": "NUM"
+      },
+      {
+        "target": "Player",
+        "id": "PX",
+        "opcode": "operator_round",
+        "input": "NUM"
+      },
+      {
+        "target": "Player",
+        "id": "PZ",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "P!",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "P)",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "P*",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "P.",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "P/",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "P;",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "=#",
+        "opcode": "motion_changexby",
+        "input": "DX"
+      },
+      {
+        "target": "Player",
+        "id": "rm",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "r)",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Enemy",
+    "id": "5e4[QC/~6cG:p}0H:}V=",
+    "name": "fame",
+    "value": 0.3333333333333333,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "eT",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PT",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Enemy",
+    "id": "1U=v4ykDKhyj%t6{2^!y",
+    "name": "fall",
+    "value": "0",
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "Pd",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "p!",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "=X",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "=Y",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "q#",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "QC",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "q^",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Enemy",
+    "id": "Sv,AsXKhvtqtn68rJ.%_",
+    "name": "DIED",
+    "value": 77,
+    "extra": [],
+    "references": [
+      {
+        "target": "Enemy",
+        "id": "N-",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "Oe",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "Of",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "Og",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "pa",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "Oi",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Enemy",
+        "id": "Oj",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "pq",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "px",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "OI",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "OQ",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "pD",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Enemy",
+    "id": "NnGOG[EsxEOvmof|4n0j",
+    "name": "SY",
+    "value": -1,
+    "extra": [],
+    "references": [
+      {
+        "target": "Enemy",
+        "id": "oW",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "NZ",
+        "opcode": "operator_mathop",
+        "input": "NUM"
+      },
+      {
+        "target": "Enemy",
+        "id": "N!",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "N)",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "N.",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "N;",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "N/",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "pv",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Enemy",
+    "id": "kn6^A$fj-Gm%B|2^?7a`",
+    "name": "START",
+    "value": "1",
+    "extra": [],
+    "references": [
+      {
+        "target": "Enemy",
+        "id": "N:",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Enemy",
+        "id": "o%",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "N=",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "pu",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Enemy",
+    "id": "FZyOUuMd,?~c7px{LKxG",
+    "name": "SX",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Enemy",
+        "id": "Om",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Enemy",
+        "id": "On",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Enemy",
+        "id": "pe",
+        "opcode": "motion_changexby",
+        "input": "DX"
+      },
+      {
+        "target": "Enemy",
+        "id": "Or",
+        "opcode": "data_changevariableby",
+        "input": "VALUE"
+      },
+      {
+        "target": "Enemy",
+        "id": "pd",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "Os",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Enemy",
+        "id": "pz",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "pA",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "=N",
+        "opcode": "motion_changexby",
+        "input": "DX"
+      }
+    ]
+  },
+  {
+    "target": "Enemy",
+    "id": "B`-A?YfgiAs*7b=v-yL)",
+    "name": "A",
+    "value": 976,
+    "extra": [],
+    "references": [
+      {
+        "target": "Enemy",
+        "id": "pI",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "pL",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "O+",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Enemy",
+        "id": "O-",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Enemy",
+        "id": "O.",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Enemy",
+        "id": "O/",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Enemy",
+        "id": "pP",
+        "opcode": "data_addtolist",
+        "input": "ITEM"
+      }
+    ]
+  },
+  {
+    "target": "Player",
+    "id": "XtC,Vn=kX|{cm-kif5KE",
+    "name": "sy",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "p;",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PA",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PB",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PG",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "PH",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PJ",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "=!",
+        "opcode": "motion_changeyby",
+        "input": "DY"
+      },
+      {
+        "target": "Player",
+        "id": "q!",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "q[",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rc",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rn",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "Rd",
+        "opcode": "operator_mathop",
+        "input": "NUM"
+      },
+      {
+        "target": "Player",
+        "id": "Re",
+        "opcode": "operator_mathop",
+        "input": "NUM"
+      },
+      {
+        "target": "Player",
+        "id": "Rf",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Rg",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Rk",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Rl",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Rq",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Rr",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rT",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "=^",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Player",
+    "id": "$InH3rv+XW|ay)sd1gz?",
+    "name": "sx",
+    "value": 4.317490571552463,
+    "extra": [],
+    "references": [
+      {
+        "target": "Enemy",
+        "id": "=H",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Player",
+        "id": "Ph",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "eO",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PL",
+        "opcode": "operator_divide",
+        "input": "NUM1"
+      },
+      {
+        "target": "Player",
+        "id": "eR",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "p|",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "eS",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PQ",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Player",
+        "id": "PR",
+        "opcode": "operator_round",
+        "input": "NUM"
+      },
+      {
+        "target": "Player",
+        "id": "PS",
+        "opcode": "operator_round",
+        "input": "NUM"
+      },
+      {
+        "target": "Player",
+        "id": "PX",
+        "opcode": "operator_round",
+        "input": "NUM"
+      },
+      {
+        "target": "Player",
+        "id": "PZ",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "P!",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "P)",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "P*",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "P.",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "P/",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "P;",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "=#",
+        "opcode": "motion_changexby",
+        "input": "DX"
+      },
+      {
+        "target": "Player",
+        "id": "rm",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "r)",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Player",
+    "id": "1U=v4ykDKhyj%t6{2^!y",
+    "name": "fall",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "Pd",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "p!",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "=X",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "=Y",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "q#",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "QC",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "q^",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Player",
+    "id": "5e4[QC/~6cG:p}0H:}V=",
+    "name": "fame",
+    "value": 43.66666666666667,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "eT",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PT",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Player",
+    "id": "mU4H!oHv.!AjC{51sqem",
+    "name": "Fall",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "p?",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "Rs",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "rR",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Player",
+    "id": "br3)Gmc4CXRju(*7YC?z",
+    "name": "Set = 0",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "PE",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "p_",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "PK",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "qa",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "P,",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "P:",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "QO",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rL",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "Rp",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Player",
+    "id": "!`}bt:W7VJ6^9Y4W1J52",
+    "name": "Scroll x",
+    "value": 900,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "Pp",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "q)",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "q|",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rl",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rw",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "Q,",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "ry",
+        "opcode": "motion_changexby",
+        "input": "DX"
+      },
+      {
+        "target": "Player",
+        "id": "Q-",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rz",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Player",
+        "id": "fy",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "Q[",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "rC",
+        "opcode": "motion_changexby",
+        "input": "DX"
+      },
+      {
+        "target": "Player",
+        "id": "Q]",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "Q^",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Player",
+        "id": "RO",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "RU",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Player",
+    "id": "u`=p]EIxx9Xs{{MTE3S0",
+    "name": "_____JUMP",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "Ps",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "p:",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "Pu",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "Pw",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rO",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rS",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "Ru",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Player",
+    "id": "0Xbn3G3pRX4T_46~ovm4",
+    "name": "FAll",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "Pt",
+        "opcode": "operator_lt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Player",
+        "id": "eI",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "rP",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Player",
+    "id": "i#?K%5ka.+/Ico#*)#g1",
+    "name": "_______Cos",
+    "value": 2,
+    "extra": [],
+    "references": [
+      {
+        "target": "Player",
+        "id": "eF",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Player",
+        "id": "eK",
+        "opcode": "looks_switchcostumeto",
+        "input": "COSTUME"
+      },
+      {
+        "target": "Player",
+        "id": "eW",
+        "opcode": "looks_switchcostumeto",
+        "input": "COSTUME"
+      },
+      {
+        "target": "Player",
+        "id": "e*",
+        "opcode": "looks_switchcostumeto",
+        "input": "COSTUME"
+      },
+      {
+        "target": "Player",
+        "id": "fC",
+        "opcode": "looks_switchcostumeto",
+        "input": "COSTUME"
+      },
+      {
+        "target": "Player",
+        "id": "fK",
+        "opcode": "looks_switchcostumeto",
+        "input": "COSTUME"
+      }
+    ]
+  },
+  {
+    "target": "Levels",
+    "id": "OQeYA$WiiG]gW/:Rv@gB",
+    "name": "mx",
+    "value": 2448,
+    "extra": [],
+    "references": [
+      {
+        "target": "Enemy",
+        "id": "N^",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Enemy",
+        "id": "N`",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Enemy",
+        "id": "ee",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "Or",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "pK",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "ew",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Enemy",
+        "id": "=O",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "gH",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Levels",
+    "id": "NmsTd6Kh2~m^9q-{?fuw",
+    "name": "ID",
+    "value": 976,
+    "extra": [],
+    "references": [
+      {
+        "target": "Levels",
+        "id": "s_",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "s{",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "gg",
+        "opcode": "data_replaceitemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "TP",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "gh",
+        "opcode": "data_replaceitemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "TQ",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "TR",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "TS",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "TT",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "ti",
+        "opcode": "data_replaceitemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "TW",
+        "opcode": "data_replaceitemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "TY",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "T#",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Levels",
+        "id": "T-",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Levels",
+        "id": "T=",
+        "opcode": "data_listcontainsitem",
+        "input": "ITEM"
+      },
+      {
+        "target": "Levels",
+        "id": "T]",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "T^",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "T_",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "T`",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "T{",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "T|",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "T}",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "T~",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "Ue",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "Um",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "gK",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "uX",
+        "opcode": "data_setvariableto",
+        "input": "VALUE"
+      },
+      {
+        "target": "Levels",
+        "id": "Vs",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "Vt",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "Vu",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "Vv",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "Vw",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "Vx",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "Vy",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "Vz",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "VA",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "VB",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "VC",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "VD",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "VE",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "WH",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "W=",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "W?",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "W@",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "W[",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "W^",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "W_",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "W~",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "Xa",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "?Q",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Levels",
+        "id": "?R",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      }
+    ]
+  },
+  {
+    "target": "Levels",
+    "id": "}Hbn?ggB}Ds5S~4sVum:",
+    "name": "X pos",
+    "value": 2772,
+    "extra": [],
+    "references": [
+      {
+        "target": "Levels",
+        "id": "T)",
+        "opcode": "operator_mathop",
+        "input": "NUM"
+      },
+      {
+        "target": "Levels",
+        "id": "t%",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "gy",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "gz",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "Up",
+        "opcode": "operator_divide",
+        "input": "NUM1"
+      },
+      {
+        "target": "Levels",
+        "id": "Uw",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Levels",
+        "id": "VQ",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "wC",
+        "opcode": "operator_join",
+        "input": "STRING1"
+      }
+    ]
+  },
+  {
+    "target": "Levels",
+    "id": "a5]bB=0w`okkH%ifO%~v",
+    "name": "Y pos",
+    "value": 72,
+    "extra": [],
+    "references": [
+      {
+        "target": "Levels",
+        "id": "T+",
+        "opcode": "operator_mathop",
+        "input": "NUM"
+      },
+      {
+        "target": "Levels",
+        "id": "gA",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "gE",
+        "opcode": "motion_gotoxy",
+        "input": "Y"
+      },
+      {
+        "target": "Levels",
+        "id": "Xb",
+        "opcode": "operator_join",
+        "input": "STRING2"
+      }
+    ]
+  },
+  {
+    "target": "Levels",
+    "id": "EMwC@xo%Ix/gY)B^M:MG",
+    "name": "_____________IIIiiii",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Levels",
+        "id": "Uf",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "tU",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "tY",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "Uk",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Levels",
+        "id": "W+",
+        "opcode": "operator_add",
+        "input": "NUM1"
+      }
+    ]
+  },
+  {
+    "target": "Player body",
+    "id": "!*YnBdsJRUKE~2@*@o|x",
+    "name": "sy",
+    "value": 0,
+    "extra": [],
+    "references": []
+  },
+  {
+    "target": "Player body",
+    "id": "VMCMQ]yhn[sQQL[104g!",
+    "name": "sx",
+    "value": 0,
+    "extra": [],
+    "references": []
+  },
+  {
+    "target": "Player body",
+    "id": "=!).BJ0^2cgcL7w~~V=N",
+    "name": "fall",
+    "value": 0,
+    "extra": [],
+    "references": []
+  },
+  {
+    "target": "Player body",
+    "id": "K}aj~P_@u6`@@WiYW/KL",
+    "name": "fame",
+    "value": 0,
+    "extra": [],
+    "references": []
+  },
+  {
+    "target": "Player body",
+    "id": "4n0g}mYT@]Vf!El;Udm4",
+    "name": "boden",
+    "value": 0,
+    "extra": [],
+    "references": []
+  },
+  {
+    "target": "Player body",
+    "id": "VnKx{TK#pmx7O!?s,3ET",
+    "name": "Hert",
+    "value": 0,
+    "extra": [],
+    "references": []
+  },
+  {
+    "target": "Ball",
+    "id": "-~Ff;GLbri+w3UIK(j%!",
+    "name": "mx",
+    "value": 9083,
+    "extra": [],
+    "references": [
+      {
+        "target": "Ball",
+        "id": ")x",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Ball",
+        "id": ")A",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Ball",
+        "id": "jy",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": ")H",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": ")L",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Ball",
+        "id": "jA",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": ")P",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "Ball",
+        "id": "jI",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": ")[",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Ball",
+    "id": "Z1)gtQ=pYs/rbLRU`.g-",
+    "name": "sx",
+    "value": 7,
+    "extra": [],
+    "references": [
+      {
+        "target": "Ball",
+        "id": "CQ",
+        "opcode": "motion_movesteps",
+        "input": "STEPS"
+      },
+      {
+        "target": "Ball",
+        "id": "C-",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Ball",
+    "id": "zt|D%.lBj}ta%m/}?.@A",
+    "name": "leves",
+    "value": 5,
+    "extra": [],
+    "references": [
+      {
+        "target": "Ball",
+        "id": "C+",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Ball",
+    "id": "-lI%Gk|w,_e|L)`7UnUT",
+    "name": "__#sy",
+    "value": 9,
+    "extra": [],
+    "references": [
+      {
+        "target": "Ball",
+        "id": ")h",
+        "opcode": "operator_gt",
+        "input": "OPERAND2"
+      },
+      {
+        "target": "Ball",
+        "id": ")i",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Ball",
+        "id": "@B",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": "CL",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": "CM",
+        "opcode": "motion_changeyby",
+        "input": "DY"
+      },
+      {
+        "target": "Ball",
+        "id": ")N",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": "C.",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Ball",
+    "id": "c`NJ)_sJG`f)}L7Mf^Nl",
+    "name": "IS CLONE",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Ball",
+        "id": ")k",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": ")m",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      }
+    ]
+  },
+  {
+    "target": "Ball",
+    "id": "n_D{Zf24V#2eQ58712}Y",
+    "name": "DIED",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Ball",
+        "id": ")!",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      }
+    ]
+  },
+  {
+    "target": "Ball",
+    "id": "dnxoDMXizaWU.77w,;9U",
+    "name": "SX",
+    "value": -14,
+    "extra": [],
+    "references": [
+      {
+        "target": "Ball",
+        "id": ")B",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Ball",
+        "id": ")C",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Ball",
+        "id": "CD",
+        "opcode": "motion_changexby",
+        "input": "DX"
+      },
+      {
+        "target": "Ball",
+        "id": ")H",
+        "opcode": "data_changevariableby",
+        "input": "VALUE"
+      },
+      {
+        "target": "Ball",
+        "id": "CC",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": ")I",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Ball",
+        "id": "jK",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Ball",
+    "id": "BdG=t/E+s-%RBm~7lS8*",
+    "name": "SY",
+    "value": 9,
+    "extra": [],
+    "references": [
+      {
+        "target": "Ball",
+        "id": "CU",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": ")R",
+        "opcode": "operator_mathop",
+        "input": "NUM"
+      },
+      {
+        "target": "Ball",
+        "id": ")S",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Ball",
+        "id": ")W",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Ball",
+        "id": ")#",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": ")%",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": "C/",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Ball",
+    "id": "ybP7*a@ys1sg28c%M{,I",
+    "name": "START",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Ball",
+        "id": "CV",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Ball",
+        "id": ")(",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "%aO~)$cF4yRJw5LF)flj",
+    "name": "++1",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Died/Pipie",
+        "id": "Dn",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "EO?n;^@Q%_XnOV#c05w0",
+    "name": "____SY",
+    "value": -28,
+    "extra": [],
+    "references": [
+      {
+        "target": "Died/Pipie",
+        "id": "Dq",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "*M",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "*N",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "Ds",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Died/Pipie",
+        "id": "Du",
+        "opcode": "motion_changeyby",
+        "input": "DY"
+      }
+    ]
+  },
+  {
+    "target": "quit",
+    "id": "%)Y-0g.^}{5=ck_:SdKp",
+    "name": "AA",
+    "value": -9,
+    "extra": [],
+    "references": [
+      {
+        "target": "quit",
+        "id": "EZ",
+        "opcode": "operator_subtract",
+        "input": "NUM2"
+      },
+      {
+        "target": "quit",
+        "id": "EY",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "quit",
+        "id": "E#",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "quit",
+        "id": ",d",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      }
+    ]
+  },
+  {
+    "target": "quit",
+    "id": "VtW~}@M|~8N=|R0ZR~b,",
+    "name": "MY LEVEL #",
+    "value": 0,
+    "extra": [],
+    "references": []
+  },
+  {
+    "target": "Final Boss",
+    "id": "I!TA@`!,7Hvq!4FFhN]Y",
+    "name": "A",
+    "value": 976,
+    "extra": [],
+    "references": [
+      {
+        "target": "Final Boss",
+        "id": "E)",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": "E,",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",q",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",s",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",t",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",v",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",u",
+        "opcode": "data_addtolist",
+        "input": "ITEM"
+      }
+    ]
+  },
+  {
+    "target": "Final Boss",
+    "id": "inuK?zp-(fE=Upp3O2#a",
+    "name": "IS CLONE",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Final Boss",
+        "id": "E*",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": "-i",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": "-l",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Final Boss",
+    "id": "wG~M9%_.W@g_gF23@saV",
+    "name": "mx",
+    "value": 3816,
+    "extra": [],
+    "references": [
+      {
+        "target": "Final Boss",
+        "id": "E+",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": "kt",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",C",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",E",
+        "opcode": "operator_subtract",
+        "input": "NUM1"
+      },
+      {
+        "target": "Final Boss",
+        "id": "kE",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": "FK",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Final Boss",
+    "id": "_q:O#l*2,gds98}{NMoG",
+    "name": "DIED",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Final Boss",
+        "id": ",F",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",P",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": "Fe",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",R",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",S",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": "Fp",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",{",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": "-e",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": "FD",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Final Boss",
+    "id": "qVLuUQ0w4_en8nk%Bf,=",
+    "name": "SX",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Final Boss",
+        "id": ",V",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",W",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Final Boss",
+        "id": "Fi",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",Y",
+        "opcode": "operator_multiply",
+        "input": "NUM1"
+      },
+      {
+        "target": "Final Boss",
+        "id": "FJ",
+        "opcode": "motion_changexby",
+        "input": "DX"
+      },
+      {
+        "target": "Final Boss",
+        "id": "FK",
+        "opcode": "data_changevariableby",
+        "input": "VALUE"
+      }
+    ]
+  },
+  {
+    "target": "Final Boss",
+    "id": "~XfZ-wRgcScq+wr+W=RV",
+    "name": "SY",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Final Boss",
+        "id": "Fy",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",;",
+        "opcode": "operator_mathop",
+        "input": "NUM"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",=",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",]",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",|",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": "-a",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": ",}",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Final Boss",
+    "id": "umn#kgGEd@RJN2lI~QHK",
+    "name": "START",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Final Boss",
+        "id": ",~",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Final Boss",
+        "id": "Fz",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Final Boss",
+        "id": "-b",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Fade",
+    "id": "!D{;8`Y*XR.$zsK]vo4u",
+    "name": "AA",
+    "value": 0.717,
+    "extra": [],
+    "references": [
+      {
+        "target": "Fade",
+        "id": "FO",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Fade",
+        "id": "-u",
+        "opcode": "event_whengreaterthan",
+        "input": "VALUE"
+      }
+    ]
+  },
+  {
+    "target": "Save + Load",
+    "id": "l3pfXx:sCbu;((Y#y3t`",
+    "name": "___END",
+    "value": 0,
+    "extra": [],
+    "references": [
+      {
+        "target": "Save + Load",
+        "id": "G)",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".l",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".n",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "G=",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "G[",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".v",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Save + Load",
+        "id": "G_",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "G`",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".x",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Save + Load",
+        "id": "G}",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".A",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Hb",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Hc",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".C",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Hf",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".F",
+        "opcode": "data_itemoflist",
+        "input": "INDEX"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".N",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Hp",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".P",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Hr",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Save + Load",
+        "id": ".R",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Save + Load",
+        "id": "Ht",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Game -Save + Load",
+    "id": "QwUWT+c0LP@_M[P{09JQ",
+    "name": "___END",
+    "value": "0",
+    "extra": [],
+    "references": [
+      {
+        "target": "Game -Save + Load",
+        "id": "H~",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/x",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "/z",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Game -Save + Load",
+    "id": "%Pq2f_jWHd2%5WcMtS]K",
+    "name": "_______LIVES",
+    "value": "2",
+    "extra": [],
+    "references": [
+      {
+        "target": "Game -Save + Load",
+        "id": "Io",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "IK",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "IN",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Game -Save + Load",
+        "id": "IQ",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Figur1",
+    "id": "cJnR8V]KOVDDfsDk8e)E",
+    "name": "______",
+    "value": 1,
+    "extra": [],
+    "references": [
+      {
+        "target": "Figur1",
+        "id": "/?",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Figur1",
+        "id": "/{",
+        "opcode": "operator_gt",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Figur1",
+        "id": "JQ",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Figur1",
+        "id": "JR",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Figur1",
+        "id": "JU",
+        "opcode": "data_changevariableby",
+        "field": "VARIABLE"
+      }
+    ]
+  },
+  {
+    "target": "Phone Controls",
+    "id": "MhgBn#yWp?51*kz@G-?8",
+    "name": "___C",
+    "value": "F",
+    "extra": [],
+    "references": [
+      {
+        "target": "Phone Controls",
+        "id": "K:",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Phone Controls",
+        "id": "K;",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Phone Controls",
+        "id": "K=",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Phone Controls",
+        "id": "K?",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Phone Controls",
+        "id": "K@",
+        "opcode": "data_setvariableto",
+        "field": "VARIABLE"
+      },
+      {
+        "target": "Phone Controls",
+        "id": "l@",
+        "opcode": "looks_switchcostumeto",
+        "input": "COSTUME"
+      },
+      {
+        "target": "Phone Controls",
+        "id": ";T",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      },
+      {
+        "target": "Phone Controls",
+        "id": ";+",
+        "opcode": "operator_equals",
+        "input": "OPERAND1"
+      }
+    ]
+  }
+]

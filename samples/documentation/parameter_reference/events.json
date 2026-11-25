@@ -1,0 +1,6920 @@
+[
+  {
+    "target": "Stage",
+    "id": "=l",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Start Game",
+          ".x?_NTu9NH3](G/S*F[i"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Stage",
+    "id": "Lq",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "mp",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Stage",
+    "id": "ms",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "c~",
+      "parent": "Ls",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Died",
+            "T_(c0o2^S!SR,Bw%/zHS"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Stage",
+    "id": "LA",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "mD",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Time Reset",
+          "9zbva(~TC3Mo^grcluZ4"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Stage",
+    "id": "mI",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "dd",
+      "parent": "dc",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "New Day",
+            "g5=V_A~Sa5J4*?}TfrV^"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Stage",
+    "id": "L,",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "W",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "END Time",
+            "Dz5y^ZLPna0U2e*w.+]8"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Stage",
+    "id": "LD",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "db",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Game over World",
+            "CJ.^[g3$DtWms=?[wfB,"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Stage",
+    "id": "=q",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Time Reset",
+            "9zbva(~TC3Mo^grcluZ4"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Stage",
+    "id": "L`",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "no",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Stage",
+    "id": "=s",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "New Day",
+            "g5=V_A~Sa5J4*?}TfrV^"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Stage",
+    "id": "L|",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "nq",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Time Reset",
+          "9zbva(~TC3Mo^grcluZ4"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Stage",
+    "id": "L}",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "nq",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "GTC",
+            "DSm^FM@cZzGhd88bcA(!"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Stage",
+    "id": "Mv",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "%",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "END Time",
+            "Dz5y^ZLPna0U2e*w.+]8"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Boss",
+    "id": "MD",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "dL",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Setup moops",
+          "biS7HOieFJF-bd1T;SW="
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Boss",
+    "id": "MK",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "ML",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Delete all mopss",
+          "O}*zvY]g]w:]0BsbSyS:"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Boss",
+    "id": "M{",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "dW",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Kill mop by free",
+          "a1zG/x`of`zCd5/#H,h?"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Boss",
+    "id": "Nb",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "om",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Move all",
+          "PdbSuI~DZxf!WbXQ47cv"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Boss",
+    "id": "Ne",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "Nf",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Boss",
+    "id": "=A",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Delete all mopss",
+            "O}*zvY]g]w:]0BsbSyS:"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Boss",
+    "id": "=B",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Setup moops",
+            "biS7HOieFJF-bd1T;SW="
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Boss",
+    "id": "=C",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Boss",
+    "id": "Nj",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "ot",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Boss",
+    "id": "NQ",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "oS",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Yump",
+            "ppA%hc:6cf-GSVCM:D|5"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Boss",
+    "id": "NS",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "oT",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power down",
+            "=`MW3DW.bklbb66O+JLv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Enemy",
+    "id": "Ox",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "pq",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Yump",
+            "ppA%hc:6cf-GSVCM:D|5"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Enemy",
+    "id": "Oz",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "pr",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power down",
+            "=`MW3DW.bklbb66O+JLv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Enemy",
+    "id": "OD",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "ps",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Move all",
+          "PdbSuI~DZxf!WbXQ47cv"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Enemy",
+    "id": "OG",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "ek",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Enemy",
+    "id": "OO",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "eo",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Kill mop by free",
+          "a1zG/x`of`zCd5/#H,h?"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Enemy",
+    "id": "OT",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "OU",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Delete all mopss",
+          "O}*zvY]g]w:]0BsbSyS:"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Enemy",
+    "id": "OX",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "er",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Setup moops",
+          "biS7HOieFJF-bd1T;SW="
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Enemy",
+    "id": "O?",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "O@",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Enemy",
+    "id": "=P",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Delete all mopss",
+            "O}*zvY]g]w:]0BsbSyS:"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Enemy",
+    "id": "=S",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Delete all mopss",
+            "O}*zvY]g]w:]0BsbSyS:"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Enemy",
+    "id": "Pb",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "pX",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "Pq",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "p/",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Win",
+            "?zr{oOqdOh0lSoID.Z$s"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Player",
+    "id": "Qs",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "fp",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "Qv",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "qY",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "Qx",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "q*",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Win",
+          "?zr{oOqdOh0lSoID.Z$s"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "QI",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "q/",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Died",
+          "T_(c0o2^S!SR,Bw%/zHS"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "q:",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "q;",
+      "parent": "q/",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Still",
+            "=l~0ac2uj;i:FTX_=!C1"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Player",
+    "id": "q~",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "ra",
+      "parent": "q}",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Lave",
+            "Q4:]7sEL0HI*G1r?Iz?j"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Player",
+    "id": "ra",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "rb",
+      "parent": "q~",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Restart Level",
+            "rDanb3UoU]gVeA`nDVGm"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Player",
+    "id": "QL",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "rc",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Yump",
+          "ppA%hc:6cf-GSVCM:D|5"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "QN",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "re",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Up",
+          "${dCg*eSv,Z~XHo3l2im"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "QR",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "rh",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Lave",
+          "Q4:]7sEL0HI*G1r?Iz?j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "QT",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "rj",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Toi died",
+          "e?D,Crhcg,rNH)G/;R%;"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "QV",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "aw",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Player Tick",
+          "_$w:u-$Gw$TZwF_cH8T%"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "Q(",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": null,
+      "parent": "rt",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Died",
+            "T_(c0o2^S!SR,Bw%/zHS"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Player",
+    "id": "Q+",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "ft",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Scroll X",
+          "^Lap7B$?cz@0~@-?@Ud="
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "=)",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Died",
+            "T_(c0o2^S!SR,Bw%/zHS"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "Q;",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "fw",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Scroll",
+          "9^?wSdf{oTpzMgzT2`6F"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "Q}",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Q~",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "=;",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "live hurt",
+            "*9oh%Toe(=1p#kDvcTNG"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "RA",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "RB",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Game Over Ani",
+          "*RNnX[bLky[vz@LqSP#@"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "RK",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "r#",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player",
+    "id": "RT",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "RU",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "boss",
+          "v^E)F?AuAi{R?~H]^(tH"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "R=",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "R?",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "R@",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "R[",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "R]",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "R^",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Still",
+          "=l~0ac2uj;i:FTX_=!C1"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "R_",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "r:",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Laut",
+          "5#S;:vaKEtzud8woDejV"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "?a",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "WIN",
+          "P@1sU$0#DmA2?reV!p7~"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "R{",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "aD",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "Si",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Sj",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Laut",
+          "5#S;:vaKEtzud8woDejV"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "Sk",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "r]",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Setup level",
+          "$[8pc%VA7Tj[tpuIl/4I"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "So",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Sp",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Game over",
+          "Lv;3B|_C,v[OF`hw0-%K"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "Sq",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "r|",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Star level",
+          "YQMYk.pDz=R`cbC{r[(j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "St",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "sb",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "SJ",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "aH",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Move all",
+          "PdbSuI~DZxf!WbXQ47cv"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "?b",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "SP",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "sj",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Lave",
+          "Q4:]7sEL0HI*G1r?Iz?j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "?d",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "SX",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "f_",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Died",
+            "T_(c0o2^S!SR,Bw%/zHS"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "S!",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "f{",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Died",
+            "T_(c0o2^S!SR,Bw%/zHS"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "S(",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "f}",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Died",
+            "T_(c0o2^S!SR,Bw%/zHS"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "S*",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "S+",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Died",
+          "T_(c0o2^S!SR,Bw%/zHS"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "S,",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "S-",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "WIN",
+          "P@1sU$0#DmA2?reV!p7~"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "S.",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "sz",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "S}",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "sJ",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "Ta",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Tb",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Game Over Ani",
+          "*RNnX[bLky[vz@LqSP#@"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme Day",
+    "id": "?h",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "?i",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "Tq",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Tr",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Move all",
+          "PdbSuI~DZxf!WbXQ47cv"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "TF",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "s,",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "TH",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": null,
+      "parent": "s;",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Setup moops",
+            "biS7HOieFJF-bd1T;SW="
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "Uu",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": null,
+      "parent": "a+",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Save",
+            "[+y-hBYnQQP_Kk7S,4|4"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "UT",
+    "block": {
+      "opcode": "event_whenkeypressed",
+      "next": "gR",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "KEY_OPTION": [
+          "a",
+          null
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "U)",
+    "block": {
+      "opcode": "event_whenkeypressed",
+      "next": "gW",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "KEY_OPTION": [
+          "d",
+          null
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "U@",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "U[",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "U]",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "uG",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "New game",
+          "v{D)qvxjW7{^}HDPxXg6"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "U_",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "uM",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "U{",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "U|",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "U}",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "uN",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Lave",
+          "Q4:]7sEL0HI*G1r?Iz?j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "Va",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "gZ",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "Vl",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "u)",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Travel",
+            "+0F]Ov7fp-w8l8wYd99m"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "Vo",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "a[",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "VF",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "vh",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "VT",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "vz",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "VV",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "VW",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "V#",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "V%",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "update",
+          "/wJvvB)m.H#squ-gbX^`"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "vB",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "a]",
+      "parent": "hg",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Scroll",
+            "9^?wSdf{oTpzMgzT2`6F"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "vE",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "hk",
+      "parent": "a_",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Move all",
+            "PdbSuI~DZxf!WbXQ47cv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "vJ",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "hl",
+      "parent": "a{",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Player Tick",
+            "_$w:u-$Gw$TZwF_cH8T%"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "V|",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "V}",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Win",
+          "?zr{oOqdOh0lSoID.Z$s"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "Wb",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "Wc",
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Setup moops",
+            "biS7HOieFJF-bd1T;SW="
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "?u",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "?y",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "Wi",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "vV",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "Wn",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "ba",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "update",
+            "/wJvvB)m.H#squ-gbX^`"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "Wo",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": null,
+      "parent": "ba",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "update",
+            "/wJvvB)m.H#squ-gbX^`"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "v)",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "v,",
+      "parent": "hp",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Save",
+            "[+y-hBYnQQP_Kk7S,4|4"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "v-",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "v.",
+      "parent": "v,",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Start",
+            "yf{[NxECOjLNIQ0lr%vS"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "v;",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "Wt",
+      "parent": "hq",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Setup moops",
+            "biS7HOieFJF-bd1T;SW="
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "v=",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "v[",
+      "parent": "hr",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Start",
+            "yf{[NxECOjLNIQ0lr%vS"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "v_",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "Ww",
+      "parent": "hs",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Setup moops",
+            "biS7HOieFJF-bd1T;SW="
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "WD",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "WE",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Game Over Ani",
+          "*RNnX[bLky[vz@LqSP#@"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "?B",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Move all",
+            "PdbSuI~DZxf!WbXQ47cv"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "?C",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Player Tick",
+            "_$w:u-$Gw$TZwF_cH8T%"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "WO",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "bc",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "WU",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "bd",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Up",
+            "${dCg*eSv,Z~XHo3l2im"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "WS",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "bd",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power Up",
+            "_nI^XD^*2sBJw3pdss4D"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "WX",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "hC",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power down",
+            "=`MW3DW.bklbb66O+JLv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "WZ",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "wh",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "wH",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "hK",
+      "parent": "hJ",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Move all",
+            "PdbSuI~DZxf!WbXQ47cv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Levels",
+    "id": "wL",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "hL",
+      "parent": "bf",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Player Tick",
+            "_$w:u-$Gw$TZwF_cH8T%"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Fane+",
+    "id": "Xs",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "Xt",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Fane+",
+    "id": "Xu",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "wO",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Star level",
+          "YQMYk.pDz=R`cbC{r[(j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Fane+",
+    "id": "Xw",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "wQ",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Win",
+          "?zr{oOqdOh0lSoID.Z$s"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Fane+",
+    "id": "wU",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "hM",
+      "parent": "wT",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Still",
+            "=l~0ac2uj;i:FTX_=!C1"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Fane+",
+    "id": "wW",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "Xy",
+      "parent": "wX",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Player move out level & back to map",
+            "BCDG,U8yOK2qyPB+iB0I"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Fane+",
+    "id": "Xz",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "bh",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Move all",
+          "PdbSuI~DZxf!WbXQ47cv"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Fane+",
+    "id": "XS",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "w_",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Win",
+            "?zr{oOqdOh0lSoID.Z$s"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Fane+",
+    "id": "XT",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "w`",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Fane+",
+    "id": "XV",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "bg",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Time Reset",
+            "9zbva(~TC3Mo^grcluZ4"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Fane+",
+    "id": "XY",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "w{",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Fane+",
+    "id": "X!",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "w}",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Game over World",
+          "CJ.^[g3$DtWms=?[wfB,"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "fane",
+    "id": "X%",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "X(",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "fane",
+    "id": "?!",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Star level",
+          "YQMYk.pDz=R`cbC{r[(j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "fane",
+    "id": "X)",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "bk",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Win",
+          "?zr{oOqdOh0lSoID.Z$s"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "fane",
+    "id": "X+",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "bl",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Move all",
+          "PdbSuI~DZxf!WbXQ47cv"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "fane",
+    "id": "Ya",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "xt",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Win",
+            "?zr{oOqdOh0lSoID.Z$s"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "fane",
+    "id": "?(",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Win",
+            "?zr{oOqdOh0lSoID.Z$s"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "fane",
+    "id": "Ye",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "xv",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "fane",
+    "id": "?*",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Win",
+          "?zr{oOqdOh0lSoID.Z$s"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "fane",
+    "id": "?+",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Win",
+          "?zr{oOqdOh0lSoID.Z$s"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "fane",
+    "id": "Yk",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "xz",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur6",
+    "id": "Ym",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "xB",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur6",
+    "id": "Yp",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "h)",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "Yu",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "Yv",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "Yw",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "Yx",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "Yy",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Yz",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Still",
+          "=l~0ac2uj;i:FTX_=!C1"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "YA",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "xJ",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Laut",
+          "5#S;:vaKEtzud8woDejV"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "?.",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "WIN",
+          "P@1sU$0#DmA2?reV!p7~"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "YC",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "bo",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "YO",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "YP",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Laut",
+          "5#S;:vaKEtzud8woDejV"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "YQ",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "xP",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Setup level",
+          "$[8pc%VA7Tj[tpuIl/4I"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "YU",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "YV",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Game over",
+          "Lv;3B|_C,v[OF`hw0-%K"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "YW",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "xU",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Star level",
+          "YQMYk.pDz=R`cbC{r[(j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "YZ",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "xY",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "Y;",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "bs",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Move all",
+          "PdbSuI~DZxf!WbXQ47cv"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "?/",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "Y`",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "x-",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Lave",
+          "Q4:]7sEL0HI*G1r?Iz?j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "?;",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "Zd",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "h|",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Died",
+            "T_(c0o2^S!SR,Bw%/zHS"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "Zg",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "h~",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Died",
+            "T_(c0o2^S!SR,Bw%/zHS"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "Zj",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "ib",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Died",
+            "T_(c0o2^S!SR,Bw%/zHS"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "Zl",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Zm",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Died",
+          "T_(c0o2^S!SR,Bw%/zHS"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "Zn",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Zo",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "WIN",
+          "P@1sU$0#DmA2?reV!p7~"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "Zp",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "x~",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "ZD",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "yj",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "ZF",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "ZG",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Game Over Ani",
+          "*RNnX[bLky[vz@LqSP#@"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Teme N",
+    "id": "?[",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "ZV",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "ZW",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "ZZ",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "ie",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "start level v1",
+          "x=6WrdpLC_$NaR|uJK#c"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "yu",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "yv",
+      "parent": "yt",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "boss",
+            "v^E)F?AuAi{R?~H]^(tH"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "Z-",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "bB",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power Up",
+            "_nI^XD^*2sBJw3pdss4D"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "Z_",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "bG",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power down",
+            "=`MW3DW.bklbb66O+JLv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "yL",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "Z`",
+      "parent": "bG",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power down",
+            "=`MW3DW.bklbb66O+JLv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "!e",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "bJ",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power down",
+            "=`MW3DW.bklbb66O+JLv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "yS",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "!f",
+      "parent": "bJ",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power down",
+            "=`MW3DW.bklbb66O+JLv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "!p",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "bO",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power down",
+            "=`MW3DW.bklbb66O+JLv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "y-",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "!q",
+      "parent": "bO",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power down",
+            "=`MW3DW.bklbb66O+JLv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "!z",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "bR",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power down",
+            "=`MW3DW.bklbb66O+JLv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "y@",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "!A",
+      "parent": "bR",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power down",
+            "=`MW3DW.bklbb66O+JLv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "!J",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "!I",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Died",
+            "T_(c0o2^S!SR,Bw%/zHS"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "?}",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power Up",
+            "_nI^XD^*2sBJw3pdss4D"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "zn",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "zp",
+      "parent": "bV",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Yump",
+            "ppA%hc:6cf-GSVCM:D|5"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "!%",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "bW",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power down",
+            "=`MW3DW.bklbb66O+JLv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "@c",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power Up",
+            "_nI^XD^*2sBJw3pdss4D"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dragon",
+    "id": "!:",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "zw",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Power up",
+    "id": "!=",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "zx",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Power down",
+          "=`MW3DW.bklbb66O+JLv"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Power up",
+    "id": "zy",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "zz",
+      "parent": "bY",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Died",
+            "T_(c0o2^S!SR,Bw%/zHS"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Power up",
+    "id": "!|",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "b!",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Power Up",
+          "_nI^XD^*2sBJw3pdss4D"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Power up",
+    "id": "@e",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Back",
+          "z7)y$A/bOxlo?RHWkDN$"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Menu",
+    "id": "#i",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "zH",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Menu",
+    "id": "@f",
+    "block": {
+      "opcode": "event_whenthisspriteclicked",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Menu",
+    "id": "zS",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "zU",
+      "parent": "zT",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Neue",
+            "R_lWkss3_#o,9-[j4e]1"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Menu",
+    "id": "#m",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "zY",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Re start",
+          "jLAo,jd[iw9:z:v)]mHy"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Menu",
+    "id": "#o",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "iI",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Title Code",
+          "rW]V}W#MkFXvf1;VenLI"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Menu",
+    "id": "zT",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "zS",
+      "parent": "zW",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Start Game",
+            ".x?_NTu9NH3](G/S*F[i"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Menu",
+    "id": "#r",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "z(",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Menu",
+    "id": "zW",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "zT",
+      "parent": "zV",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Intro Ani",
+            "js3)W6?n1E^,[Ud]mKSw"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "@h",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Neue",
+          "R_lWkss3_#o,9-[j4e]1"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "#w",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "z,",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Out",
+            "d:V|v{,Xdq=AJT4s#|nh"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "#x",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "z-",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "z@",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "#B",
+      "parent": "z?",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Out",
+            "d:V|v{,Xdq=AJT4s#|nh"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "#B",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "z@",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Title Code",
+            "rW]V}W#MkFXvf1;VenLI"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "#C",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "z[",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "In",
+          "L_ug7}Y9L,gLRm^v-lII"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "#M",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Af",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Out",
+          "d:V|v{,Xdq=AJT4s#|nh"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "#S",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Ao",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Trans",
+          "HpkX.+*VY4*YDRh6Nj*{"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "Ao",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "Ap",
+      "parent": "#S",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "In",
+            "L_ug7}Y9L,gLRm^v-lII"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "#T",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "Ar",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Out",
+            "d:V|v{,Xdq=AJT4s#|nh"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "#U",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "As",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Trank",
+          "r4%Gim{Snc6NJqS5(-/I"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "As",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "iV",
+      "parent": "#U",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "In",
+            "L_ug7}Y9L,gLRm^v-lII"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "#V",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "iV",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Out",
+            "d:V|v{,Xdq=AJT4s#|nh"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "#X",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "At",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "trans 2",
+          "cB+/ghsL},JrKTmvXe]-"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "At",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "Au",
+      "parent": "#X",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "In",
+            "L_ug7}Y9L,gLRm^v-lII"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "#Y",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "Au",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Out",
+            "d:V|v{,Xdq=AJT4s#|nh"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "#Z",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "Av",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "##",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Az",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Tran Lev",
+          "Y5ZowrI*xV|fR@4=to|s"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "Az",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "iW",
+      "parent": "##",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "In",
+            "L_ug7}Y9L,gLRm^v-lII"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "AA",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "iX",
+      "parent": "iW",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "intro",
+            "d)Xa;Tk;i0}Qez$6Igmm"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "#(",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "iX",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Out",
+            "d:V|v{,Xdq=AJT4s#|nh"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "@i",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "#*",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "AB",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Game over",
+          "Lv;3B|_C,v[OF`hw0-%K"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Dynamick",
+    "id": "#-",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "AF",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "#:",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "AH",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Lave",
+          "Q4:]7sEL0HI*G1r?Iz?j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "#=",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "i!",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "#[",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "AI",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "#{",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "AM",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Player move out level & back to map",
+          "BCDG,U8yOK2qyPB+iB0I"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "AM",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "i#",
+      "parent": "#{",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Still",
+            "=l~0ac2uj;i:FTX_=!C1"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "%z",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "%A",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Move all",
+          "PdbSuI~DZxf!WbXQ47cv"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "%F",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "A=",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Power Up",
+          "_nI^XD^*2sBJw3pdss4D"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "%G",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "A?",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Power down",
+          "=`MW3DW.bklbb66O+JLv"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "%H",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "A@",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Died",
+          "T_(c0o2^S!SR,Bw%/zHS"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "%J",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "%K",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Hide player",
+          "3x+-NE^fn5o9[Fn9T|hz"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "%L",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "A[",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Hide player",
+          "3x+-NE^fn5o9[Fn9T|hz"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "%N",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "%O",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Toi died",
+          "e?D,Crhcg,rNH)G/;R%;"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "%P",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "A]",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Game Over Ani",
+          "*RNnX[bLky[vz@LqSP#@"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "%R",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "A^",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "%Z",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "i@",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "GTC",
+          "DSm^FM@cZzGhd88bcA(!"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player out",
+    "id": "%#",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "%%",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Tobo",
+    "id": "%(",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Bf",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Setup level",
+          "$[8pc%VA7Tj[tpuIl/4I"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Tobo",
+    "id": "%+",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "%*",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Tobo",
+    "id": "%)",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "Bf",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Laut",
+            "5#S;:vaKEtzud8woDejV"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "%,",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "i^",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "%/",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Bg",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "%^",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "%_",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Player move out level & back to map",
+          "BCDG,U8yOK2qyPB+iB0I"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "%_",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "%^",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Restart Level",
+            "rDanb3UoU]gVeA`nDVGm"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "%`",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "Bk",
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Still",
+            "=l~0ac2uj;i:FTX_=!C1"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "Bo",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "%|",
+      "parent": "Bn",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Lave",
+            "Q4:]7sEL0HI*G1r?Iz?j"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "%|",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "Bo",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Back",
+            "z7)y$A/bOxlo?RHWkDN$"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(c",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "(d",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Move all",
+          "PdbSuI~DZxf!WbXQ47cv"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(g",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Bs",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Power Up",
+          "_nI^XD^*2sBJw3pdss4D"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(j",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Bw",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Power down",
+          "=`MW3DW.bklbb66O+JLv"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(k",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "(l",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(q",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "By",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(s",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "BC",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Died",
+          "T_(c0o2^S!SR,Bw%/zHS"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(u",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "BE",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Lave",
+          "Q4:]7sEL0HI*G1r?Iz?j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(w",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "BF",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Hide player",
+          "3x+-NE^fn5o9[Fn9T|hz"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(y",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "(z",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Start",
+          "yf{[NxECOjLNIQ0lr%vS"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(A",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "(B",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Toi died",
+          "e?D,Crhcg,rNH)G/;R%;"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(/",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "b^",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Up",
+            "${dCg*eSv,Z~XHo3l2im"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(-",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "b^",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power Up",
+            "_nI^XD^*2sBJw3pdss4D"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(=",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "jj",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power down",
+            "=`MW3DW.bklbb66O+JLv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(?",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "B:",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Game Over Ani",
+          "*RNnX[bLky[vz@LqSP#@"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "([",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "B;",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Player move out level & back to map",
+          "BCDG,U8yOK2qyPB+iB0I"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "B;",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "jk",
+      "parent": "([",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Still",
+            "=l~0ac2uj;i:FTX_=!C1"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(_",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "B=",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Player body",
+    "id": "(}",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "jm",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "GTC",
+          "DSm^FM@cZzGhd88bcA(!"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Ball",
+    "id": "@u",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Ball",
+    "id": "@x",
+    "block": {
+      "opcode": "event_whenkeypressed",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "KEY_OPTION": [
+          "x",
+          null
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Ball",
+    "id": "@A",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Ball",
+    "id": ")j",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": ")k",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Ball",
+    "id": ")l",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Ce",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Move all",
+          "PdbSuI~DZxf!WbXQ47cv"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Ball",
+    "id": "Ck",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "js",
+      "parent": "Cj",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Kill mop by free",
+            "a1zG/x`of`zCd5/#H,h?"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Ball",
+    "id": "Cn",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "ju",
+      "parent": "Cm",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Kill mop by free",
+            "a1zG/x`of`zCd5/#H,h?"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Ball",
+    "id": ")+",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "CZ",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "WIN",
+          "P@1sU$0#DmA2?reV!p7~"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Ball",
+    "id": ")-",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "C!",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Died",
+          "T_(c0o2^S!SR,Bw%/zHS"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Ball",
+    "id": ")/",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "C#",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Ball",
+    "id": ")}",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "C[",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Ball",
+    "id": "*c",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "C^",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Ball",
+    "id": "C}",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "jO",
+      "parent": "C|",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Kill mop by free",
+            "a1zG/x`of`zCd5/#H,h?"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "fane pos",
+    "id": "*n",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "*o",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "fane pos",
+    "id": "*p",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Db",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Star level",
+          "YQMYk.pDz=R`cbC{r[(j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "fane pos",
+    "id": "*r",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "*s",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Win",
+          "?zr{oOqdOh0lSoID.Z$s"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "fane pos",
+    "id": "*t",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "*u",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Move all",
+          "PdbSuI~DZxf!WbXQ47cv"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "fane pos",
+    "id": "@I",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Win",
+            "?zr{oOqdOh0lSoID.Z$s"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "*E",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Dl",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Died",
+          "T_(c0o2^S!SR,Bw%/zHS"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "*R",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Dz",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Travel",
+          "+0F]Ov7fp-w8l8wYd99m"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "Dz",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "DA",
+      "parent": "*R",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Hide player",
+            "3x+-NE^fn5o9[Fn9T|hz"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "DV",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "D#",
+      "parent": "j*",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Trank",
+            "r4%Gim{Snc6NJqS5(-/I"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "D(",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "j:",
+      "parent": "j/",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Scroll X",
+            "^Lap7B$?cz@0~@-?@Ud="
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "D;",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "D=",
+      "parent": "D:",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Move all",
+            "PdbSuI~DZxf!WbXQ47cv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "D=",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "D?",
+      "parent": "D;",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Setup moops",
+            "biS7HOieFJF-bd1T;SW="
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "D@",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "D[",
+      "parent": "D?",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Hide player",
+            "3x+-NE^fn5o9[Fn9T|hz"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "D]",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "Ea",
+      "parent": "cl",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Toi died",
+            "e?D,Crhcg,rNH)G/;R%;"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "+i",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "+j",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "@O",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Scroll X",
+            "^Lap7B$?cz@0~@-?@Ud="
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "+k",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Ej",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Game Over Ani",
+          "*RNnX[bLky[vz@LqSP#@"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "+m",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "j^",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Game over",
+            "Lv;3B|_C,v[OF`hw0-%K"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Died/Pipie",
+    "id": "+o",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "El",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Water",
+    "id": "+s",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Eo",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "menu",
+    "id": "+x",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "+y",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Neue",
+          "R_lWkss3_#o,9-[j4e]1"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "menu",
+    "id": "+W",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "+X",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "menu",
+    "id": "+Y",
+    "block": {
+      "opcode": "event_whenthisspriteclicked",
+      "next": "EB",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "menu",
+    "id": "+!",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "EE",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "New menu",
+            "Fa7Xo0FmCJT{eSl(Wc{]"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "menu",
+    "id": "+%",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "EG",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "New menu",
+            "Fa7Xo0FmCJT{eSl(Wc{]"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "menu",
+    "id": "+)",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "EJ",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "New menu",
+            "Fa7Xo0FmCJT{eSl(Wc{]"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "menu",
+    "id": "EL",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "++",
+      "parent": "ct",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "New game",
+            "v{D)qvxjW7{^}HDPxXg6"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "menu",
+    "id": "++",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "EL",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Create",
+            "q+Ohh`p0lh^(S;YVv})S"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "menu",
+    "id": "EQ",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "cu",
+      "parent": "EP",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Load",
+            ".tSUlQ{j@z{0V,,IHCjS"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "menu",
+    "id": "@T",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Trans",
+            "HpkX.+*VY4*YDRh6Nj*{"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "menu",
+    "id": "+:",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "kl",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Create",
+            "q+Ohh`p0lh^(S;YVv})S"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "menu",
+    "id": "+=",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "kn",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "New menu",
+          "Fa7Xo0FmCJT{eSl(Wc{]"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "menu",
+    "id": "+[",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "EV",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "menu",
+    "id": "@U",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Open",
+          "Y*9Iu6Iyc_hr!I697B.T"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "menu",
+    "id": "+y",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "+x",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Restart Level",
+            "rDanb3UoU]gVeA`nDVGm"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "quit",
+    "id": "+^",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "EW",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Lave",
+          "Q4:]7sEL0HI*G1r?Iz?j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "quit",
+    "id": "+_",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "EW",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "New menu",
+            "Fa7Xo0FmCJT{eSl(Wc{]"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "quit",
+    "id": "+`",
+    "block": {
+      "opcode": "event_whenthisspriteclicked",
+      "next": "cv",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "quit",
+    "id": "+{",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "cv",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Lave",
+            "Q4:]7sEL0HI*G1r?Iz?j"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "quit",
+    "id": "+~",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "E!",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "quit",
+    "id": ",b",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": ",c",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Final Boss",
+    "id": ",f",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "ko",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Setup moops",
+          "biS7HOieFJF-bd1T;SW="
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Final Boss",
+    "id": ",m",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": ",n",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Delete all mopss",
+          "O}*zvY]g]w:]0BsbSyS:"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Final Boss",
+    "id": "Fq",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": ",*",
+      "parent": "Fp",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Yump",
+            "ppA%hc:6cf-GSVCM:D|5"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Final Boss",
+    "id": ",,",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "Fr",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power down",
+            "=`MW3DW.bklbb66O+JLv"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Final Boss",
+    "id": "-c",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "kN",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Kill mop by free",
+          "a1zG/x`of`zCd5/#H,h?"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Final Boss",
+    "id": "-h",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "FE",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Move all",
+          "PdbSuI~DZxf!WbXQ47cv"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Final Boss",
+    "id": "-k",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "-l",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Final Boss",
+    "id": "@Y",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Delete all mopss",
+            "O}*zvY]g]w:]0BsbSyS:"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Final Boss",
+    "id": "@Z",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Setup moops",
+            "biS7HOieFJF-bd1T;SW="
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Final Boss",
+    "id": "@!",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Final Boss",
+    "id": "-p",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "FL",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Final Boss",
+    "id": "@#",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Back",
+          "z7)y$A/bOxlo?RHWkDN$"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Fade",
+    "id": "-r",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "FN",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Fade",
+    "id": "-u",
+    "block": {
+      "opcode": "event_whengreaterthan",
+      "next": "FR",
+      "parent": null,
+      "inputs": {
+        "VALUE": [
+          3,
+          [
+            12,
+            "AA",
+            "!D{;8`Y*XR.$zsK]vo4u"
+          ],
+          [
+            4,
+            "10"
+          ]
+        ]
+      },
+      "fields": {
+        "WHENGREATERTHANMENU": [
+          "TIMER",
+          null
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Sprite1",
+    "id": "-x",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "-y",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Back to map",
+          "*lDoWGWc17eNJK-ecp@l"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Sprite1",
+    "id": "-E",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": null,
+      "parent": "cK",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Save Your Game",
+            "Kq|#=CF:#zzd}9W0tf`S"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Sprite1",
+    "id": "@%",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "stop map",
+            "%HUYcrt|zFY[,%XM|qF~"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Sprite1",
+    "id": "@)",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Back to map",
+          "*lDoWGWc17eNJK-ecp@l"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Sprite1",
+    "id": "@,",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Power Up",
+            "_nI^XD^*2sBJw3pdss4D"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Sprite1",
+    "id": "-}",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "L",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Restart Level",
+          "rDanb3UoU]gVeA`nDVGm"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Sprite1",
+    "id": "GU",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "GV",
+      "parent": "GS",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Load",
+            ".tSUlQ{j@z{0V,,IHCjS"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Sprite1",
+    "id": "GV",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "GW",
+      "parent": "GU",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Tran Lev",
+            "Y5ZowrI*xV|fR@4=to|s"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Sprite1",
+    "id": "GW",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "GX",
+      "parent": "GV",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Create",
+            "q+Ohh`p0lh^(S;YVv})S"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Sprite1",
+    "id": ".c",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": ".b",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Sprite1",
+    "id": ".e",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "L",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Good Ending",
+            "]b7Zx:=04H1Gu=@tTP*j"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Sprite1",
+    "id": "GX",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "GY",
+      "parent": "GW",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "start level v1",
+            "x=6WrdpLC_$NaR|uJK#c"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Save + Load",
+    "id": ".U",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "lb",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Load",
+          ".tSUlQ{j@z{0V,,IHCjS"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Save + Load",
+    "id": ".X",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "HB",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Save",
+          "[+y-hBYnQQP_Kk7S,4|4"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Save + Load",
+    "id": ".!",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": ".#",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Save + Load",
+    "id": "._",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "H,",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Sprite3",
+    "id": ".`",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "H-",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur3",
+    "id": ".~",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "/a",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur3",
+    "id": "/b",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "H;",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Game over World",
+          "CJ.^[g3$DtWms=?[wfB,"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur3",
+    "id": "/c",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": "c*",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Game Over Ani",
+            "*RNnX[bLky[vz@LqSP#@"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Figur4",
+    "id": "/j",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "/k",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Game over World",
+          "CJ.^[g3$DtWms=?[wfB,"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur4",
+    "id": "/m",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "/l",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur4",
+    "id": "/n",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "H`",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur4",
+    "id": "/p",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "/q",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Game over",
+          "Lv;3B|_C,v[OF`hw0-%K"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Game -Save + Load",
+    "id": "/G",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Ip",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Load Youer Game",
+          "aFW_/s)4u!MFjEey+R!@"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Game -Save + Load",
+    "id": "/J",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "Iq",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Save Your Game",
+          "Kq|#=CF:#zzd}9W0tf`S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Game -Save + Load",
+    "id": "/M",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "/N",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Game -Save + Load",
+    "id": "IH",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "IJ",
+      "parent": "Io",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "lives",
+            "{hC09{qvqq#(L!hoQdJ3"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Game -Save + Load",
+    "id": "IL",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "IM",
+      "parent": "IK",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "player x",
+            "(2UJlXuu[|7{yfcV7nVO"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Game -Save + Load",
+    "id": "IO",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "IP",
+      "parent": "IN",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "player:y",
+            "vo.y0P3tHQE+gIvfB%Ae"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Game -Save + Load",
+    "id": "IR",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": "IS",
+      "parent": "IQ",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "player:cos",
+            "9]7w|t0V[gm=X7TD[9bh"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Figur8",
+    "id": "/!",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "M",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "New Day",
+          "g5=V_A~Sa5J4*?}TfrV^"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur8",
+    "id": "/*",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "IZ",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur1",
+    "id": "/=",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "c.",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur1",
+    "id": ":k",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "JP",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "intro",
+          "d)Xa;Tk;i0}Qez$6Igmm"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur1",
+    "id": ":x",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "JY",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur2",
+    "id": ":B",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": ":C",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur2",
+    "id": "@_",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Create",
+          "q+Ohh`p0lh^(S;YVv})S"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur2",
+    "id": "@{",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Game over",
+          "Lv;3B|_C,v[OF`hw0-%K"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur2",
+    "id": ":D",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": ":E",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Back",
+          "z7)y$A/bOxlo?RHWkDN$"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur2",
+    "id": ":E",
+    "block": {
+      "opcode": "event_broadcastandwait",
+      "next": null,
+      "parent": ":D",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "trans 2",
+            "cB+/ghsL},JrKTmvXe]-"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Figur2",
+    "id": ":H",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "J*",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Intro/BadEnding",
+    "id": "@}",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Intro/BadEnding",
+    "id": ":I",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "J+",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Intro Ani",
+          "js3)W6?n1E^,[Ud]mKSw"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Intro/BadEnding",
+    "id": "J+",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": "J,",
+      "parent": ":I",
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Time Reset",
+            "9zbva(~TC3Mo^grcluZ4"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "target": "Intro/BadEnding",
+    "id": ":S",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": ":T",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Intro/BadEnding",
+    "id": ":U",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "J{",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Intro/BadEnding",
+    "id": "[b",
+    "block": {
+      "opcode": "event_broadcast",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "BROADCAST_INPUT": [
+          1,
+          [
+            11,
+            "Good Ending",
+            "]b7Zx:=04H1Gu=@tTP*j"
+          ]
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur7",
+    "id": ":(",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "Kn",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur7",
+    "id": ":,",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": ":-",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur7",
+    "id": ":.",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "l#",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Time Reset",
+          "9zbva(~TC3Mo^grcluZ4"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur7",
+    "id": ":]",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "KD",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "END Time",
+          "Dz5y^ZLPna0U2e*w.+]8"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur7",
+    "id": ":_",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "KF",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur9",
+    "id": ":{",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "KH",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur9",
+    "id": ":}",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": ":~",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur9",
+    "id": ";a",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "KJ",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Time Reset",
+          "9zbva(~TC3Mo^grcluZ4"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur9",
+    "id": ";e",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "l(",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "END Time",
+          "Dz5y^ZLPna0U2e*w.+]8"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur9",
+    "id": ";w",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "K(",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur5",
+    "id": ";F",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": ";G",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur5",
+    "id": ";H",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "K-",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Good Ending",
+          "]b7Zx:=04H1Gu=@tTP*j"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Figur5",
+    "id": ";C",
+    "block": {
+      "opcode": "event_whenbroadcastreceived",
+      "next": "K+",
+      "parent": null,
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": [
+          "Start Game",
+          ".x?_NTu9NH3](G/S*F[i"
+        ]
+      },
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Phone Controls",
+    "id": ";J",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "K.",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Phone Controls",
+    "id": ";Q",
+    "block": {
+      "opcode": "control_start_as_clone",
+      "next": "K]",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "target": "Sprite6",
+    "id": "=d",
+    "block": {
+      "opcode": "event_whenflagclicked",
+      "next": "Lh",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  }
+]

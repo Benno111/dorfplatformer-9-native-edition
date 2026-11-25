@@ -1,0 +1,376 @@
+[
+  {
+    "name": "1-1",
+    "metadata": [
+      "1",
+      "2"
+    ],
+    "count": 976,
+    "goals": [
+      {
+        "x": 4644.0,
+        "y": -108.0,
+        "type": 19
+      }
+    ],
+    "pipes": [
+      {
+        "index": 356,
+        "entrance": {
+          "x": 648.0,
+          "y": 1116.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 900.0,
+          "y": -108.0,
+          "type": 18
+        }
+      },
+      {
+        "index": 359,
+        "entrance": {
+          "x": 432.0,
+          "y": 36.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 108.0,
+          "y": 1116.0,
+          "type": 18
+        }
+      },
+      {
+        "index": 937,
+        "entrance": {
+          "x": 396.0,
+          "y": -144.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 9999999999999972.0,
+          "y": -36.0,
+          "type": 18
+        }
+      }
+    ],
+    "boss_markers": []
+  },
+  {
+    "name": "1-2",
+    "metadata": [
+      "1",
+      "2"
+    ],
+    "count": 773,
+    "goals": [
+      {
+        "x": 5580.0,
+        "y": -108.0,
+        "type": 19
+      }
+    ],
+    "pipes": [
+      {
+        "index": 57,
+        "entrance": {
+          "x": 36.0,
+          "y": 108.0,
+          "type": 16
+        },
+        "destination": {
+          "x": -144.0,
+          "y": 1044.0,
+          "type": 18
+        }
+      },
+      {
+        "index": 633,
+        "entrance": {
+          "x": 3132.0,
+          "y": 1080.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 5004.0,
+          "y": -108.0,
+          "type": 18
+        }
+      },
+      {
+        "index": 770,
+        "entrance": {
+          "x": 900.0,
+          "y": 36.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 2160.0,
+          "y": 1260.0,
+          "type": 18
+        }
+      },
+      {
+        "index": 772,
+        "entrance": {
+          "x": 1260.0,
+          "y": 1260.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 756.0,
+          "y": 36.0,
+          "type": 18
+        }
+      }
+    ],
+    "boss_markers": []
+  },
+  {
+    "name": "1-3",
+    "metadata": [
+      "1",
+      "3"
+    ],
+    "count": 123,
+    "goals": [
+      {
+        "x": 3091.0,
+        "y": -124.0,
+        "type": 19
+      }
+    ],
+    "pipes": [
+      {
+        "index": 52,
+        "entrance": {
+          "x": -113.0,
+          "y": -124.0,
+          "type": 16
+        },
+        "destination": {
+          "x": -77.0,
+          "y": 1048.0,
+          "type": 18
+        }
+      },
+      {
+        "index": 56,
+        "entrance": {
+          "x": 175.0,
+          "y": 1156.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 2947.0,
+          "y": -124.0,
+          "type": 18
+        }
+      }
+    ],
+    "boss_markers": []
+  },
+  {
+    "name": "1-4",
+    "metadata": [
+      "1",
+      "4"
+    ],
+    "count": 835,
+    "goals": [
+      {
+        "x": 648.0,
+        "y": -72.0,
+        "type": 19
+      }
+    ],
+    "pipes": [
+      {
+        "index": 43,
+        "entrance": {
+          "x": -180.0,
+          "y": 72.0,
+          "type": 16
+        },
+        "destination": {
+          "x": -144.0,
+          "y": 1008.0,
+          "type": 18
+        }
+      },
+      {
+        "index": 162,
+        "entrance": {
+          "x": 360.0,
+          "y": 1008.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 360.0,
+          "y": -144.0,
+          "type": 18
+        }
+      },
+      {
+        "index": 605,
+        "entrance": {
+          "x": 6444.0,
+          "y": -108.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 1764.0,
+          "y": 972.0,
+          "type": 18
+        }
+      },
+      {
+        "index": 607,
+        "entrance": {
+          "x": 1296.0,
+          "y": 1152.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 5976.0,
+          "y": -108.0,
+          "type": 18
+        }
+      }
+    ],
+    "boss_markers": []
+  },
+  {
+    "name": "1-5",
+    "metadata": [
+      "5",
+      "3"
+    ],
+    "count": 235,
+    "goals": [
+      {
+        "x": 2232.0,
+        "y": -72.0,
+        "type": 19
+      }
+    ],
+    "pipes": [
+      {
+        "index": 54,
+        "entrance": {
+          "x": 1656.0,
+          "y": -72.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 1656.0,
+          "y": 1116.0,
+          "type": 18
+        }
+      },
+      {
+        "index": 189,
+        "entrance": {
+          "x": 3636.0,
+          "y": 1152.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 2052.0,
+          "y": -72.0,
+          "type": 18
+        }
+      }
+    ],
+    "boss_markers": []
+  },
+  {
+    "name": "1-6",
+    "metadata": [
+      "6",
+      "2"
+    ],
+    "count": 1568,
+    "goals": [
+      {
+        "x": 9684.0,
+        "y": 1080.0,
+        "type": 19
+      }
+    ],
+    "pipes": [
+      {
+        "index": 260,
+        "entrance": {
+          "x": 1872.0,
+          "y": -108.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 1764.0,
+          "y": 1152.0,
+          "type": 18
+        }
+      },
+      {
+        "index": 296,
+        "entrance": {
+          "x": 3924.0,
+          "y": 1080.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 3816.0,
+          "y": -36.0,
+          "type": 18
+        }
+      },
+      {
+        "index": 456,
+        "entrance": {
+          "x": 4896.0,
+          "y": -36.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 5868.0,
+          "y": 108.0,
+          "type": 18
+        }
+      },
+      {
+        "index": 955,
+        "entrance": {
+          "x": 7560.0,
+          "y": -108.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 8892.0,
+          "y": -36.0,
+          "type": 18
+        }
+      },
+      {
+        "index": 1497,
+        "entrance": {
+          "x": 9828.0,
+          "y": -36.0,
+          "type": 16
+        },
+        "destination": {
+          "x": 9360.0,
+          "y": 1080.0,
+          "type": 18
+        }
+      }
+    ],
+    "boss_markers": [
+      {
+        "x": 9252.0,
+        "y": 72.0,
+        "type": 25
+      }
+    ]
+  }
+]

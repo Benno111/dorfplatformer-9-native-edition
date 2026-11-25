@@ -1,0 +1,1504 @@
+[
+  {
+    "id": "NmsTd6Kh2~m^9q-{?fuw",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "ID"
+    },
+    "spriteName": "Levels",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 0,
+    "y": 35,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "W1cir]R0=MPuyc7~;;8v",
+    "mode": "slider",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Teme"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 0,
+    "y": 56,
+    "visible": false,
+    "sliderMin": 1,
+    "sliderMax": 6,
+    "isDiscrete": true
+  },
+  {
+    "id": "@iAYc2q;bIeDnoq73$s:",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Levels #"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "BBO|Zik5{VP/0p!L8ViL",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "MY LEVEL #"
+    },
+    "spriteName": "Figur3",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "XtC,Vn=kX|{cm-kif5KE",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "sy"
+    },
+    "spriteName": "Player",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 162,
+    "y": 63,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "$InH3rv+XW|ay)sd1gz?",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "sx"
+    },
+    "spriteName": "Player",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "^Nv(;}F!rqY.QLvq|+dF",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Cam x"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": ",*20Kf1Nb!6-ssFb{)b!",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Win leve"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "1U=v4ykDKhyj%t6{2^!y",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "fall"
+    },
+    "spriteName": "Player",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "5e4[QC/~6cG:p}0H:}V=",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "fame"
+    },
+    "spriteName": "Player",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "undefined_volume",
+    "mode": "default",
+    "opcode": "sound_volume",
+    "params": {},
+    "spriteName": "Teme&Win",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "$,`euE+/QV8H-[[:mFVR",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "my x pos"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "Zh7=0s5c`3vubrp)nmG=",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "My y"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "}^W35(z5`(*:4s.LL;%Y",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Travel"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "ER2gRE+djea_.a|?%7]x",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "win"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "LuQ$oN$PbE}cUYjvU=:-",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Powerup"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "gj?_{n~dZahKvxKd_`#_",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "IS CLONE"
+    },
+    "spriteName": "Mop",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": ").B0eMP]Jp`1|C:7LMTG",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "DAMAGE"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "Qq6PIbakg^?jrs=jr4F?",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Plus"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "NnGOG[EsxEOvmof|4n0j",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "SY"
+    },
+    "spriteName": "Mop",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "%aO~)$cF4yRJw5LF)flj",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "++1"
+    },
+    "spriteName": "Die",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "kn6^A$fj-Gm%B|2^?7a`",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "START"
+    },
+    "spriteName": "Mop",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "xFT@3qVSCzyqA|qiSGg5",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "kill"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "FZyOUuMd,?~c7px{LKxG",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "SX"
+    },
+    "spriteName": "Mop",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "?}@H9K~pMv*vF4lS4]1.",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Mode"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "CU;6/LV:h`a|q`I#_4=F",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Make"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "Vuf,!I%vy0}X6@x]j~t=",
+    "mode": "list",
+    "opcode": "data_listcontents",
+    "params": {
+      "LIST": "Level"
+    },
+    "spriteName": null,
+    "value": [],
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 32,
+    "visible": false
+  },
+  {
+    "id": "DU#p{F94ptV1n9]J/?,R",
+    "mode": "list",
+    "opcode": "data_listcontents",
+    "params": {
+      "LIST": "Level 2"
+    },
+    "spriteName": null,
+    "value": [],
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false
+  },
+  {
+    "id": "MvC0Dpf@pqZu)e_Z}l,P",
+    "mode": "list",
+    "opcode": "data_listcontents",
+    "params": {
+      "LIST": "Level 3"
+    },
+    "spriteName": null,
+    "value": [],
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false
+  },
+  {
+    "id": "4@PJRkq|:XF:HtaKsA3y",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Hit"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "ubsAnZE^Idk.n#q4p[l%",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Play"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "n/r0_n(EOodfCN{rd7v+",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Pause"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 36,
+    "y": 71,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "w$3zxK~3j/hz[]KKAUX4",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "MA"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 179,
+    "y": 0,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "hV[y?w/IAyEM}IYOuU?)",
+    "mode": "large",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "By"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 218,
+    "y": 174,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "JhKpsBAE9#KZ.SL`r_[{",
+    "mode": "list",
+    "opcode": "data_listcontents",
+    "params": {
+      "LIST": "Output"
+    },
+    "spriteName": null,
+    "value": [],
+    "width": 480,
+    "height": 351,
+    "x": 0,
+    "y": 7,
+    "visible": false
+  },
+  {
+    "id": "timer",
+    "mode": "default",
+    "opcode": "sensing_timer",
+    "params": {},
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "%)Y-0g.^}{5=ck_:SdKp",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "AA"
+    },
+    "spriteName": "Figur2",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 9,
+    "y": 58,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "!D{;8`Y*XR.$zsK]vo4u",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "AA"
+    },
+    "spriteName": "Fade",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 17,
+    "y": 100,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "LL|H@(UR^E*vtUY_EloD",
+    "mode": "list",
+    "opcode": "data_listcontents",
+    "params": {
+      "LIST": "NO?"
+    },
+    "spriteName": null,
+    "value": [],
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false
+  },
+  {
+    "id": "[4s3TD/BCjd:C5.GTOqP",
+    "mode": "list",
+    "opcode": "data_listcontents",
+    "params": {
+      "LIST": "Mop x"
+    },
+    "spriteName": null,
+    "value": [],
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false
+  },
+  {
+    "id": "U6DnpHB)bjOi=w=jRj{{",
+    "mode": "list",
+    "opcode": "data_listcontents",
+    "params": {
+      "LIST": "Mop y"
+    },
+    "spriteName": null,
+    "value": [],
+    "width": 0,
+    "height": 0,
+    "x": 155,
+    "y": 5,
+    "visible": false
+  },
+  {
+    "id": "B`-A?YfgiAs*7b=v-yL)",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "A"
+    },
+    "spriteName": "Mop",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "SMxh!AEZ.8fV[k`qTI4#",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Trap X"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "Z0Z)oSZie{_2[nI(DBpB",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Y world"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "*bk:-ppHmMiu%jqpMD6g",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "TRANZ"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "xApkNM4kMfC(uAg$U.o.",
+    "mode": "slider",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "teme"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 343,
+    "y": 322,
+    "visible": false,
+    "sliderMin": 1,
+    "sliderMax": 6,
+    "isDiscrete": true
+  },
+  {
+    "id": "+ogT}0{Y1ZNx2ti_(6:,",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "PLAYER TEME"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "}Hbn?ggB}Ds5S~4sVum:",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "X pos"
+    },
+    "spriteName": "Levels",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "a5]bB=0w`okkH%ifO%~v",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Y pos"
+    },
+    "spriteName": "Levels",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 52,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "wPfb]l~mcl5kN2wI!Bt#",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "_PIE #"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "SyzXMl!^iJIw/fnd;K`w",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "__COS"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 48,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "EO?n;^@Q%_XnOV#c05w0",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "____SY"
+    },
+    "spriteName": "Died/Pipie",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "l3pfXx:sCbu;((Y#y3t`",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "___END"
+    },
+    "spriteName": "Save + Load",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": ";?#F0HF|u6}Ip-tv!3M=",
+    "mode": "list",
+    "opcode": "data_listcontents",
+    "params": {
+      "LIST": "SaveCode"
+    },
+    "spriteName": null,
+    "value": [],
+    "width": 480,
+    "height": 163,
+    "x": 0,
+    "y": 212,
+    "visible": false
+  },
+  {
+    "id": "mU4H!oHv.!AjC{51sqem",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Fall"
+    },
+    "spriteName": "Enemy",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "Z1)gtQ=pYs/rbLRU`.g-",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "sx"
+    },
+    "spriteName": "Ball",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "zt|D%.lBj}ta%m/}?.@A",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "leves"
+    },
+    "spriteName": "Ball",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "-lI%Gk|w,_e|L)`7UnUT",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "__#sy"
+    },
+    "spriteName": "Ball",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "{w-^CBigK4`.w_LG1SpD",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Level #"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 343,
+    "y": 322,
+    "visible": false,
+    "sliderMin": 1,
+    "sliderMax": 6,
+    "isDiscrete": true
+  },
+  {
+    "id": "[cDvjLh`5=F)Y_|XS~wF",
+    "mode": "list",
+    "opcode": "data_listcontents",
+    "params": {
+      "LIST": "Levels"
+    },
+    "spriteName": null,
+    "value": [],
+    "width": 472,
+    "height": 247,
+    "x": 5,
+    "y": 48,
+    "visible": false
+  },
+  {
+    "id": "!hva2{7?mUfLvWM{Hc~a",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "___LEVELs"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "gY+pT-[?-CO#)ZJOZm}_",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Time"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 384,
+    "y": 8,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "u`=p]EIxx9Xs{{MTE3S0",
+    "mode": "large",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "_____JUMP"
+    },
+    "spriteName": "Player",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "0Xbn3G3pRX4T_46~ovm4",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "FAll"
+    },
+    "spriteName": "Player",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "i#?K%5ka.+/Ico#*)#g1",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "_______Cos"
+    },
+    "spriteName": "Player",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 35,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "e5kHgnw0TxH%jU21otKV",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "E"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "cJnR8V]KOVDDfsDk8e)E",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "______"
+    },
+    "spriteName": "Figur1",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 32,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "5Hf_Uw[.2a#Q.9L^+k/g",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Day"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 380,
+    "y": 0,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "%S9C}rlJY=K+}XvGWJ4$",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "N"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 32,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "9u4F!ZYt-oHC[?Hg?=6v",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "%"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 380,
+    "y": 23,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "NC*ANpQLI-!s^viT}J.w",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "a____SS"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 86,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": ",PsGFzw?zVPgPaq;f:eq",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "J B"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "(zQe+WH#1!I~#q-q5a*G",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Timer"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": ",O=5-py)Xcc0C%pj9oTy",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "ND"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "EMwC@xo%Ix/gY)B^M:MG",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "_____________IIIiiii"
+    },
+    "spriteName": "Levels",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "bs5l}ds{5k*ZNdx%XYf)",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "PIX"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "czK^(#S;kYlsAup)A%Dr",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Speed Timer"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 340,
+    "y": 0,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "^P|WhdLwGIDlF5Y0OS_?",
+    "mode": "list",
+    "opcode": "data_listcontents",
+    "params": {
+      "LIST": "Lev"
+    },
+    "spriteName": null,
+    "value": [],
+    "width": 0,
+    "height": 0,
+    "x": 141,
+    "y": 99,
+    "visible": false
+  },
+  {
+    "id": "~(o%^q0*(evJ(E!gl!Zc",
+    "mode": "list",
+    "opcode": "data_listcontents",
+    "params": {
+      "LIST": "GGG"
+    },
+    "spriteName": null,
+    "value": [],
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false
+  },
+  {
+    "id": "q6=S#/S5(yV*Nja,0.%t",
+    "mode": "list",
+    "opcode": "data_listcontents",
+    "params": {
+      "LIST": "a_input"
+    },
+    "spriteName": null,
+    "value": [],
+    "width": 0,
+    "height": 0,
+    "x": 378,
+    "y": 0,
+    "visible": false
+  },
+  {
+    "id": "MhgBn#yWp?51*kz@G-?8",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "___C"
+    },
+    "spriteName": "Phone Controls",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 212,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "qu4|XrU9CBOWET3/k$Mc",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "______________s"
+    },
+    "spriteName": "Boss",
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "1Ije0gC3;|A;a::D{6,(",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "Boss HP"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 363,
+    "y": 47,
+    "visible": false,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "U@E@7)+$eTXlzT04Yq=l",
+    "mode": "list",
+    "opcode": "data_listcontents",
+    "params": {
+      "LIST": "Walk"
+    },
+    "spriteName": null,
+    "value": [],
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": false
+  },
+  {
+    "id": "n`f=!SlD,i#x]l_jEu_`",
+    "mode": "default",
+    "opcode": "data_variable",
+    "params": {
+      "VARIABLE": "FPS"
+    },
+    "spriteName": null,
+    "value": 0,
+    "width": 0,
+    "height": 0,
+    "x": 5,
+    "y": 5,
+    "visible": true,
+    "sliderMin": 0,
+    "sliderMax": 100,
+    "isDiscrete": true
+  },
+  {
+    "id": "uGu(rz6#G-RbH6}wQO9o",
+    "mode": "list",
+    "opcode": "data_listcontents",
+    "params": {
+      "LIST": "fpsdata"
+    },
+    "spriteName": "Sprite6",
+    "value": [],
+    "width": 118,
+    "height": 302,
+    "x": 5,
+    "y": 32,
+    "visible": false
+  }
+]

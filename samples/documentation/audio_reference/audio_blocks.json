@@ -1,0 +1,6708 @@
+[
+  {
+    "sprite": "Stage",
+    "id": "LB",
+    "opcode": "sound_play",
+    "root_id": "LB",
+    "root_opcode": "sound_play",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "LB"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "LC"
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "sprite": "Stage",
+    "id": "LC",
+    "opcode": "sound_sounds_menu",
+    "root_id": "LB",
+    "root_opcode": "sound_play",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "LC",
+      "LB"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "LB",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "A Guitar",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Boss",
+    "id": "dY",
+    "opcode": "sound_play",
+    "root_id": "M{",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Kill mop by free",
+        "a1zG/x`of`zCd5/#H,h?"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "dY",
+      "dX",
+      "dW",
+      "M{"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "ok",
+      "parent": "dX",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "M~"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Boss",
+    "id": "M~",
+    "opcode": "sound_sounds_menu",
+    "root_id": "M{",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Kill mop by free",
+        "a1zG/x`of`zCd5/#H,h?"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "M~",
+      "dY",
+      "dX",
+      "dW",
+      "M{"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "dY",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Boss",
+    "id": "ow",
+    "opcode": "sound_play",
+    "root_id": "ow",
+    "root_opcode": "sound_play",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "ow"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "No",
+      "parent": null,
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "Np"
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "sprite": "Boss",
+    "id": "Np",
+    "opcode": "sound_sounds_menu",
+    "root_id": "ow",
+    "root_opcode": "sound_play",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "Np",
+      "ow"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "ow",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Boss",
+    "id": "d(",
+    "opcode": "sound_play",
+    "root_id": "n(",
+    "root_opcode": "procedures_definition",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "d(",
+      "d%",
+      "?",
+      "=",
+      ";",
+      ".",
+      "-",
+      "n[",
+      "n@",
+      "n?",
+      "n=",
+      "n;",
+      "n:",
+      "n/",
+      "n.",
+      "n,",
+      ",",
+      "n)",
+      "+",
+      "n("
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "oD",
+      "parent": "d%",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "Ny"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Boss",
+    "id": "Ny",
+    "opcode": "sound_sounds_menu",
+    "root_id": "n(",
+    "root_opcode": "procedures_definition",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Ny",
+      "d(",
+      "d%",
+      "?",
+      "=",
+      ";",
+      ".",
+      "-",
+      "n[",
+      "n@",
+      "n?",
+      "n=",
+      "n;",
+      "n:",
+      "n/",
+      "n.",
+      "n,",
+      ",",
+      "n)",
+      "+",
+      "n("
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "d(",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Boss",
+    "id": "d[",
+    "opcode": "sound_play",
+    "root_id": "n(",
+    "root_opcode": "procedures_definition",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "d[",
+      "oL",
+      "]",
+      "a",
+      "d:",
+      "d/",
+      "oG",
+      "[",
+      "d.",
+      "d-",
+      "d*",
+      "@",
+      "?",
+      "=",
+      ";",
+      ".",
+      "-",
+      "n[",
+      "n@",
+      "n?",
+      "n=",
+      "n;",
+      "n:",
+      "n/",
+      "n.",
+      "n,",
+      ",",
+      "n)",
+      "+",
+      "n("
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "oQ",
+      "parent": "oL",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "NP"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Boss",
+    "id": "NP",
+    "opcode": "sound_sounds_menu",
+    "root_id": "n(",
+    "root_opcode": "procedures_definition",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "NP",
+      "d[",
+      "oL",
+      "]",
+      "a",
+      "d:",
+      "d/",
+      "oG",
+      "[",
+      "d.",
+      "d-",
+      "d*",
+      "@",
+      "?",
+      "=",
+      ";",
+      ".",
+      "-",
+      "n[",
+      "n@",
+      "n?",
+      "n=",
+      "n;",
+      "n:",
+      "n/",
+      "n.",
+      "n,",
+      ",",
+      "n)",
+      "+",
+      "n("
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "d[",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Enemy",
+    "id": "d|",
+    "opcode": "sound_play",
+    "root_id": "o*",
+    "root_opcode": "procedures_definition",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "d|",
+      "d{",
+      "aa",
+      "~",
+      "}",
+      "o]",
+      "o[",
+      "o?",
+      "d^",
+      "o=",
+      "o;",
+      "o:",
+      "o.",
+      "|",
+      "o+",
+      "{",
+      "o*"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "Oc",
+      "parent": "d{",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "Od"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Enemy",
+    "id": "Od",
+    "opcode": "sound_sounds_menu",
+    "root_id": "o*",
+    "root_opcode": "procedures_definition",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Od",
+      "d|",
+      "d{",
+      "aa",
+      "~",
+      "}",
+      "o]",
+      "o[",
+      "o?",
+      "d^",
+      "o=",
+      "o;",
+      "o:",
+      "o.",
+      "|",
+      "o+",
+      "{",
+      "o*"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "d|",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Enemy",
+    "id": "eq",
+    "opcode": "sound_play",
+    "root_id": "OO",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Kill mop by free",
+        "a1zG/x`of`zCd5/#H,h?"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "eq",
+      "ep",
+      "eo",
+      "OO"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "pD",
+      "parent": "ep",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "OR"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Enemy",
+    "id": "OR",
+    "opcode": "sound_sounds_menu",
+    "root_id": "OO",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Kill mop by free",
+        "a1zG/x`of`zCd5/#H,h?"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "OR",
+      "eq",
+      "ep",
+      "eo",
+      "OO"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "eq",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Enemy",
+    "id": "eB",
+    "opcode": "sound_play",
+    "root_id": "ey",
+    "root_opcode": "control_if",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "eB",
+      "eA",
+      "ez",
+      "ai",
+      "ey"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "O|",
+      "parent": "eA",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "O}"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Enemy",
+    "id": "O}",
+    "opcode": "sound_sounds_menu",
+    "root_id": "ey",
+    "root_opcode": "control_if",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "O}",
+      "eB",
+      "eA",
+      "ez",
+      "ai",
+      "ey"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "eB",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Player",
+    "id": "q;",
+    "opcode": "sound_seteffectto",
+    "root_id": "QI",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Died",
+        "T_(c0o2^S!SR,Bw%/zHS"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "q;",
+      "q:",
+      "q/",
+      "QI"
+    ],
+    "block": {
+      "opcode": "sound_seteffectto",
+      "next": "fs",
+      "parent": "q:",
+      "inputs": {
+        "VALUE": [
+          1,
+          [
+            4,
+            "90"
+          ]
+        ]
+      },
+      "fields": {
+        "EFFECT": [
+          "PITCH",
+          null
+        ]
+      }
+    }
+  },
+  {
+    "sprite": "Player",
+    "id": "fs",
+    "opcode": "sound_playuntildone",
+    "root_id": "QI",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Died",
+        "T_(c0o2^S!SR,Bw%/zHS"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "fs",
+      "q;",
+      "q:",
+      "q/",
+      "QI"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": "q=",
+      "parent": "q;",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "QJ"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Player",
+    "id": "QJ",
+    "opcode": "sound_sounds_menu",
+    "root_id": "QI",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Died",
+        "T_(c0o2^S!SR,Bw%/zHS"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "QJ",
+      "fs",
+      "q;",
+      "q:",
+      "q/",
+      "QI"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "fs",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Cymbal Echo",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Player",
+    "id": "q=",
+    "opcode": "sound_cleareffects",
+    "root_id": "QI",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Died",
+        "T_(c0o2^S!SR,Bw%/zHS"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "q=",
+      "fs",
+      "q;",
+      "q:",
+      "q/",
+      "QI"
+    ],
+    "block": {
+      "opcode": "sound_cleareffects",
+      "next": "q?",
+      "parent": "fs",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Player",
+    "id": "QK",
+    "opcode": "sound_stopallsounds",
+    "root_id": "QI",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Died",
+        "T_(c0o2^S!SR,Bw%/zHS"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "QK",
+      "rb",
+      "ra",
+      "q~",
+      "q}",
+      "q|",
+      "q{",
+      "q`",
+      "q_",
+      "q^",
+      "q]",
+      "q[",
+      "q@",
+      "q?",
+      "q=",
+      "fs",
+      "q;",
+      "q:",
+      "q/",
+      "QI"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": null,
+      "parent": "rb",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Player",
+    "id": "rd",
+    "opcode": "sound_play",
+    "root_id": "QL",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Yump",
+        "ppA%hc:6cf-GSVCM:D|5"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "rd",
+      "rc",
+      "QL"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": null,
+      "parent": "rc",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "QM"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Player",
+    "id": "QM",
+    "opcode": "sound_sounds_menu",
+    "root_id": "QL",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Yump",
+        "ppA%hc:6cf-GSVCM:D|5"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "QM",
+      "rd",
+      "rc",
+      "QL"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "rd",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill mopps",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Player",
+    "id": "Q|",
+    "opcode": "sound_stopallsounds",
+    "root_id": "Q{",
+    "root_opcode": "data_setvariableto",
+    "root_fields": {
+      "VARIABLE": [
+        "Pause",
+        "n/r0_n(EOodfCN{rd7v+"
+      ]
+    },
+    "root_reachable_hat": false,
+    "ancestry": [
+      "Q|",
+      "Q{"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": null,
+      "parent": "Q{",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Player",
+    "id": "rU",
+    "opcode": "sound_play",
+    "root_id": "rE",
+    "root_opcode": "procedures_definition",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "rU",
+      "n",
+      "fO",
+      "rT",
+      "rS",
+      "rR",
+      "rP",
+      "fN",
+      "m",
+      "aB",
+      "fK",
+      "fJ",
+      "fI",
+      "rL",
+      "fG",
+      "fF",
+      "fE",
+      "fD",
+      "fC",
+      "fB",
+      "rE"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": null,
+      "parent": "n",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "Rw"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Player",
+    "id": "Rw",
+    "opcode": "sound_sounds_menu",
+    "root_id": "rE",
+    "root_opcode": "procedures_definition",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Rw",
+      "rU",
+      "n",
+      "fO",
+      "rT",
+      "rS",
+      "rR",
+      "rP",
+      "fN",
+      "m",
+      "aB",
+      "fK",
+      "fJ",
+      "fI",
+      "rL",
+      "fG",
+      "fF",
+      "fE",
+      "fD",
+      "fC",
+      "fB",
+      "rE"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "rU",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Jump",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Player",
+    "id": "rV",
+    "opcode": "sound_play",
+    "root_id": "rE",
+    "root_opcode": "procedures_definition",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "rV",
+      "n",
+      "fO",
+      "rT",
+      "rS",
+      "rR",
+      "rP",
+      "fN",
+      "m",
+      "aB",
+      "fK",
+      "fJ",
+      "fI",
+      "rL",
+      "fG",
+      "fF",
+      "fE",
+      "fD",
+      "fC",
+      "fB",
+      "rE"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": null,
+      "parent": "n",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "Rx"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Player",
+    "id": "Rx",
+    "opcode": "sound_sounds_menu",
+    "root_id": "rE",
+    "root_opcode": "procedures_definition",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Rx",
+      "rV",
+      "n",
+      "fO",
+      "rT",
+      "rS",
+      "rR",
+      "rP",
+      "fN",
+      "m",
+      "aB",
+      "fK",
+      "fJ",
+      "fI",
+      "rL",
+      "fG",
+      "fF",
+      "fE",
+      "fD",
+      "fC",
+      "fB",
+      "rE"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "rV",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Jump2",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "R^",
+    "opcode": "sound_setvolumeto",
+    "root_id": "R]",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Still",
+        "=l~0ac2uj;i:FTX_=!C1"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "R^",
+      "R]"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": null,
+      "parent": "R]",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "0"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "r:",
+    "opcode": "sound_stopallsounds",
+    "root_id": "R_",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Laut",
+        "5#S;:vaKEtzud8woDejV"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "r:",
+      "R_"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "R`",
+      "parent": "R_",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "R`",
+    "opcode": "sound_setvolumeto",
+    "root_id": "R_",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Laut",
+        "5#S;:vaKEtzud8woDejV"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "R`",
+      "r:",
+      "R_"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": null,
+      "parent": "r:",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "100"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "r]",
+    "opcode": "sound_stopallsounds",
+    "root_id": "Sk",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Setup level",
+        "$[8pc%VA7Tj[tpuIl/4I"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "r]",
+      "Sk"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "Sl",
+      "parent": "Sk",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "Sl",
+    "opcode": "sound_setvolumeto",
+    "root_id": "Sk",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Setup level",
+        "$[8pc%VA7Tj[tpuIl/4I"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Sl",
+      "r]",
+      "Sk"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": null,
+      "parent": "r]",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "100"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "r{",
+    "opcode": "sound_playuntildone",
+    "root_id": "Sm",
+    "root_opcode": "looks_show",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "r{",
+      "r`",
+      "r_",
+      "r^",
+      "Sm"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "r`",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "Sn"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "Sn",
+    "opcode": "sound_sounds_menu",
+    "root_id": "Sm",
+    "root_opcode": "looks_show",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "Sn",
+      "r{",
+      "r`",
+      "r_",
+      "r^",
+      "Sm"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "r{",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Level 5",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "r}",
+    "opcode": "sound_setvolumeto",
+    "root_id": "Sq",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Star level",
+        "YQMYk.pDz=R`cbC{r[(j"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "r}",
+      "f,",
+      "r|",
+      "Sq"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": "r~",
+      "parent": "f,",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "0"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "sa",
+    "opcode": "sound_playuntildone",
+    "root_id": "Sq",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Star level",
+        "YQMYk.pDz=R`cbC{r[(j"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "sa",
+      "r~",
+      "r}",
+      "f,",
+      "r|",
+      "Sq"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "r~",
+      "inputs": {
+        "SOUND_MENU": [
+          3,
+          [
+            12,
+            "Teme",
+            "W1cir]R0=MPuyc7~;;8v"
+          ],
+          "Ss"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "Ss",
+    "opcode": "sound_sounds_menu",
+    "root_id": "Sq",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Star level",
+        "YQMYk.pDz=R`cbC{r[(j"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Ss",
+      "sa",
+      "r~",
+      "r}",
+      "f,",
+      "r|",
+      "Sq"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "sa",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "sc",
+    "opcode": "sound_stopallsounds",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "f-",
+      "parent": "sb",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "sd",
+    "opcode": "sound_seteffectto",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "sd",
+      "f-",
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_seteffectto",
+      "next": "se",
+      "parent": "f-",
+      "inputs": {
+        "VALUE": [
+          1,
+          [
+            4,
+            "0"
+          ]
+        ]
+      },
+      "fields": {
+        "EFFECT": [
+          "PITCH",
+          null
+        ]
+      }
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "se",
+    "opcode": "sound_setvolumeto",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "se",
+      "sd",
+      "f-",
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": "sf",
+      "parent": "sd",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "0"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "f/",
+    "opcode": "sound_playuntildone",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "f/",
+      "aE",
+      "f.",
+      "sf",
+      "se",
+      "sd",
+      "f-",
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": "Sx",
+      "parent": "aE",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "Sy"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "Sy",
+    "opcode": "sound_sounds_menu",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Sy",
+      "f/",
+      "aE",
+      "f.",
+      "sf",
+      "se",
+      "sd",
+      "f-",
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "f/",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "recording1",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "Sx",
+    "opcode": "sound_seteffectto",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Sx",
+      "f/",
+      "aE",
+      "f.",
+      "sf",
+      "se",
+      "sd",
+      "f-",
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_seteffectto",
+      "next": null,
+      "parent": "f/",
+      "inputs": {
+        "VALUE": [
+          1,
+          [
+            4,
+            "25"
+          ]
+        ]
+      },
+      "fields": {
+        "EFFECT": [
+          "PITCH",
+          null
+        ]
+      }
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "sg",
+    "opcode": "sound_playuntildone",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "sg",
+      "f:",
+      "aF",
+      "aE",
+      "f.",
+      "sf",
+      "se",
+      "sd",
+      "f-",
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "f:",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "SB"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "SB",
+    "opcode": "sound_sounds_menu",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "SB",
+      "sg",
+      "f:",
+      "aF",
+      "aE",
+      "f.",
+      "sf",
+      "se",
+      "sd",
+      "f-",
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "sg",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Jungle",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "f;",
+    "opcode": "sound_playuntildone",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "f;",
+      "aG",
+      "aF",
+      "aE",
+      "f.",
+      "sf",
+      "se",
+      "sd",
+      "f-",
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": "sh",
+      "parent": "aG",
+      "inputs": {
+        "SOUND_MENU": [
+          3,
+          [
+            12,
+            "Teme",
+            "W1cir]R0=MPuyc7~;;8v"
+          ],
+          "SD"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "SD",
+    "opcode": "sound_sounds_menu",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "SD",
+      "f;",
+      "aG",
+      "aF",
+      "aE",
+      "f.",
+      "sf",
+      "se",
+      "sd",
+      "f-",
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "f;",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "f?",
+    "opcode": "sound_playuntildone",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "f?",
+      "sh",
+      "f;",
+      "aG",
+      "aF",
+      "aE",
+      "f.",
+      "sf",
+      "se",
+      "sd",
+      "f-",
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "sh",
+      "inputs": {
+        "SOUND_MENU": [
+          3,
+          "SE",
+          "SF"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "SF",
+    "opcode": "sound_sounds_menu",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "SF",
+      "f?",
+      "sh",
+      "f;",
+      "aG",
+      "aF",
+      "aE",
+      "f.",
+      "sf",
+      "se",
+      "sd",
+      "f-",
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "f?",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "f=",
+    "opcode": "sound_playuntildone",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "f=",
+      "aG",
+      "aF",
+      "aE",
+      "f.",
+      "sf",
+      "se",
+      "sd",
+      "f-",
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": "si",
+      "parent": "aG",
+      "inputs": {
+        "SOUND_MENU": [
+          3,
+          [
+            12,
+            "teme",
+            "xApkNM4kMfC(uAg$U.o."
+          ],
+          "SG"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "SG",
+    "opcode": "sound_sounds_menu",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "SG",
+      "f=",
+      "aG",
+      "aF",
+      "aE",
+      "f.",
+      "sf",
+      "se",
+      "sd",
+      "f-",
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "f=",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "f@",
+    "opcode": "sound_playuntildone",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "f@",
+      "si",
+      "f=",
+      "aG",
+      "aF",
+      "aE",
+      "f.",
+      "sf",
+      "se",
+      "sd",
+      "f-",
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "si",
+      "inputs": {
+        "SOUND_MENU": [
+          3,
+          "SH",
+          "SI"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "SI",
+    "opcode": "sound_sounds_menu",
+    "root_id": "St",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "SI",
+      "f@",
+      "si",
+      "f=",
+      "aG",
+      "aF",
+      "aE",
+      "f.",
+      "sf",
+      "se",
+      "sd",
+      "f-",
+      "sc",
+      "sb",
+      "St"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "f@",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "SN",
+    "opcode": "sound_setvolumeto",
+    "root_id": "SJ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Move all",
+        "PdbSuI~DZxf!WbXQ47cv"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "SN",
+      "aJ",
+      "aI",
+      "aH",
+      "SJ"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": null,
+      "parent": "aJ",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "100"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "SO",
+    "opcode": "sound_setvolumeto",
+    "root_id": "SJ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Move all",
+        "PdbSuI~DZxf!WbXQ47cv"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "SO",
+      "aJ",
+      "aI",
+      "aH",
+      "SJ"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": null,
+      "parent": "aJ",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "0"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "SL",
+    "opcode": "sound_setvolumeto",
+    "root_id": "SJ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Move all",
+        "PdbSuI~DZxf!WbXQ47cv"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "SL",
+      "aI",
+      "aH",
+      "SJ"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": null,
+      "parent": "aI",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "0"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "?c",
+    "opcode": "sound_stopallsounds",
+    "root_id": "?c",
+    "root_opcode": "sound_stopallsounds",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "?c"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "so",
+    "opcode": "sound_stopallsounds",
+    "root_id": "f]",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "so",
+      "f^",
+      "sn",
+      "sl",
+      "aK",
+      "f]"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "f_",
+      "parent": "f^",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "ss",
+    "opcode": "sound_stopallsounds",
+    "root_id": "f]",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "ss",
+      "f`",
+      "sr",
+      "sm",
+      "aK",
+      "f]"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "f{",
+      "parent": "f`",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "sw",
+    "opcode": "sound_stopallsounds",
+    "root_id": "f]",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "sw",
+      "f|",
+      "sv",
+      "sk",
+      "f]"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "f}",
+      "parent": "f|",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "?g",
+    "opcode": "sound_stopallsounds",
+    "root_id": "?g",
+    "root_opcode": "sound_stopallsounds",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "?g"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "S;",
+    "opcode": "sound_cleareffects",
+    "root_id": "S.",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "S;",
+      "aL",
+      "f~",
+      "sz",
+      "S."
+    ],
+    "block": {
+      "opcode": "sound_cleareffects",
+      "next": null,
+      "parent": "aL",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "S?",
+    "opcode": "sound_stopallsounds",
+    "root_id": "S.",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "S?",
+      "sB",
+      "aM",
+      "aL",
+      "f~",
+      "sz",
+      "S."
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": null,
+      "parent": "sB",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "S[",
+    "opcode": "sound_stopallsounds",
+    "root_id": "S.",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "S[",
+      "sE",
+      "aN",
+      "aM",
+      "aL",
+      "f~",
+      "sz",
+      "S."
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": null,
+      "parent": "sE",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "S]",
+    "opcode": "sound_seteffectto",
+    "root_id": "S.",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "S]",
+      "aO",
+      "aN",
+      "aM",
+      "aL",
+      "f~",
+      "sz",
+      "S."
+    ],
+    "block": {
+      "opcode": "sound_seteffectto",
+      "next": null,
+      "parent": "aO",
+      "inputs": {
+        "VALUE": [
+          1,
+          [
+            4,
+            "5"
+          ]
+        ]
+      },
+      "fields": {
+        "EFFECT": [
+          "PITCH",
+          null
+        ]
+      }
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "S^",
+    "opcode": "sound_seteffectto",
+    "root_id": "S.",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "S^",
+      "aO",
+      "aN",
+      "aM",
+      "aL",
+      "f~",
+      "sz",
+      "S."
+    ],
+    "block": {
+      "opcode": "sound_seteffectto",
+      "next": null,
+      "parent": "aO",
+      "inputs": {
+        "VALUE": [
+          1,
+          [
+            4,
+            "0"
+          ]
+        ]
+      },
+      "fields": {
+        "EFFECT": [
+          "PITCH",
+          null
+        ]
+      }
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "sH",
+    "opcode": "sound_playuntildone",
+    "root_id": "ga",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "sH",
+      "ga"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "ga",
+      "inputs": {
+        "SOUND_MENU": [
+          3,
+          [
+            12,
+            "Teme",
+            "W1cir]R0=MPuyc7~;;8v"
+          ],
+          "S{"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "S{",
+    "opcode": "sound_sounds_menu",
+    "root_id": "ga",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "S{",
+      "sH",
+      "ga"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "sH",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "sI",
+    "opcode": "sound_playuntildone",
+    "root_id": "ga",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "sI",
+      "ga"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "ga",
+      "inputs": {
+        "SOUND_MENU": [
+          3,
+          [
+            12,
+            "teme",
+            "xApkNM4kMfC(uAg$U.o."
+          ],
+          "S|"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "S|",
+    "opcode": "sound_sounds_menu",
+    "root_id": "ga",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "S|",
+      "sI",
+      "ga"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "sI",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "Tc",
+    "opcode": "sound_stopallsounds",
+    "root_id": "Tc",
+    "root_opcode": "sound_stopallsounds",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "Tc"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "Td",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "Tf",
+    "opcode": "sound_seteffectto",
+    "root_id": "sL",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "Tf",
+      "sL"
+    ],
+    "block": {
+      "opcode": "sound_seteffectto",
+      "next": null,
+      "parent": "sL",
+      "inputs": {
+        "VALUE": [
+          1,
+          [
+            4,
+            "-20"
+          ]
+        ]
+      },
+      "fields": {
+        "EFFECT": [
+          "PITCH",
+          null
+        ]
+      }
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "Th",
+    "opcode": "sound_seteffectto",
+    "root_id": "sM",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "Th",
+      "sM"
+    ],
+    "block": {
+      "opcode": "sound_seteffectto",
+      "next": null,
+      "parent": "sM",
+      "inputs": {
+        "VALUE": [
+          1,
+          [
+            4,
+            "25"
+          ]
+        ]
+      },
+      "fields": {
+        "EFFECT": [
+          "PITCH",
+          null
+        ]
+      }
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "sN",
+    "opcode": "sound_stopallsounds",
+    "root_id": "Ti",
+    "root_opcode": "control_forever",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "sN",
+      "Ti"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "sO",
+      "parent": "Ti",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "sP",
+    "opcode": "sound_stopallsounds",
+    "root_id": "Ti",
+    "root_opcode": "control_forever",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "sP",
+      "sO",
+      "sN",
+      "Ti"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "sQ",
+      "parent": "sO",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "Tm",
+    "opcode": "sound_playuntildone",
+    "root_id": "Tm",
+    "root_opcode": "sound_playuntildone",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "Tm"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": null,
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "Tn"
+        ]
+      },
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "Tn",
+    "opcode": "sound_sounds_menu",
+    "root_id": "Tm",
+    "root_opcode": "sound_playuntildone",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "Tn",
+      "Tm"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "Tm",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme Day",
+    "id": "Tp",
+    "opcode": "sound_setvolumeto",
+    "root_id": "SJ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Move all",
+        "PdbSuI~DZxf!WbXQ47cv"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Tp",
+      "aH",
+      "SJ"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": null,
+      "parent": "aH",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "100"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Levels",
+    "id": "Wc",
+    "opcode": "sound_stopallsounds",
+    "root_id": "Wb",
+    "root_opcode": "event_broadcastandwait",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Wc",
+      "Wb"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": null,
+      "parent": "Wb",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Levels",
+    "id": "Wt",
+    "opcode": "sound_stopallsounds",
+    "root_id": "Wi",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Wt",
+      "v;",
+      "hq",
+      "v:",
+      "v/",
+      "v.",
+      "v-",
+      "v,",
+      "v)",
+      "hp",
+      "bb",
+      "ho",
+      "hH",
+      "v%",
+      "a~",
+      "a}",
+      "a|",
+      "vW",
+      "vV",
+      "Wi"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": null,
+      "parent": "v;",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Levels",
+    "id": "Ww",
+    "opcode": "sound_stopallsounds",
+    "root_id": "Wi",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Ww",
+      "v_",
+      "hs",
+      "v^",
+      "v]",
+      "v[",
+      "v=",
+      "hr",
+      "v(",
+      "bb",
+      "ho",
+      "hH",
+      "v%",
+      "a~",
+      "a}",
+      "a|",
+      "vW",
+      "vV",
+      "Wi"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": null,
+      "parent": "v_",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Fane+",
+    "id": "hM",
+    "opcode": "sound_play",
+    "root_id": "Xw",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Win",
+        "?zr{oOqdOh0lSoID.Z$s"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "hM",
+      "wU",
+      "wT",
+      "wS",
+      "wR",
+      "wQ",
+      "Xw"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "wV",
+      "parent": "wU",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "Xx"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Fane+",
+    "id": "Xx",
+    "opcode": "sound_sounds_menu",
+    "root_id": "Xw",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Win",
+        "?zr{oOqdOh0lSoID.Z$s"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Xx",
+      "hM",
+      "wU",
+      "wT",
+      "wS",
+      "wR",
+      "wQ",
+      "Xw"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "hM",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Elec Piano Loop",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Yz",
+    "opcode": "sound_setvolumeto",
+    "root_id": "Yy",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Still",
+        "=l~0ac2uj;i:FTX_=!C1"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Yz",
+      "Yy"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": null,
+      "parent": "Yy",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "0"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "xJ",
+    "opcode": "sound_stopallsounds",
+    "root_id": "YA",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Laut",
+        "5#S;:vaKEtzud8woDejV"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "xJ",
+      "YA"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "YB",
+      "parent": "YA",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "YB",
+    "opcode": "sound_setvolumeto",
+    "root_id": "YA",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Laut",
+        "5#S;:vaKEtzud8woDejV"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "YB",
+      "xJ",
+      "YA"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": null,
+      "parent": "xJ",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "100"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "xP",
+    "opcode": "sound_stopallsounds",
+    "root_id": "YQ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Setup level",
+        "$[8pc%VA7Tj[tpuIl/4I"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "xP",
+      "YQ"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "YR",
+      "parent": "YQ",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "YR",
+    "opcode": "sound_setvolumeto",
+    "root_id": "YQ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Setup level",
+        "$[8pc%VA7Tj[tpuIl/4I"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "YR",
+      "xP",
+      "YQ"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": null,
+      "parent": "xP",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "100"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "xT",
+    "opcode": "sound_playuntildone",
+    "root_id": "YS",
+    "root_opcode": "looks_show",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "xT",
+      "xS",
+      "xR",
+      "xQ",
+      "YS"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "xS",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "YT"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "YT",
+    "opcode": "sound_sounds_menu",
+    "root_id": "YS",
+    "root_opcode": "looks_show",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "YT",
+      "xT",
+      "xS",
+      "xR",
+      "xQ",
+      "YS"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "xT",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Level 5",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "xV",
+    "opcode": "sound_setvolumeto",
+    "root_id": "YW",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Star level",
+        "YQMYk.pDz=R`cbC{r[(j"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "xV",
+      "h=",
+      "xU",
+      "YW"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": "xW",
+      "parent": "h=",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "0"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "xX",
+    "opcode": "sound_playuntildone",
+    "root_id": "YW",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Star level",
+        "YQMYk.pDz=R`cbC{r[(j"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "xX",
+      "xW",
+      "xV",
+      "h=",
+      "xU",
+      "YW"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "xW",
+      "inputs": {
+        "SOUND_MENU": [
+          3,
+          [
+            12,
+            "Teme",
+            "W1cir]R0=MPuyc7~;;8v"
+          ],
+          "YY"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "YY",
+    "opcode": "sound_sounds_menu",
+    "root_id": "YW",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Star level",
+        "YQMYk.pDz=R`cbC{r[(j"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "YY",
+      "xX",
+      "xW",
+      "xV",
+      "h=",
+      "xU",
+      "YW"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "xX",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "xZ",
+    "opcode": "sound_stopallsounds",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "h?",
+      "parent": "xY",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "x!",
+    "opcode": "sound_seteffectto",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "x!",
+      "h?",
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_seteffectto",
+      "next": "x#",
+      "parent": "h?",
+      "inputs": {
+        "VALUE": [
+          1,
+          [
+            4,
+            "0"
+          ]
+        ]
+      },
+      "fields": {
+        "EFFECT": [
+          "PITCH",
+          null
+        ]
+      }
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "x#",
+    "opcode": "sound_setvolumeto",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "x#",
+      "x!",
+      "h?",
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": "x%",
+      "parent": "x!",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "0"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "x(",
+    "opcode": "sound_playuntildone",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "x(",
+      "bp",
+      "x%",
+      "x#",
+      "x!",
+      "h?",
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "bp",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "Y%"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Y%",
+    "opcode": "sound_sounds_menu",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Y%",
+      "x(",
+      "bp",
+      "x%",
+      "x#",
+      "x!",
+      "h?",
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "x(",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "h[",
+    "opcode": "sound_playuntildone",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "h[",
+      "bq",
+      "bp",
+      "x%",
+      "x#",
+      "x!",
+      "h?",
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": "Y)",
+      "parent": "bq",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "Y*"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Y*",
+    "opcode": "sound_sounds_menu",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Y*",
+      "h[",
+      "bq",
+      "bp",
+      "x%",
+      "x#",
+      "x!",
+      "h?",
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "h[",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "recording1",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Y)",
+    "opcode": "sound_seteffectto",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Y)",
+      "h[",
+      "bq",
+      "bp",
+      "x%",
+      "x#",
+      "x!",
+      "h?",
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_seteffectto",
+      "next": null,
+      "parent": "h[",
+      "inputs": {
+        "VALUE": [
+          1,
+          [
+            4,
+            "25"
+          ]
+        ]
+      },
+      "fields": {
+        "EFFECT": [
+          "PITCH",
+          null
+        ]
+      }
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "h]",
+    "opcode": "sound_playuntildone",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "h]",
+      "br",
+      "h@",
+      "bq",
+      "bp",
+      "x%",
+      "x#",
+      "x!",
+      "h?",
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": "x)",
+      "parent": "br",
+      "inputs": {
+        "SOUND_MENU": [
+          3,
+          [
+            12,
+            "Teme",
+            "W1cir]R0=MPuyc7~;;8v"
+          ],
+          "Y-"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Y-",
+    "opcode": "sound_sounds_menu",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Y-",
+      "h]",
+      "br",
+      "h@",
+      "bq",
+      "bp",
+      "x%",
+      "x#",
+      "x!",
+      "h?",
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "h]",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "x*",
+    "opcode": "sound_playuntildone",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "x*",
+      "x)",
+      "h]",
+      "br",
+      "h@",
+      "bq",
+      "bp",
+      "x%",
+      "x#",
+      "x!",
+      "h?",
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "x)",
+      "inputs": {
+        "SOUND_MENU": [
+          3,
+          [
+            12,
+            "Teme",
+            "W1cir]R0=MPuyc7~;;8v"
+          ],
+          "Y."
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Y.",
+    "opcode": "sound_sounds_menu",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Y.",
+      "x*",
+      "x)",
+      "h]",
+      "br",
+      "h@",
+      "bq",
+      "bp",
+      "x%",
+      "x#",
+      "x!",
+      "h?",
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "x*",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "h^",
+    "opcode": "sound_playuntildone",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "h^",
+      "br",
+      "h@",
+      "bq",
+      "bp",
+      "x%",
+      "x#",
+      "x!",
+      "h?",
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": "x+",
+      "parent": "br",
+      "inputs": {
+        "SOUND_MENU": [
+          3,
+          [
+            12,
+            "teme",
+            "xApkNM4kMfC(uAg$U.o."
+          ],
+          "Y/"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Y/",
+    "opcode": "sound_sounds_menu",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Y/",
+      "h^",
+      "br",
+      "h@",
+      "bq",
+      "bp",
+      "x%",
+      "x#",
+      "x!",
+      "h?",
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "h^",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "x,",
+    "opcode": "sound_playuntildone",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "x,",
+      "x+",
+      "h^",
+      "br",
+      "h@",
+      "bq",
+      "bp",
+      "x%",
+      "x#",
+      "x!",
+      "h?",
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "x+",
+      "inputs": {
+        "SOUND_MENU": [
+          3,
+          [
+            12,
+            "teme",
+            "xApkNM4kMfC(uAg$U.o."
+          ],
+          "Y:"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Y:",
+    "opcode": "sound_sounds_menu",
+    "root_id": "YZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Y:",
+      "x,",
+      "x+",
+      "h^",
+      "br",
+      "h@",
+      "bq",
+      "bp",
+      "x%",
+      "x#",
+      "x!",
+      "h?",
+      "xZ",
+      "xY",
+      "YZ"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "x,",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Y[",
+    "opcode": "sound_setvolumeto",
+    "root_id": "Y;",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Move all",
+        "PdbSuI~DZxf!WbXQ47cv"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Y[",
+      "bu",
+      "bt",
+      "bs",
+      "Y;"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": null,
+      "parent": "bu",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "100"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Y^",
+    "opcode": "sound_setvolumeto",
+    "root_id": "Y;",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Move all",
+        "PdbSuI~DZxf!WbXQ47cv"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Y^",
+      "bv",
+      "bu",
+      "bt",
+      "bs",
+      "Y;"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": null,
+      "parent": "bv",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "100"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Y_",
+    "opcode": "sound_setvolumeto",
+    "root_id": "Y;",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Move all",
+        "PdbSuI~DZxf!WbXQ47cv"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Y_",
+      "bv",
+      "bu",
+      "bt",
+      "bs",
+      "Y;"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": null,
+      "parent": "bv",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "0"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Y?",
+    "opcode": "sound_setvolumeto",
+    "root_id": "Y;",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Move all",
+        "PdbSuI~DZxf!WbXQ47cv"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Y?",
+      "bt",
+      "bs",
+      "Y;"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": null,
+      "parent": "bt",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "0"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "?:",
+    "opcode": "sound_stopallsounds",
+    "root_id": "?:",
+    "root_opcode": "sound_stopallsounds",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "?:"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "x=",
+    "opcode": "sound_stopallsounds",
+    "root_id": "h`",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "x=",
+      "h{",
+      "x;",
+      "x/",
+      "bw",
+      "h`"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "h|",
+      "parent": "h{",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "x]",
+    "opcode": "sound_stopallsounds",
+    "root_id": "h`",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "x]",
+      "h}",
+      "x[",
+      "x:",
+      "bw",
+      "h`"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "h~",
+      "parent": "h}",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "x{",
+    "opcode": "sound_stopallsounds",
+    "root_id": "h`",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "x{",
+      "ia",
+      "x`",
+      "x.",
+      "h`"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "ib",
+      "parent": "ia",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "?@",
+    "opcode": "sound_stopallsounds",
+    "root_id": "?@",
+    "root_opcode": "sound_stopallsounds",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "?@"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": null,
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Zs",
+    "opcode": "sound_cleareffects",
+    "root_id": "Zp",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Zs",
+      "bx",
+      "ic",
+      "x~",
+      "Zp"
+    ],
+    "block": {
+      "opcode": "sound_cleareffects",
+      "next": null,
+      "parent": "bx",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Zu",
+    "opcode": "sound_stopallsounds",
+    "root_id": "Zp",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Zu",
+      "yb",
+      "by",
+      "bx",
+      "ic",
+      "x~",
+      "Zp"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": null,
+      "parent": "yb",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Zw",
+    "opcode": "sound_stopallsounds",
+    "root_id": "Zp",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Zw",
+      "ye",
+      "bz",
+      "by",
+      "bx",
+      "ic",
+      "x~",
+      "Zp"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": null,
+      "parent": "ye",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Zx",
+    "opcode": "sound_seteffectto",
+    "root_id": "Zp",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Zx",
+      "bA",
+      "bz",
+      "by",
+      "bx",
+      "ic",
+      "x~",
+      "Zp"
+    ],
+    "block": {
+      "opcode": "sound_seteffectto",
+      "next": null,
+      "parent": "bA",
+      "inputs": {
+        "VALUE": [
+          1,
+          [
+            4,
+            "5"
+          ]
+        ]
+      },
+      "fields": {
+        "EFFECT": [
+          "PITCH",
+          null
+        ]
+      }
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "Zy",
+    "opcode": "sound_seteffectto",
+    "root_id": "Zp",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Zy",
+      "bA",
+      "bz",
+      "by",
+      "bx",
+      "ic",
+      "x~",
+      "Zp"
+    ],
+    "block": {
+      "opcode": "sound_seteffectto",
+      "next": null,
+      "parent": "bA",
+      "inputs": {
+        "VALUE": [
+          1,
+          [
+            4,
+            "0"
+          ]
+        ]
+      },
+      "fields": {
+        "EFFECT": [
+          "PITCH",
+          null
+        ]
+      }
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "yh",
+    "opcode": "sound_playuntildone",
+    "root_id": "id",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "yh",
+      "id"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "id",
+      "inputs": {
+        "SOUND_MENU": [
+          3,
+          [
+            12,
+            "Teme",
+            "W1cir]R0=MPuyc7~;;8v"
+          ],
+          "ZB"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "ZB",
+    "opcode": "sound_sounds_menu",
+    "root_id": "id",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "ZB",
+      "yh",
+      "id"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "yh",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "yi",
+    "opcode": "sound_playuntildone",
+    "root_id": "id",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "yi",
+      "id"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "id",
+      "inputs": {
+        "SOUND_MENU": [
+          3,
+          [
+            12,
+            "teme",
+            "xApkNM4kMfC(uAg$U.o."
+          ],
+          "ZC"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "ZC",
+    "opcode": "sound_sounds_menu",
+    "root_id": "id",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "ZC",
+      "yi",
+      "id"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "yi",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "ZH",
+    "opcode": "sound_stopallsounds",
+    "root_id": "ZH",
+    "root_opcode": "sound_stopallsounds",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "ZH"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "ZI",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "topLevel": true
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "ZK",
+    "opcode": "sound_seteffectto",
+    "root_id": "yl",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "ZK",
+      "yl"
+    ],
+    "block": {
+      "opcode": "sound_seteffectto",
+      "next": null,
+      "parent": "yl",
+      "inputs": {
+        "VALUE": [
+          1,
+          [
+            4,
+            "-20"
+          ]
+        ]
+      },
+      "fields": {
+        "EFFECT": [
+          "PITCH",
+          null
+        ]
+      }
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "ZM",
+    "opcode": "sound_seteffectto",
+    "root_id": "ym",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "ZM",
+      "ym"
+    ],
+    "block": {
+      "opcode": "sound_seteffectto",
+      "next": null,
+      "parent": "ym",
+      "inputs": {
+        "VALUE": [
+          1,
+          [
+            4,
+            "25"
+          ]
+        ]
+      },
+      "fields": {
+        "EFFECT": [
+          "PITCH",
+          null
+        ]
+      }
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "yn",
+    "opcode": "sound_stopallsounds",
+    "root_id": "ZN",
+    "root_opcode": "control_forever",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "yn",
+      "ZN"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "yo",
+      "parent": "ZN",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "yp",
+    "opcode": "sound_stopallsounds",
+    "root_id": "ZN",
+    "root_opcode": "control_forever",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "yp",
+      "yo",
+      "yn",
+      "ZN"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "yq",
+      "parent": "yo",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "yr",
+    "opcode": "sound_playuntildone",
+    "root_id": "ZP",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "yr",
+      "ZP"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "ZP",
+      "inputs": {
+        "SOUND_MENU": [
+          3,
+          [
+            12,
+            "teme",
+            "xApkNM4kMfC(uAg$U.o."
+          ],
+          "ZQ"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "ZQ",
+    "opcode": "sound_sounds_menu",
+    "root_id": "ZP",
+    "root_opcode": "control_if_else",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "ZQ",
+      "yr",
+      "ZP"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "yr",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Teme N",
+    "id": "ZU",
+    "opcode": "sound_setvolumeto",
+    "root_id": "Y;",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Move all",
+        "PdbSuI~DZxf!WbXQ47cv"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "ZU",
+      "bs",
+      "Y;"
+    ],
+    "block": {
+      "opcode": "sound_setvolumeto",
+      "next": null,
+      "parent": "bs",
+      "inputs": {
+        "VOLUME": [
+          1,
+          [
+            4,
+            "0"
+          ]
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Dragon",
+    "id": "yv",
+    "opcode": "sound_stopallsounds",
+    "root_id": "ZZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "start level v1",
+        "x=6WrdpLC_$NaR|uJK#c"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "yv",
+      "yu",
+      "yt",
+      "ig",
+      "if",
+      "ie",
+      "ZZ"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "yw",
+      "parent": "yu",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Dragon",
+    "id": "yJ",
+    "opcode": "sound_play",
+    "root_id": "ZZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "start level v1",
+        "x=6WrdpLC_$NaR|uJK#c"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "yJ",
+      "yI",
+      "bE",
+      "yF",
+      "bD",
+      "bC",
+      "yD",
+      "yC",
+      "yB",
+      "yA",
+      "yz",
+      "yy",
+      "il",
+      "yx",
+      "bB",
+      "yw",
+      "yv",
+      "yu",
+      "yt",
+      "ig",
+      "if",
+      "ie",
+      "ZZ"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": null,
+      "parent": "yI",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "Z?"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Dragon",
+    "id": "Z?",
+    "opcode": "sound_sounds_menu",
+    "root_id": "ZZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "start level v1",
+        "x=6WrdpLC_$NaR|uJK#c"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Z?",
+      "yJ",
+      "yI",
+      "bE",
+      "yF",
+      "bD",
+      "bC",
+      "yD",
+      "yC",
+      "yB",
+      "yA",
+      "yz",
+      "yy",
+      "il",
+      "yx",
+      "bB",
+      "yw",
+      "yv",
+      "yu",
+      "yt",
+      "ig",
+      "if",
+      "ie",
+      "ZZ"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "yJ",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Dragon",
+    "id": "yQ",
+    "opcode": "sound_play",
+    "root_id": "ZZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "start level v1",
+        "x=6WrdpLC_$NaR|uJK#c"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "yQ",
+      "yP",
+      "bH",
+      "yM",
+      "im",
+      "bD",
+      "bC",
+      "yD",
+      "yC",
+      "yB",
+      "yA",
+      "yz",
+      "yy",
+      "il",
+      "yx",
+      "bB",
+      "yw",
+      "yv",
+      "yu",
+      "yt",
+      "ig",
+      "if",
+      "ie",
+      "ZZ"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": null,
+      "parent": "yP",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "Z~"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Dragon",
+    "id": "Z~",
+    "opcode": "sound_sounds_menu",
+    "root_id": "ZZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "start level v1",
+        "x=6WrdpLC_$NaR|uJK#c"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "Z~",
+      "yQ",
+      "yP",
+      "bH",
+      "yM",
+      "im",
+      "bD",
+      "bC",
+      "yD",
+      "yC",
+      "yB",
+      "yA",
+      "yz",
+      "yy",
+      "il",
+      "yx",
+      "bB",
+      "yw",
+      "yv",
+      "yu",
+      "yt",
+      "ig",
+      "if",
+      "ie",
+      "ZZ"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "yQ",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Dragon",
+    "id": "y+",
+    "opcode": "sound_play",
+    "root_id": "ZZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "start level v1",
+        "x=6WrdpLC_$NaR|uJK#c"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "y+",
+      "y*",
+      "bM",
+      "y%",
+      "bL",
+      "bK",
+      "y!",
+      "yZ",
+      "yY",
+      "yX",
+      "yW",
+      "yV",
+      "yU",
+      "yT",
+      "yE",
+      "bC",
+      "yD",
+      "yC",
+      "yB",
+      "yA",
+      "yz",
+      "yy",
+      "il",
+      "yx",
+      "bB",
+      "yw",
+      "yv",
+      "yu",
+      "yt",
+      "ig",
+      "if",
+      "ie",
+      "ZZ"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": null,
+      "parent": "y*",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "!k"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Dragon",
+    "id": "!k",
+    "opcode": "sound_sounds_menu",
+    "root_id": "ZZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "start level v1",
+        "x=6WrdpLC_$NaR|uJK#c"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "!k",
+      "y+",
+      "y*",
+      "bM",
+      "y%",
+      "bL",
+      "bK",
+      "y!",
+      "yZ",
+      "yY",
+      "yX",
+      "yW",
+      "yV",
+      "yU",
+      "yT",
+      "yE",
+      "bC",
+      "yD",
+      "yC",
+      "yB",
+      "yA",
+      "yz",
+      "yy",
+      "il",
+      "yx",
+      "bB",
+      "yw",
+      "yv",
+      "yu",
+      "yt",
+      "ig",
+      "if",
+      "ie",
+      "ZZ"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "y+",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Dragon",
+    "id": "y=",
+    "opcode": "sound_play",
+    "root_id": "ZZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "start level v1",
+        "x=6WrdpLC_$NaR|uJK#c"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "y=",
+      "y;",
+      "bP",
+      "y.",
+      "ir",
+      "bL",
+      "bK",
+      "y!",
+      "yZ",
+      "yY",
+      "yX",
+      "yW",
+      "yV",
+      "yU",
+      "yT",
+      "yE",
+      "bC",
+      "yD",
+      "yC",
+      "yB",
+      "yA",
+      "yz",
+      "yy",
+      "il",
+      "yx",
+      "bB",
+      "yw",
+      "yv",
+      "yu",
+      "yt",
+      "ig",
+      "if",
+      "ie",
+      "ZZ"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": null,
+      "parent": "y;",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "!u"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Dragon",
+    "id": "!u",
+    "opcode": "sound_sounds_menu",
+    "root_id": "ZZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "start level v1",
+        "x=6WrdpLC_$NaR|uJK#c"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "!u",
+      "y=",
+      "y;",
+      "bP",
+      "y.",
+      "ir",
+      "bL",
+      "bK",
+      "y!",
+      "yZ",
+      "yY",
+      "yX",
+      "yW",
+      "yV",
+      "yU",
+      "yT",
+      "yE",
+      "bC",
+      "yD",
+      "yC",
+      "yB",
+      "yA",
+      "yz",
+      "yy",
+      "il",
+      "yx",
+      "bB",
+      "yw",
+      "yv",
+      "yu",
+      "yt",
+      "ig",
+      "if",
+      "ie",
+      "ZZ"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "y=",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Dragon",
+    "id": "y{",
+    "opcode": "sound_play",
+    "root_id": "ZZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "start level v1",
+        "x=6WrdpLC_$NaR|uJK#c"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "y{",
+      "y`",
+      "y_",
+      "bS",
+      "y^",
+      "y]",
+      "y[",
+      "y#",
+      "bK",
+      "y!",
+      "yZ",
+      "yY",
+      "yX",
+      "yW",
+      "yV",
+      "yU",
+      "yT",
+      "yE",
+      "bC",
+      "yD",
+      "yC",
+      "yB",
+      "yA",
+      "yz",
+      "yy",
+      "il",
+      "yx",
+      "bB",
+      "yw",
+      "yv",
+      "yu",
+      "yt",
+      "ig",
+      "if",
+      "ie",
+      "ZZ"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": null,
+      "parent": "y`",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "!D"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Dragon",
+    "id": "!D",
+    "opcode": "sound_sounds_menu",
+    "root_id": "ZZ",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "start level v1",
+        "x=6WrdpLC_$NaR|uJK#c"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "!D",
+      "y{",
+      "y`",
+      "y_",
+      "bS",
+      "y^",
+      "y]",
+      "y[",
+      "y#",
+      "bK",
+      "y!",
+      "yZ",
+      "yY",
+      "yX",
+      "yW",
+      "yV",
+      "yU",
+      "yT",
+      "yE",
+      "bC",
+      "yD",
+      "yC",
+      "yB",
+      "yA",
+      "yz",
+      "yy",
+      "il",
+      "yx",
+      "bB",
+      "yw",
+      "yv",
+      "yu",
+      "yt",
+      "ig",
+      "if",
+      "ie",
+      "ZZ"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "y{",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Dragon",
+    "id": "zv",
+    "opcode": "sound_play",
+    "root_id": "!,",
+    "root_opcode": "looks_show",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "zv",
+      "zu",
+      "zt",
+      "bX",
+      "!,"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": null,
+      "parent": "zu",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "!/"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Dragon",
+    "id": "!/",
+    "opcode": "sound_sounds_menu",
+    "root_id": "!,",
+    "root_opcode": "looks_show",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "!/",
+      "zv",
+      "zu",
+      "zt",
+      "bX",
+      "!,"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "zv",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Power up",
+    "id": "iD",
+    "opcode": "sound_play",
+    "root_id": "!=",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Power down",
+        "=`MW3DW.bklbb66O+JLv"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "iD",
+      "bY",
+      "zx",
+      "!="
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "bZ",
+      "parent": "bY",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "!["
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Power up",
+    "id": "![",
+    "opcode": "sound_sounds_menu",
+    "root_id": "!=",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Power down",
+        "=`MW3DW.bklbb66O+JLv"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "![",
+      "iD",
+      "bY",
+      "zx",
+      "!="
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "iD",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Power down",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Power up",
+    "id": "iF",
+    "opcode": "sound_play",
+    "root_id": "!|",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Power Up",
+        "_nI^XD^*2sBJw3pdss4D"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "iF",
+      "zC",
+      "iE",
+      "b!",
+      "!|"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "b#",
+      "parent": "zC",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "!~"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Power up",
+    "id": "!~",
+    "opcode": "sound_sounds_menu",
+    "root_id": "!|",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Power Up",
+        "_nI^XD^*2sBJw3pdss4D"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "!~",
+      "iF",
+      "zC",
+      "iE",
+      "b!",
+      "!|"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "iF",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Power up",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Power up",
+    "id": "zF",
+    "opcode": "sound_stopallsounds",
+    "root_id": "!|",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Power Up",
+        "_nI^XD^*2sBJw3pdss4D"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "zF",
+      "zE",
+      "zD",
+      "iG",
+      "b!",
+      "!|"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": "zG",
+      "parent": "zE",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Power up",
+    "id": "zG",
+    "opcode": "sound_play",
+    "root_id": "!|",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Power Up",
+        "_nI^XD^*2sBJw3pdss4D"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "zG",
+      "zF",
+      "zE",
+      "zD",
+      "iG",
+      "b!",
+      "!|"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": null,
+      "parent": "zF",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "#g"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Power up",
+    "id": "#g",
+    "opcode": "sound_sounds_menu",
+    "root_id": "!|",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Power Up",
+        "_nI^XD^*2sBJw3pdss4D"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "#g",
+      "zG",
+      "zF",
+      "zE",
+      "zD",
+      "iG",
+      "b!",
+      "!|"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "zG",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Power up",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Menu",
+    "id": "iH",
+    "opcode": "sound_playuntildone",
+    "root_id": "#i",
+    "root_opcode": "event_whenflagclicked",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "iH",
+      "zP",
+      "zO",
+      "zN",
+      "zM",
+      "zL",
+      "zK",
+      "zJ",
+      "zI",
+      "zH",
+      "#i"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": "zQ",
+      "parent": "zP",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "#j"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Menu",
+    "id": "#j",
+    "opcode": "sound_sounds_menu",
+    "root_id": "#i",
+    "root_opcode": "event_whenflagclicked",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "#j",
+      "iH",
+      "zP",
+      "zO",
+      "zN",
+      "zM",
+      "zL",
+      "zK",
+      "zJ",
+      "zI",
+      "zH",
+      "#i"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "iH",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Drifting Intro",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Menu",
+    "id": "zR",
+    "opcode": "sound_playuntildone",
+    "root_id": "#i",
+    "root_opcode": "event_whenflagclicked",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "zR",
+      "zQ",
+      "iH",
+      "zP",
+      "zO",
+      "zN",
+      "zM",
+      "zL",
+      "zK",
+      "zJ",
+      "zI",
+      "zH",
+      "#i"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "zQ",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "#k"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Menu",
+    "id": "#k",
+    "opcode": "sound_sounds_menu",
+    "root_id": "#i",
+    "root_opcode": "event_whenflagclicked",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "#k",
+      "zR",
+      "zQ",
+      "iH",
+      "zP",
+      "zO",
+      "zN",
+      "zM",
+      "zL",
+      "zK",
+      "zJ",
+      "zI",
+      "zH",
+      "#i"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "zR",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Drifting Looped",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Menu",
+    "id": "z#",
+    "opcode": "sound_playuntildone",
+    "root_id": "#m",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Re start",
+        "jLAo,jd[iw9:z:v)]mHy"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "z#",
+      "z!",
+      "zZ",
+      "zY",
+      "#m"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "z!",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "#n"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Menu",
+    "id": "#n",
+    "opcode": "sound_sounds_menu",
+    "root_id": "#m",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Re start",
+        "jLAo,jd[iw9:z:v)]mHy"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "#n",
+      "z#",
+      "z!",
+      "zZ",
+      "zY",
+      "#m"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "z#",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "6",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Dynamick",
+    "id": "iN",
+    "opcode": "sound_playuntildone",
+    "root_id": "#x",
+    "root_opcode": "event_whenflagclicked",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "iN",
+      "z:",
+      "iM",
+      "z/",
+      "z.",
+      "z-",
+      "#x"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": "z;",
+      "parent": "z:",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "#z"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Dynamick",
+    "id": "#z",
+    "opcode": "sound_sounds_menu",
+    "root_id": "#x",
+    "root_opcode": "event_whenflagclicked",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "#z",
+      "iN",
+      "z:",
+      "iM",
+      "z/",
+      "z.",
+      "z-",
+      "#x"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "iN",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Coin",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Dynamick",
+    "id": "iZ",
+    "opcode": "sound_playuntildone",
+    "root_id": "#*",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Game over",
+        "Lv;3B|_C,v[OF`hw0-%K"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "iZ",
+      "AD",
+      "AC",
+      "iY",
+      "AB",
+      "#*"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": "AE",
+      "parent": "AD",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "#/"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Dynamick",
+    "id": "#/",
+    "opcode": "sound_sounds_menu",
+    "root_id": "#*",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Game over",
+        "Lv;3B|_C,v[OF`hw0-%K"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "#/",
+      "iZ",
+      "AD",
+      "AC",
+      "iY",
+      "AB",
+      "#*"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "iZ",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Game Over",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Ball",
+    "id": "jG",
+    "opcode": "sound_play",
+    "root_id": ")/",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "jG",
+      "jD",
+      "jC",
+      "C#",
+      ")/"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "C(",
+      "parent": "jD",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          ")="
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Ball",
+    "id": ")=",
+    "opcode": "sound_sounds_menu",
+    "root_id": ")/",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Create",
+        "q+Ohh`p0lh^(S;YVv})S"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      ")=",
+      "jG",
+      "jD",
+      "jC",
+      "C#",
+      ")/"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "jG",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Ball",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Died/Pipie",
+    "id": "jW",
+    "opcode": "sound_play",
+    "root_id": "*E",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Died",
+        "T_(c0o2^S!SR,Bw%/zHS"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "jW",
+      "Dn",
+      "cd",
+      "jV",
+      "Dm",
+      "Dl",
+      "*E"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "jX",
+      "parent": "Dn",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "*I"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Died/Pipie",
+    "id": "*I",
+    "opcode": "sound_sounds_menu",
+    "root_id": "*E",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Died",
+        "T_(c0o2^S!SR,Bw%/zHS"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "*I",
+      "jW",
+      "Dn",
+      "cd",
+      "jV",
+      "Dm",
+      "Dl",
+      "*E"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "jW",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill player",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Died/Pipie",
+    "id": "jX",
+    "opcode": "sound_play",
+    "root_id": "*E",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Died",
+        "T_(c0o2^S!SR,Bw%/zHS"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "jX",
+      "jW",
+      "Dn",
+      "cd",
+      "jV",
+      "Dm",
+      "Dl",
+      "*E"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "Do",
+      "parent": "jW",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "*J"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Died/Pipie",
+    "id": "*J",
+    "opcode": "sound_sounds_menu",
+    "root_id": "*E",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Died",
+        "T_(c0o2^S!SR,Bw%/zHS"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "*J",
+      "jX",
+      "jW",
+      "Dn",
+      "cd",
+      "jV",
+      "Dm",
+      "Dl",
+      "*E"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "jX",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Cymbal Echo",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Died/Pipie",
+    "id": "j(",
+    "opcode": "sound_play",
+    "root_id": "*R",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Travel",
+        "+0F]Ov7fp-w8l8wYd99m"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "j(",
+      "DD",
+      "ch",
+      "j!",
+      "DC",
+      "cg",
+      "DB",
+      "DA",
+      "Dz",
+      "*R"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "DF",
+      "parent": "DD",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "*Z"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Died/Pipie",
+    "id": "*Z",
+    "opcode": "sound_sounds_menu",
+    "root_id": "*R",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Travel",
+        "+0F]Ov7fp-w8l8wYd99m"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "*Z",
+      "j(",
+      "DD",
+      "ch",
+      "j!",
+      "DC",
+      "cg",
+      "DB",
+      "DA",
+      "Dz",
+      "*R"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "j(",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Travel",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Died/Pipie",
+    "id": "*[",
+    "opcode": "sound_stopallsounds",
+    "root_id": "*R",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Travel",
+        "+0F]Ov7fp-w8l8wYd99m"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "*[",
+      "ck",
+      "G",
+      "j:",
+      "D(",
+      "j/",
+      "D%",
+      "D#",
+      "DV",
+      "j*",
+      "cj",
+      "ci",
+      "DG",
+      "DF",
+      "j(",
+      "DD",
+      "ch",
+      "j!",
+      "DC",
+      "cg",
+      "DB",
+      "DA",
+      "Dz",
+      "*R"
+    ],
+    "block": {
+      "opcode": "sound_stopallsounds",
+      "next": null,
+      "parent": "ck",
+      "inputs": {},
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Died/Pipie",
+    "id": "j]",
+    "opcode": "sound_play",
+    "root_id": "+k",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Game Over Ani",
+        "*RNnX[bLky[vz@LqSP#@"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "j]",
+      "Ek",
+      "Ej",
+      "+k"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "j^",
+      "parent": "Ek",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "+l"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Died/Pipie",
+    "id": "+l",
+    "opcode": "sound_sounds_menu",
+    "root_id": "+k",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Game Over Ani",
+        "*RNnX[bLky[vz@LqSP#@"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "+l",
+      "j]",
+      "Ek",
+      "Ej",
+      "+k"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "j]",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill player",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Died/Pipie",
+    "id": "j^",
+    "opcode": "sound_playuntildone",
+    "root_id": "+k",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Game Over Ani",
+        "*RNnX[bLky[vz@LqSP#@"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "j^",
+      "j]",
+      "Ek",
+      "Ej",
+      "+k"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": "+m",
+      "parent": "j]",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "+n"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Died/Pipie",
+    "id": "+n",
+    "opcode": "sound_sounds_menu",
+    "root_id": "+k",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Game Over Ani",
+        "*RNnX[bLky[vz@LqSP#@"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "+n",
+      "j^",
+      "j]",
+      "Ek",
+      "Ej",
+      "+k"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "j^",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Cymbal Echo",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Water",
+    "id": "En",
+    "opcode": "sound_playuntildone",
+    "root_id": "+r",
+    "root_opcode": "control_forever",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "En",
+      "j_",
+      "j`",
+      "+r"
+    ],
+    "block": {
+      "opcode": "sound_playuntildone",
+      "next": null,
+      "parent": "j_",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "+q"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Water",
+    "id": "+q",
+    "opcode": "sound_sounds_menu",
+    "root_id": "+r",
+    "root_opcode": "control_forever",
+    "root_fields": {},
+    "root_reachable_hat": false,
+    "ancestry": [
+      "+q",
+      "En",
+      "j_",
+      "j`",
+      "+r"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "En",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Water",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Final Boss",
+    "id": "ky",
+    "opcode": "sound_play",
+    "root_id": "E:",
+    "root_opcode": "procedures_definition",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      "ky",
+      "kx",
+      "cD",
+      "cC",
+      "cB",
+      "E}",
+      "cA",
+      "E|",
+      "E`",
+      "kv",
+      "E_",
+      "E^",
+      "E]",
+      "E@",
+      "cz",
+      "E;",
+      "cy",
+      "E:"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": ",N",
+      "parent": "kx",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          ",O"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Final Boss",
+    "id": ",O",
+    "opcode": "sound_sounds_menu",
+    "root_id": "E:",
+    "root_opcode": "procedures_definition",
+    "root_fields": {},
+    "root_reachable_hat": true,
+    "ancestry": [
+      ",O",
+      "ky",
+      "kx",
+      "cD",
+      "cC",
+      "cB",
+      "E}",
+      "cA",
+      "E|",
+      "E`",
+      "kv",
+      "E_",
+      "E^",
+      "E]",
+      "E@",
+      "cz",
+      "E;",
+      "cy",
+      "E:"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "ky",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Final Boss",
+    "id": "kP",
+    "opcode": "sound_play",
+    "root_id": "-c",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Kill mop by free",
+        "a1zG/x`of`zCd5/#H,h?"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "kP",
+      "kO",
+      "kN",
+      "-c"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": "FD",
+      "parent": "kO",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "-f"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Final Boss",
+    "id": "-f",
+    "opcode": "sound_sounds_menu",
+    "root_id": "-c",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "Kill mop by free",
+        "a1zG/x`of`zCd5/#H,h?"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "-f",
+      "kP",
+      "kO",
+      "kN",
+      "-c"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "kP",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Kill",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Figur8",
+    "id": "IX",
+    "opcode": "sound_play",
+    "root_id": "/!",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "New Day",
+        "g5=V_A~Sa5J4*?}TfrV^"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "IX",
+      "M",
+      "/!"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": null,
+      "parent": "M",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "/%"
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Figur8",
+    "id": "/%",
+    "opcode": "sound_sounds_menu",
+    "root_id": "/!",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "New Day",
+        "g5=V_A~Sa5J4*?}TfrV^"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "/%",
+      "IX",
+      "M",
+      "/!"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "IX",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Engine",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  },
+  {
+    "sprite": "Figur8",
+    "id": "IY",
+    "opcode": "sound_play",
+    "root_id": "/!",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "New Day",
+        "g5=V_A~Sa5J4*?}TfrV^"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "IY",
+      "M",
+      "/!"
+    ],
+    "block": {
+      "opcode": "sound_play",
+      "next": null,
+      "parent": "M",
+      "inputs": {
+        "SOUND_MENU": [
+          1,
+          "/("
+        ]
+      },
+      "fields": {}
+    }
+  },
+  {
+    "sprite": "Figur8",
+    "id": "/(",
+    "opcode": "sound_sounds_menu",
+    "root_id": "/!",
+    "root_opcode": "event_whenbroadcastreceived",
+    "root_fields": {
+      "BROADCAST_OPTION": [
+        "New Day",
+        "g5=V_A~Sa5J4*?}TfrV^"
+      ]
+    },
+    "root_reachable_hat": true,
+    "ancestry": [
+      "/(",
+      "IY",
+      "M",
+      "/!"
+    ],
+    "block": {
+      "opcode": "sound_sounds_menu",
+      "next": null,
+      "parent": "IY",
+      "inputs": {},
+      "fields": {
+        "SOUND_MENU": [
+          "Clang",
+          null
+        ]
+      },
+      "shadow": true
+    }
+  }
+]
