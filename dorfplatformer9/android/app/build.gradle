@@ -109,6 +109,7 @@ androidComponents {
             importer.set(importerScript)
             samples.set(sampleRoot)
             python.set(providers.gradleProperty('python').getOrElse('python3'))
+            referenceFiles.from(fileTree(new File(port, 'art/hud')) { include '*.svg' })
             referenceFiles.from(fileTree(sampleRoot) {
                 include 'source/project.json', 'documentation/port_reference/levels.json'
                 include 'assets/images/**', 'assets/audio/**'

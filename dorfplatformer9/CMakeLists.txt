@@ -48,9 +48,10 @@ if(NOT ANDROID)
   set(DORF_DATA "${CMAKE_CURRENT_BINARY_DIR}/assets")
   file(GLOB DORF_REFERENCE_MEDIA CONFIGURE_DEPENDS
     "${DORF_SAMPLES}/assets/images/*" "${DORF_SAMPLES}/assets/audio/*")
+  file(GLOB DORF_HUD_MEDIA CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/art/hud/*.svg")
   set(dorf_importer "${CMAKE_CURRENT_SOURCE_DIR}/tools/import_reference.py")
   set(dorf_inputs "${dorf_importer}" "${DORF_SAMPLES}/source/project.json"
-      "${DORF_SAMPLES}/documentation/port_reference/levels.json" ${DORF_REFERENCE_MEDIA})
+      "${DORF_SAMPLES}/documentation/port_reference/levels.json" ${DORF_REFERENCE_MEDIA} ${DORF_HUD_MEDIA})
   if(APPLE)
     # Xcode needs each bundle resource at generation time so it can copy
     # resources before code signing and track them on subsequent builds.

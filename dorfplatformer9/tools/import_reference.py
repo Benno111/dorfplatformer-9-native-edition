@@ -32,7 +32,9 @@ def import_reference(samples, output):
         "dragon": ("Dragon", (1, 4)),
         "boss_guard": ("Final Boss", (1,)),
         "fireball": ("Ball", (1,)),
-        "fire_button": ("Phone Controls", (5,)),
+        "touch_button": ("Phone Controls", range(1, 6)),
+        "hud_day": ("Figur7", (1, 2, 3, 5)),
+        "hud_digit": ("Figur9", range(1, 12)),
         "flag": ("fane", (1,)),
         "flag_icon": ("fane", (1,)),
         "menu": ("Menu", (1,)),
@@ -77,6 +79,8 @@ def import_reference(samples, output):
                     if Path(original).name != original:
                         raise ValueError(f"Invalid asset filename {original}")
                     source = samples / "assets" / source_folder / original
+                    if group == "hud_digit" or (group == "hud_day" and index <= 3):
+                        source = Path(__file__).resolve().parents[1] / "art" / "hud" / original
                     suffix = source.suffix
                     if kind == "image":
                         pivot_x, pivot_y, resolution = (asset[key] for key in

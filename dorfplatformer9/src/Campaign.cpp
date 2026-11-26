@@ -112,6 +112,19 @@ bool Campaign::night() const {
     return (day() > 1 && localTime < 0) || localTime >= daylightLength;
 }
 
+float Campaign::clockProgress() const {
+    const double localTime = worldTime - (day() - 1) * (dayLength + dawnLength);
+    const double progress = night() ? (localTime - daylightLength - sunset) / nightLength
+                                    : localTime / daylightLength;
+    return static_cast<float>(std::clamp(progress, 0.0, 1.0));
+}
+
+double Campaign::finalNightSeconds() const {
+    const double remaining = campaignLength - worldTime;
+    if (remaining > nightLength) return -1;
+    return std::max(0.0, remaining) / (clockStep * 60);
+}
+
 void Campaign::changeScene(Scene next) {
     scene = next;
     elapsed = 0;
@@ -266,7 +279,7 @@ void Campaign::updateActors() {
     if (theme() == 4) return;
     for (auto& actor : actors) {
         actor.cooldown = std::max(0.0, actor.cooldown - tickSeconds);
-        if (actor.health <= 0 || std::abs(actor.position.x - camera) > 345) continue;
+        if (actor.health <= 0 || std::abs(actor.position.x - camera) > 425) continue;
         actor.velocityY = std::max(-22.0, actor.velocityY - 1.96);
         move(actor.position, actor.velocityY, false, 10, 23);
         double walk = actor.direction * (actor.type == 24 ? 3.0 : 2.0);
@@ -302,7 +315,7 @@ void Campaign::updateFireballs(bool fire) {
         if (ball.ticksLeft <= 0) continue;
         --ball.ticksLeft;
         move(ball.position, ball.velocity.x, true, 4, 8);
-        if (ball.velocity.x == 0 || std::abs(ball.position.x - camera) > 240 ||
+        if (ball.velocity.x == 0 || std::abs(ball.position.x - camera) > 320 ||
             ball.position.y < upper - 180 || ball.position.y > upper + 180) {
             ball.ticksLeft = 0;
             continue;

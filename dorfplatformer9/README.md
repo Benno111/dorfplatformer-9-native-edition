@@ -73,7 +73,7 @@ The simulator ZIP contains a `.app` for an arm64 simulator. The device IPA conta
 | Fireball (full power) | X or Space | X or Y |
 | Pause | Esc | Start or Back |
 
-Touch controls appear during gameplay after touch input. Progress saves locally. At the title screen, F5 copies a compatible save code and F9 imports one. Import uses the original progression and power fields. Legacy map coordinates and costume fields have no native equivalent and export with default values.
+Gameplay uses a 16:9 viewport. The original day indicator and final-night timer use vector outlines of the source lettering. The larger original touch button sprites appear during gameplay after touch input. Progress saves locally. At the title screen, F5 copies a compatible save code and F9 imports one. Import uses the original progression and power fields. Legacy map coordinates and costume fields have no native equivalent and export with default values.
 
 The native campaign implements sequential progression, both pipe layers, the level-one shortcut, the day-two gate in level six, death and retry, power changes, the world clock, and a three-phase dragon encounter. Collision masks are sampled from the imported tile artwork. Actor behavior, timing and presentation are native approximations of the reference, and the Scratch editor and optional map are outside this build.
 

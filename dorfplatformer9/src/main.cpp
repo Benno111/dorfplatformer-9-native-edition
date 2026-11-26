@@ -16,7 +16,7 @@
 
 namespace {
 namespace fs = std::filesystem;
-constexpr int width = 480;
+constexpr int width = 640;
 constexpr int height = 360;
 constexpr Uint64 renderFramesPerSecond = 30;
 constexpr Uint64 renderFrameBudget =
@@ -170,7 +170,7 @@ struct Media {
 
     explicit Media(SDL_Renderer* renderer) : renderer(renderer) {}
 
-    void load(const fs::path& root, Campaign& game, bool verifyPlayerPixels) {
+    void load(const fs::path& root, Campaign& game, bool verifyUiPixels) {
         auto file = openGameData(root / "media.txt");
         std::string kind, group, path;
         int index;
@@ -193,7 +193,8 @@ struct Media {
             }
             Owned<SDL_Surface, SDL_DestroySurface> surface(IMG_Load(fullPath.c_str()), SDL_DestroySurface);
             if (!surface) throw std::runtime_error("Could not load " + fullPath + " (" + SDL_GetError() + ")");
-            if (verifyPlayerPixels && (group == "player" || group == "player_face")) {
+            if (verifyUiPixels && (group == "player" || group == "player_face" ||
+                                   group == "hud_day" || group == "hud_digit" || group == "touch_button")) {
                 Uint8 alpha = 0;
                 for (int y = 0; y < surface->h && alpha == 0; ++y) {
                     for (int x = 0; x < surface->w && alpha == 0; ++x) {
@@ -202,7 +203,7 @@ struct Media {
                         }
                     }
                 }
-                if (alpha == 0) throw std::runtime_error("Transparent player costume: " + fullPath);
+                if (alpha == 0) throw std::runtime_error("Transparent game artwork: " + fullPath);
             }
             image.x /= resolution;
             image.y /= resolution;
@@ -245,8 +246,13 @@ struct Media {
                                  flip ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE);
     }
 
-    void backdrop(const Key& key) const {
-        const SDL_FRect rect{0, 0, width, height};
+    void fitted(const Key& key, SDL_FRect rect) const {
+        SDL_RenderTexture(renderer, images.at(key).texture.get(), nullptr, &rect);
+    }
+
+    void backdrop(const Key& key, bool widescreen = true) const {
+        const float artworkWidth = widescreen ? width : 480;
+        const SDL_FRect rect{(width - artworkWidth) / 2, 0, artworkWidth, height};
         SDL_RenderTexture(renderer, images.at(key).texture.get(), nullptr, &rect);
     }
 };
@@ -264,6 +270,13 @@ void text(SDL_Renderer* renderer, float x, float y, const std::string& value) {
 void centered(SDL_Renderer* renderer, float y, const std::string& value) {
     text(renderer, (width - value.size() * SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE) / 2.0f, y, value);
 }
+
+constexpr SDL_FRect leftButton{14, 262, 84, 84};
+constexpr SDL_FRect rightButton{110, 262, 84, 84};
+constexpr SDL_FRect jumpButton{width - 98, 262, 84, 84};
+constexpr SDL_FRect downButton{width - 194, 262, 84, 84};
+constexpr SDL_FRect fireButton{width - 98, 166, 84, 84};
+constexpr SDL_FRect pauseButton{width - 56, 12, 44, 44};
 
 struct Touch {
     std::map<SDL_FingerID, SDL_FPoint> points;
@@ -287,12 +300,11 @@ struct Touch {
         Controls result;
         bool left = false, right = false;
         for (const auto& [id, p] : points) {
-            if (p.y < 288 || p.y > height) continue;
-            left |= p.x >= 0 && p.x < 64;
-            right |= p.x >= 64 && p.x < 126;
-            result.fire |= p.x >= 294 && p.x <= 350;
-            result.down |= p.x > 350 && p.x <= 414;
-            result.jump |= p.x > 414 && p.x <= width;
+            left |= SDL_PointInRectFloat(&p, &leftButton);
+            right |= SDL_PointInRectFloat(&p, &rightButton);
+            result.down |= SDL_PointInRectFloat(&p, &downButton);
+            result.jump |= SDL_PointInRectFloat(&p, &jumpButton);
+            result.fire |= SDL_PointInRectFloat(&p, &fireButton);
         }
         result.move = float(right) - float(left);
         return result;
@@ -305,8 +317,8 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
     SDL_RenderClear(renderer);
     if (game.scene == Scene::Title) {
         media.backdrop({"sky", 1});
-        media.backdrop({"menu", 1});
-        fill(renderer, {32, 261, 416, 83}, {12, 20, 40, 220});
+        media.backdrop({"menu", 1}, false);
+        fill(renderer, {(width - 416) / 2.0f, 261, 416, 83}, {12, 20, 40, 220});
         centered(renderer, 273, "Level " + std::to_string(selected + 1) + " / 6");
         centered(renderer, 291, "Arrows select  |  Enter / A / Tap to play");
         centered(renderer, 309, "F5 copy save  |  F9 import from clipboard");
@@ -322,7 +334,7 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
     const auto& objects = game.level().objects;
     for (std::size_t i = 0; i < objects.size(); ++i) {
         const auto& object = objects[i];
-        if (std::abs(object.position.x - game.camera) > 330 ||
+        if (std::abs(object.position.x - game.camera) > width / 2 + 90 ||
             std::abs(object.position.y - game.upper) > 450) continue;
         const auto x = xMid + static_cast<float>(object.position.x);
         const auto y = yMid - static_cast<float>(object.position.y);
@@ -337,7 +349,7 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
         }
     }
     const Point exit = game.exitPosition();
-    if ((exit.y > 400) == (game.upper != 0) && std::abs(exit.x - game.camera) < 280) {
+    if ((exit.y > 400) == (game.upper != 0) && std::abs(exit.x - game.camera) < width / 2 + 40) {
         const auto x = xMid + static_cast<float>(exit.x);
         const auto y = yMid - static_cast<float>(exit.y);
         media.sprite({"flag", 1}, x, y);
@@ -345,7 +357,7 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
     }
     for (const auto& actor : game.actors) {
         const bool defeated = actor.health <= 0;
-        if (game.theme() == 4 || std::abs(actor.position.x - game.camera) > 320 ||
+        if (game.theme() == 4 || std::abs(actor.position.x - game.camera) > width / 2 + 80 ||
             (defeated && (actor.type != 15 || actor.cooldown <= 0))) continue;
         const auto x = xMid + static_cast<float>(actor.position.x);
         const auto y = yMid - static_cast<float>(actor.position.y) - 13;
@@ -401,15 +413,23 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
     if (game.darkness() > 0) {
         fill(renderer, {0, 0, width, height}, {8, 12, 47, static_cast<Uint8>(game.darkness() * 146)});
     }
-    fill(renderer, {0, 0, width, 25}, {10, 15, 31, 216});
-    text(renderer, 9, 8, game.level().name);
-    text(renderer, 57, 8, "Day " + std::to_string(game.day()) + "/3");
-    text(renderer, 155, 8, game.night() ? "Night" : "Daylight");
-    text(renderer, 388, 8, game.special() ? "Invincible" : game.power == Power::Full ? "Fire" : small ? "Small" : "Big");
+    const double remaining = game.finalNightSeconds();
+    if (remaining >= 0) {
+        const auto display = std::to_string(remaining);
+        for (std::size_t i = 0; i < std::min<std::size_t>(display.size(), 5); ++i) {
+            const char digit = display[i];
+            const int costume = digit == '.' ? 11 : digit == '0' ? 10 : digit - '0';
+            media.sprite({"hud_digit", costume}, 240 + 20 * static_cast<float>(i), 180);
+        }
+    } else {
+        const float clockX = 240 + 80 * game.clockProgress() + (game.night() ? 100 : 0);
+        media.sprite({"hud_day", game.day()}, clockX, 180);
+        media.sprite({"hud_day", 5}, clockX, 180);
+    }
     if (game.dragonActive()) {
-        fill(renderer, {152, 31, 176, 6}, {20, 10, 30, 220});
+        fill(renderer, {width / 2.0f - 88, 31, 176, 6}, {20, 10, 30, 220});
         const auto limit = game.dragonPhase == 3 ? 5 : 3;
-        fill(renderer, {152, 31, static_cast<float>(176 * std::clamp(game.dragonHealth / limit, 0.0, 1.0)), 6},
+        fill(renderer, {width / 2.0f - 88, 31, static_cast<float>(176 * std::clamp(game.dragonHealth / limit, 0.0, 1.0)), 6},
              {215, 61, 70, 255});
     }
     if (game.paused || game.scene == Scene::Intro || game.scene == Scene::Clear ||
@@ -417,29 +437,30 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
         fill(renderer, {0, 0, width, height}, {10, 15, 31, 205});
         if (game.paused) {
             centered(renderer, 150, "Paused");
-            centered(renderer, 174, "Esc / Start to resume  |  M for title");
+            centered(renderer, 174, touch ? "Tap pause to resume  |  M for title" :
+                                           "Esc / Start to resume  |  M for title");
+            if (touch) {
+                fill(renderer, pauseButton, {10, 15, 31, 160});
+                text(renderer, pauseButton.x + 18, pauseButton.y + 18, ">");
+            }
         } else if (game.scene == Scene::Intro) {
-            media.backdrop({"ending", 1});
+            media.backdrop({"ending", 1}, false);
         } else if (game.scene == Scene::Clear) {
             centered(renderer, 168, "Level clear");
         } else {
-            if (game.scene == Scene::Ending) media.sprite({"ending", 2}, 240, 94, 0.28f);
+            if (game.scene == Scene::Ending) media.sprite({"ending", 2}, width / 2.0f, 94, 0.28f);
             centered(renderer, 150, game.scene == Scene::Ending ? "Campaign complete" : "The world ran out of time");
             centered(renderer, 174, "Enter / A / Tap to return to title");
         }
     } else if (touch) {
-        fill(renderer, {6, 300, 50, 51}, {10, 15, 31, 160});
-        fill(renderer, {65, 300, 50, 51}, {10, 15, 31, 160});
-        fill(renderer, {356, 300, 50, 51}, {10, 15, 31, 160});
-        fill(renderer, {417, 300, 55, 51}, {10, 15, 31, 160});
-        text(renderer, 26, 321, "<");
-        text(renderer, 85, 321, ">");
-        if (game.power == Power::Full) {
-            const SDL_FRect fireButton{296, 300, 51, 51};
-            SDL_RenderTexture(renderer, media.images.at({"fire_button", 5}).texture.get(), nullptr, &fireButton);
-        }
-        text(renderer, 367, 321, "DOWN");
-        text(renderer, 428, 321, "JUMP");
+        media.fitted({"touch_button", 1}, leftButton);
+        media.fitted({"touch_button", 2}, rightButton);
+        media.fitted({"touch_button", 3}, jumpButton);
+        media.fitted({"touch_button", 4}, downButton);
+        if (game.power == Power::Full) media.fitted({"touch_button", 5}, fireButton);
+        fill(renderer, pauseButton, {10, 15, 31, 160});
+        fill(renderer, {pauseButton.x + 15, pauseButton.y + 12, 5, 20}, {255, 255, 255, 255});
+        fill(renderer, {pauseButton.x + 24, pauseButton.y + 12, 5, 20}, {255, 255, 255, 255});
     }
     SDL_RenderPresent(renderer);
 }
@@ -511,7 +532,7 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
     SDL_Renderer* renderer = nullptr;
     SDL_WindowFlags flags = SDL_WINDOW_RESIZABLE | SDL_WINDOW_HIGH_PIXEL_DENSITY;
     if (smoke) flags |= SDL_WINDOW_HIDDEN;
-    const bool created = SDL_CreateWindowAndRenderer("Dorfplatformer 9 Native Edition", 960, 720, flags, &window, &renderer);
+    const bool created = SDL_CreateWindowAndRenderer("Dorfplatformer 9 Native Edition", width * 2, height * 2, flags, &window, &renderer);
     Owned<SDL_Window, SDL_DestroyWindow> ownedWindow(window, SDL_DestroyWindow);
     Owned<SDL_Renderer, SDL_DestroyRenderer> ownedRenderer(renderer, SDL_DestroyRenderer);
     if (!created || !SDL_SetRenderLogicalPresentation(renderer, width, height, SDL_LOGICAL_PRESENTATION_LETTERBOX)) {
@@ -556,6 +577,15 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
         game.dragonPhase = 1;
         updateAudio(media.audio, game);
         if (media.audio.nightMusic.current != Key{"night", 6}) return 1;
+        game.worldTime = 320;
+        if (game.finalNightSeconds() <= 0) return 1;
+        draw(media, game, 0, true, {});
+        Touch touchControls;
+        touchControls.points.emplace(1, SDL_FPoint{leftButton.x + 4, leftButton.y + 4});
+        touchControls.points.emplace(2, SDL_FPoint{jumpButton.x + 4, jumpButton.y + 4});
+        touchControls.points.emplace(3, SDL_FPoint{fireButton.x + 4, fireButton.y + 4});
+        const auto pressed = touchControls.controls();
+        if (pressed.move != -1 || !pressed.jump || !pressed.fire || pressed.down) return 1;
         return 0;
     }
 
@@ -621,8 +651,8 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
                     selected = std::min(game.unlocked, 5);
                 }
             } else if (key == SDL_SCANCODE_ESCAPE || InputSystem::isPauseToggleEvent(event) ||
-                       (event.type == SDL_EVENT_FINGER_DOWN && event.tfinger.y < 0.10f &&
-                        event.tfinger.x > 0.79f)) {
+                       (event.type == SDL_EVENT_FINGER_DOWN &&
+                        SDL_PointInRectFloat(&touch.points.at(event.tfinger.fingerID), &pauseButton))) {
                 game.paused = !game.paused;
             } else if (game.paused && key == SDL_SCANCODE_M) {
                 game.scene = Scene::Title;
