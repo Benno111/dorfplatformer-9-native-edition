@@ -66,7 +66,7 @@ The simulator ZIP contains a `.app` for an arm64 simulator. The device IPA conta
 
 | Action | Keyboard | Gamepad |
 | --- | --- | --- |
-| Start or choose an unlocked level | Enter / Left / Right | A / D-pad |
+| Navigate menus and select unlocked levels | Arrow keys or Tab, then Enter | D-pad, then A |
 | Move | A / D or Left / Right | Left stick or D-pad |
 | Jump | W or Up | A or B |
 | Crouch and enter pipes | S or Down | Down |

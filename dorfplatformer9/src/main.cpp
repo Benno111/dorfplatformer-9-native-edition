@@ -312,18 +312,114 @@ struct Touch {
     }
 };
 
-void draw(const Media& media, const Campaign& game, int selected, bool touch, const std::string& status) {
+enum class MenuAction { Play, SelectLevel, Exit, Resume, Title, Back, StartLevel };
+
+struct MenuButton {
+    SDL_FRect rect;
+    std::string label;
+    MenuAction action;
+    int level = -1;
+    bool enabled = true;
+};
+
+struct MenuState {
+    bool levelPicker = false;
+    int focus = 0;
+
+    std::vector<MenuButton> buttons(const Campaign& game) const {
+        constexpr float x = width / 2.0f - 108;
+        if (levelPicker) {
+            std::vector<MenuButton> result;
+            for (int level = 0; level < 6; ++level) {
+                const auto column = static_cast<float>(level % 3);
+                const auto row = static_cast<float>(level / 3);
+                const bool unlocked = level <= game.unlocked;
+                result.push_back({{width / 2.0f - 175 + 118 * column, 157 + 57 * row, 114, 46},
+                                  "1-" + std::to_string(level + 1) + (unlocked ? "" : " Locked"),
+                                  MenuAction::StartLevel, level, unlocked});
+            }
+            result.push_back({{x, 281, 216, 43}, "Back", MenuAction::Back});
+            return result;
+        }
+        if (game.scene == Scene::Title) {
+            return {{{width / 2.0f - 195, 270, 126, 48}, "Play", MenuAction::Play},
+                    {{width / 2.0f - 63, 270, 126, 48}, "Level select", MenuAction::SelectLevel},
+                    {{width / 2.0f + 69, 270, 126, 48}, "Exit", MenuAction::Exit}};
+        }
+        if (game.paused) {
+            return {{{x, 133, 216, 38}, "Resume", MenuAction::Resume},
+                    {{x, 178, 216, 38}, "Level select", MenuAction::SelectLevel},
+                    {{x, 223, 216, 38}, "Title screen", MenuAction::Title},
+                    {{x, 268, 216, 38}, "Exit", MenuAction::Exit}};
+        }
+        if (game.scene == Scene::Ending || game.scene == Scene::Expired) {
+            return {{{x, 176, 216, 44}, "Title screen", MenuAction::Title}};
+        }
+        return {};
+    }
+
+    void navigate(const std::vector<MenuButton>& buttons, int direction) {
+        const auto count = static_cast<int>(buttons.size());
+        if (count == 0) return;
+        for (int attempt = 0; attempt < count; ++attempt) {
+            focus = (focus + direction + count) % count;
+            if (buttons[focus].enabled) return;
+        }
+    }
+
+    bool activate(Campaign& game, const MenuButton& button) {
+        if (!button.enabled) return true;
+        switch (button.action) {
+        case MenuAction::Play: game.start(std::min(game.unlocked, 5)); break;
+        case MenuAction::SelectLevel:
+            levelPicker = true;
+            focus = std::min(game.unlocked, 5);
+            return true;
+        case MenuAction::Exit: return false;
+        case MenuAction::Resume: game.paused = false; break;
+        case MenuAction::Title:
+            game.scene = Scene::Title;
+            game.paused = false;
+            break;
+        case MenuAction::Back: break;
+        case MenuAction::StartLevel: game.start(button.level); break;
+        }
+        levelPicker = false;
+        focus = 0;
+        return true;
+    }
+};
+
+void drawMenuButtons(SDL_Renderer* renderer, const Campaign& game, const MenuState& menu) {
+    const auto buttons = menu.buttons(game);
+    for (std::size_t i = 0; i < buttons.size(); ++i) {
+        const auto& button = buttons[i];
+        const auto& rect = button.rect;
+        const bool focused = button.enabled && static_cast<int>(i) == menu.focus;
+        fill(renderer, rect, focused ? SDL_Color{141, 203, 255, 255} : SDL_Color{60, 85, 118, 255});
+        fill(renderer, {rect.x + 2, rect.y + 2, rect.w - 4, rect.h - 4},
+             button.enabled ? SDL_Color{24, 48, 79, 255} : SDL_Color{34, 42, 55, 255});
+        const auto labelColor = button.enabled ? SDL_Color{255, 255, 255, 255} : SDL_Color{172, 184, 199, 255};
+        SDL_SetRenderDrawColor(renderer, labelColor.r, labelColor.g, labelColor.b, labelColor.a);
+        SDL_RenderDebugText(renderer, rect.x + (rect.w - SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE * button.label.size()) / 2,
+                            rect.y + (rect.h - SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE) / 2, button.label.c_str());
+    }
+}
+
+void draw(const Media& media, const Campaign& game, const MenuState& menu, bool touch, const std::string& status) {
     auto* renderer = media.renderer;
     SDL_SetRenderDrawColor(renderer, 40, 81, 135, 255);
     SDL_RenderClear(renderer);
-    if (game.scene == Scene::Title) {
+    if (menu.levelPicker || game.scene == Scene::Title) {
         media.backdrop({"sky", 1});
-        media.backdrop({"menu", 1}, false);
-        fill(renderer, {(width - 416) / 2.0f, 261, 416, 83}, {12, 20, 40, 220});
-        centered(renderer, 273, "Level " + std::to_string(selected + 1) + " / 6");
-        centered(renderer, 291, "Arrows select  |  Enter / A / Tap to play");
-        centered(renderer, 309, "F5 copy save  |  F9 import from clipboard");
-        if (!status.empty()) centered(renderer, 326, status);
+        if (menu.levelPicker) {
+            fill(renderer, {width / 2.0f - 194, 100, 388, 237}, {12, 20, 40, 238});
+            centered(renderer, 125, "Level select");
+        } else {
+            media.backdrop({"menu", 1}, false);
+            if (!status.empty()) centered(renderer, 330, status);
+        }
+        drawMenuButtons(renderer, game, menu);
         SDL_RenderPresent(renderer);
         return;
     }
@@ -438,13 +534,8 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
         game.scene == Scene::Ending || game.scene == Scene::Expired) {
         fill(renderer, {0, 0, width, height}, {10, 15, 31, 205});
         if (game.paused) {
-            centered(renderer, 150, "Paused");
-            centered(renderer, 174, touch ? "Tap pause to resume  |  M for title" :
-                                           "Esc / Start to resume  |  M for title");
-            if (touch) {
-                fill(renderer, pauseButton, {10, 15, 31, 160});
-                text(renderer, pauseButton.x + 18, pauseButton.y + 18, ">");
-            }
+            centered(renderer, 105, "Paused");
+            drawMenuButtons(renderer, game, menu);
         } else if (game.scene == Scene::Intro) {
             media.backdrop({"ending", 1}, false);
         } else if (game.scene == Scene::Clear) {
@@ -452,7 +543,7 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
         } else {
             if (game.scene == Scene::Ending) media.sprite({"ending", 2}, width / 2.0f, 94, 0.28f);
             centered(renderer, 150, game.scene == Scene::Ending ? "Campaign complete" : "The world ran out of time");
-            centered(renderer, 174, "Enter / A / Tap to return to title");
+            drawMenuButtons(renderer, game, menu);
         }
     } else if (touch) {
         media.fitted({"touch_button", 1}, leftButton);
@@ -460,6 +551,8 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
         media.fitted({"touch_button", 3}, jumpButton);
         media.fitted({"touch_button", 4}, downButton);
         if (game.power == Power::Full) media.fitted({"touch_button", 5}, fireButton);
+    }
+    if (game.scene == Scene::Play && !game.paused) {
         fill(renderer, pauseButton, {10, 15, 31, 160});
         fill(renderer, {pauseButton.x + 15, pauseButton.y + 12, 5, 20}, {255, 255, 255, 255});
         fill(renderer, {pauseButton.x + 24, pauseButton.y + 12, 5, 20}, {255, 255, 255, 255});
@@ -549,18 +642,18 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
         const auto fireColor = shiftHue(0, 255, 0, 128, -54);
         if (fireColor.r != 255 || fireColor.g >= 110 || fireColor.b != 0 || fireColor.a != 128) return 1;
         if (!media.audio.mixer || media.audio.clips.size() != media.soundCount) return 1;
-        draw(media, game, 0, false, {});
+        draw(media, game, {}, false, {});
         game.start();
         for (int i = 0; i < 120; ++i) game.tick({});
         if (!game.grounded || game.scene != Scene::Play || game.player.y < -80) return 1;
         const auto x = game.player.x;
         for (int i = 0; i < 8; ++i) game.tick({1, true, false});
         if (game.player.x <= x || game.grounded) return 1;
-        draw(media, game, 0, true, {});
+        draw(media, game, {}, true, {});
         for (int i = 1; i < 6; ++i) {
             game.start(i);
             for (int j = 0; j < 90; ++j) game.tick({});
-            draw(media, game, i, false, {});
+            draw(media, game, {}, false, {});
             updateAudio(media.audio, game);
         }
         // Level 2's surface and upper world use different header selectors.
@@ -581,7 +674,7 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
         if (media.audio.nightMusic.current != Key{"night", 6}) return 1;
         game.worldTime = 320;
         if (game.finalNightSeconds() <= 0) return 1;
-        draw(media, game, 0, true, {});
+        draw(media, game, {}, true, {});
         Touch touchControls;
         touchControls.points.emplace(1, SDL_FPoint{leftButton.x + 4, leftButton.y + 4});
         touchControls.points.emplace(2, SDL_FPoint{jumpButton.x + 4, jumpButton.y + 4});
@@ -601,7 +694,23 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
         for (int tick = 0; tick < 31; ++tick) game.tick({});
         if (game.backdropIndex() != 7 || game.meteors.empty() ||
             game.meteors.front().y >= 170 || game.dragon.y >= 170) return 1;
-        draw(media, game, 5, false, {});
+        draw(media, game, {}, false, {});
+        Campaign menuGame(levels);
+        MenuState testMenu;
+        const auto titleButtons = testMenu.buttons(menuGame);
+        if (titleButtons.size() != 3 || !testMenu.activate(menuGame, titleButtons[1])) return 1;
+        draw(media, menuGame, testMenu, false, {});
+        auto levelButtons = testMenu.buttons(menuGame);
+        if (!testMenu.levelPicker || levelButtons.size() != 7 ||
+            !levelButtons[0].enabled || levelButtons[1].enabled) return 1;
+        testMenu.navigate(levelButtons, 1);
+        if (testMenu.focus != 6 || !testMenu.activate(menuGame, levelButtons[1]) ||
+            menuGame.scene != Scene::Title) return 1;
+        if (!testMenu.activate(menuGame, levelButtons[0]) || menuGame.scene != Scene::Intro) return 1;
+        menuGame.paused = true;
+        auto pauseButtons = testMenu.buttons(menuGame);
+        if (!testMenu.activate(menuGame, pauseButtons[0]) || menuGame.paused) return 1;
+        if (testMenu.activate(menuGame, titleButtons.back())) return 1;
         return 0;
     }
 
@@ -614,7 +723,7 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
         if (std::getline(save, code)) game.importSave(code);
     }
     auto saved = game.exportSave();
-    int selected = std::min(game.unlocked, 5);
+    MenuState menu;
     std::string status;
     InputSystem pads;
     pads.scanConnected();
@@ -626,10 +735,13 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
     while (running) {
         const auto frameStart = SDL_GetTicksNS();
         SDL_Event event;
-        while (SDL_PollEvent(&event)) {
+        while (running && SDL_PollEvent(&event)) {
             pads.handleEvent(event);
             touch.handle(event, renderer);
-            if (event.type == SDL_EVENT_QUIT) running = false;
+            if (event.type == SDL_EVENT_QUIT) {
+                running = false;
+                break;
+            }
             if (event.type == SDL_EVENT_WINDOW_FOCUS_LOST) {
                 touch.points.clear();
                 if (game.scene == Scene::Play) game.paused = true;
@@ -637,43 +749,64 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
             const bool keyDown = event.type == SDL_EVENT_KEY_DOWN && !event.key.repeat;
             const auto key = keyDown ? event.key.scancode : SDL_SCANCODE_UNKNOWN;
             const bool accept = key == SDL_SCANCODE_RETURN || key == SDL_SCANCODE_SPACE ||
-                                event.type == SDL_EVENT_MOUSE_BUTTON_DOWN ||
-                                event.type == SDL_EVENT_FINGER_DOWN || InputSystem::isAcceptEvent(event);
+                                InputSystem::isAcceptEvent(event);
             const bool padDown = event.type == SDL_EVENT_GAMEPAD_BUTTON_DOWN;
-            if (game.scene == Scene::Title) {
-                if (key == SDL_SCANCODE_LEFT || (padDown && event.gbutton.button == SDL_GAMEPAD_BUTTON_DPAD_LEFT)) {
-                    selected = std::max(0, selected - 1);
-                }
-                if (key == SDL_SCANCODE_RIGHT || (padDown && event.gbutton.button == SDL_GAMEPAD_BUTTON_DPAD_RIGHT)) {
-                    selected = std::min(std::min(game.unlocked, 5), selected + 1);
-                }
-                if (key == SDL_SCANCODE_F5) {
+            const bool cancel = key == SDL_SCANCODE_ESCAPE ||
+                                (padDown && event.gbutton.button == SDL_GAMEPAD_BUTTON_EAST);
+            SDL_FPoint pointer{};
+            bool pointerDown = false;
+            if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN && event.button.button == SDL_BUTTON_LEFT) {
+                pointerDown = SDL_RenderCoordinatesFromWindow(renderer, event.button.x, event.button.y,
+                                                              &pointer.x, &pointer.y);
+            } else if (event.type == SDL_EVENT_FINGER_DOWN) {
+                pointer = touch.points.at(event.tfinger.fingerID);
+                pointerDown = true;
+            }
+            const auto buttons = menu.buttons(game);
+            if (!buttons.empty()) {
+                if (game.scene == Scene::Title && key == SDL_SCANCODE_F5) {
                     status = SDL_SetClipboardText(game.exportSave().c_str()) ? "Save code copied" : "Clipboard unavailable";
-                }
-                if (key == SDL_SCANCODE_F9) {
+                } else if (game.scene == Scene::Title && key == SDL_SCANCODE_F9) {
                     auto* clipboard = SDL_GetClipboardText();
                     const bool ok = clipboard && game.importSave(clipboard);
                     SDL_free(clipboard);
                     status = ok ? "Save imported" : "Invalid save code";
-                    if (ok) selected = std::min(game.unlocked, 5);
-                }
-                if (accept) {
-                    status.clear();
-                    game.start(selected);
-                }
-            } else if (game.scene == Scene::Ending || game.scene == Scene::Expired) {
-                if (accept) {
-                    game.scene = Scene::Title;
-                    selected = std::min(game.unlocked, 5);
+                    menu.focus = menu.levelPicker && ok ? std::min(game.unlocked, 5) : 0;
+                } else if (cancel || (game.paused && InputSystem::isPauseToggleEvent(event))) {
+                    if (menu.levelPicker) {
+                        menu.levelPicker = false;
+                        menu.focus = 0;
+                    } else if (game.paused) {
+                        game.paused = false;
+                        menu.focus = 0;
+                    }
+                } else if (game.paused && key == SDL_SCANCODE_M) {
+                    menu.activate(game, {{}, "", MenuAction::Title});
+                } else if (pointerDown) {
+                    const auto hit = std::find_if(buttons.begin(), buttons.end(), [&](const MenuButton& button) {
+                        return SDL_PointInRectFloat(&pointer, &button.rect);
+                    });
+                    if (hit != buttons.end() && hit->enabled) {
+                        running = menu.activate(game, *hit);
+                        touch.points.clear();
+                    }
+                } else if (accept) {
+                    running = menu.activate(game, buttons.at(menu.focus));
+                    touch.points.clear();
+                } else if (key == SDL_SCANCODE_LEFT || key == SDL_SCANCODE_UP ||
+                           (padDown && (event.gbutton.button == SDL_GAMEPAD_BUTTON_DPAD_LEFT ||
+                                        event.gbutton.button == SDL_GAMEPAD_BUTTON_DPAD_UP))) {
+                    menu.navigate(buttons, -1);
+                } else if (key == SDL_SCANCODE_RIGHT || key == SDL_SCANCODE_DOWN || key == SDL_SCANCODE_TAB ||
+                           (padDown && (event.gbutton.button == SDL_GAMEPAD_BUTTON_DPAD_RIGHT ||
+                                        event.gbutton.button == SDL_GAMEPAD_BUTTON_DPAD_DOWN))) {
+                    menu.navigate(buttons, 1);
                 }
             } else if (key == SDL_SCANCODE_ESCAPE || InputSystem::isPauseToggleEvent(event) ||
-                       (event.type == SDL_EVENT_FINGER_DOWN &&
-                        SDL_PointInRectFloat(&touch.points.at(event.tfinger.fingerID), &pauseButton))) {
-                game.paused = !game.paused;
-            } else if (game.paused && key == SDL_SCANCODE_M) {
-                game.scene = Scene::Title;
-                game.paused = false;
-                selected = std::min(game.unlocked, 5);
+                       (game.scene == Scene::Play && pointerDown && SDL_PointInRectFloat(&pointer, &pauseButton))) {
+                game.paused = true;
+                menu.focus = 0;
+                touch.points.clear();
             }
         }
         const auto now = SDL_GetTicksNS();
@@ -683,7 +816,7 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
         for (unsigned tick = 0; tick < ticks; ++tick) {
             const auto before = game.scene;
             game.tick(held);
-            if (before == Scene::Ending && game.scene == Scene::Title) selected = std::min(game.unlocked, 5);
+            if (before == Scene::Ending && game.scene == Scene::Title) menu.focus = 0;
         }
         updateAudio(media.audio, game);
         const auto code = game.exportSave();
@@ -696,7 +829,7 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
             if (file) fs::rename(temporary, savePath, error);
             if (file && !error) saved = code;
         }
-        draw(media, game, selected, touch.visible, status);
+        draw(media, game, menu, touch.visible, status);
         const auto spent = SDL_GetTicksNS() - frameStart;
         if (spent < renderFrameBudget) SDL_DelayNS(renderFrameBudget - spent);
     }
