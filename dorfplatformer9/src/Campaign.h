@@ -97,7 +97,8 @@ private:
     Point pipeExit;
     bool downWasHeld = false;
     bool jumpWasHeld = false;
-    double jumpTicks = 0;
+    int jumpHoldTicks = 0;
+    int bounceProtectionTicks = 0;
     int clearNext = 0;
 
     void spawn();
@@ -108,6 +109,7 @@ private:
     void interact(Controls controls);
     void updateActors();
     void updateDragon();
+    void bounce(int protectionTicks);
     void damage();
     void die();
     void finish(int next);

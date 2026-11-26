@@ -385,7 +385,8 @@ Controls controls(const InputSystem& pads, const Touch& touch) {
     const auto fingers = touch.controls();
     const float move = float(keys[SDL_SCANCODE_RIGHT] || keys[SDL_SCANCODE_D]) -
                        float(keys[SDL_SCANCODE_LEFT] || keys[SDL_SCANCODE_A]);
-    return {std::clamp(move + pads.gameplayMoveX() + fingers.move, -1.0f, 1.0f),
+    const float padMove = pads.gameplayMoveX();
+    return {padMove != 0 ? padMove : std::clamp(move + fingers.move, -1.0f, 1.0f),
             keys[SDL_SCANCODE_UP] || keys[SDL_SCANCODE_W] || keys[SDL_SCANCODE_SPACE] ||
               pads.gameplayJumpHeld() || fingers.jump,
             keys[SDL_SCANCODE_DOWN] || keys[SDL_SCANCODE_S] || pads.gameplayDownHeld() || fingers.down};

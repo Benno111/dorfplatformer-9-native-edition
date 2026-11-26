@@ -136,7 +136,8 @@ void Campaign::spawn() {
     crouched = false;
     invincible = 0;
     walkFrame = 0;
-    jumpTicks = 0;
+    jumpHoldTicks = 0;
+    bounceProtectionTicks = 0;
     dragonPhase = 0;
     dragonHealth = 0;
     dragonGrace = 0;
@@ -172,8 +173,16 @@ void Campaign::move(Point& point, double& speed, bool horizontal, double halfWid
     }
 }
 
+void Campaign::bounce(int protectionTicks) {
+    velocity.y = 32;
+    grounded = false;
+    jumpHoldTicks = 0;
+    bounceProtectionTicks = protectionTicks;
+    sounds.push_back(Sound::Stomp);
+}
+
 void Campaign::damage() {
-    if (invincible > 0 || special) return;
+    if (invincible > 0 || bounceProtectionTicks > 0 || special) return;
     if (power == Power::Small) {
         die();
         return;
@@ -240,13 +249,11 @@ void Campaign::updateActors() {
             continue;
         }
         if (!near({player.x, player.y + 10}, {actor.position.x, actor.position.y + 13}, 23, 25)) continue;
-        if ((player.y > actor.position.y + 12 && velocity.y < 0) || special) {
+        if ((player.y > actor.position.y + 12 && velocity.y < 0) || bounceProtectionTicks > 0 || special) {
             if (actor.cooldown > 0) continue;
             --actor.health;
             actor.cooldown = actor.type == 15 ? 0.5 : 0.22;
-            velocity.y = 32;
-            grounded = false;
-            sounds.push_back(Sound::Stomp);
+            bounce(actor.type == 24 ? 14 : 15);
         } else {
             damage();
             if (scene == Scene::Death) return;
@@ -278,11 +285,9 @@ void Campaign::updateDragon() {
         if (!strong) damage();
     } else if (stomp || special) {
         dragonHealth -= special ? 3 : 1;
-        velocity.y = 32;
-        grounded = false;
+        bounce(15);
         dragonGrace = 0.25;
-        sounds.push_back(Sound::Stomp);
-    } else if (invincible == 0) {
+    } else if (invincible == 0 && bounceProtectionTicks == 0) {
         dragonHealth -= 1;
         damage();
         dragonGrace = 0.75;
@@ -317,7 +322,8 @@ void Campaign::tick(Controls controls) {
         velocity = {};
         camera = std::max(0.0, player.x);
         grounded = false;
-        jumpTicks = 0;
+        jumpHoldTicks = 0;
+        bounceProtectionTicks = 0;
         resetActors();
         downWasHeld = true;
         changeScene(Scene::Play);
@@ -357,35 +363,48 @@ void Campaign::tick(Controls controls) {
         return;
     }
     invincible = std::max(0.0, invincible - tickSeconds);
-    if (jumpWasHeld && jumpTicks > 0 && jumpTicks < 9) {
+    if (bounceProtectionTicks > 0) --bounceProtectionTicks;
+    // The original applies the held jump from the previous tick before reading
+    // movement for this tick. A press starts its hold on downward contact.
+    if (jumpHoldTicks > 0 && jumpWasHeld && jumpHoldTicks < 8) {
         velocity.y = 14 / 0.77;
-        ++jumpTicks;
+        ++jumpHoldTicks;
     }
-    if (!controls.jump) jumpTicks = 0;
-    jumpWasHeld = controls.jump;
-    const bool wantsCrouch = controls.down && power != Power::Small && theme() != 4;
+    if (!jumpWasHeld) jumpHoldTicks = 0;
+    const int currentTheme = theme();
+    const bool wantsCrouch = controls.down && power != Power::Small && currentTheme != 4;
     const bool needsClearance = crouched && blocked({
         player.x - 10, player.x + 10, player.y, player.y + playerHeight(power, false)
     });
     crouched = wantsCrouch || needsClearance;
-    if (crouched) controls.move = 0;
+    if (crouched) {
+        controls.move = 0;
+        controls.jump = false;
+    }
+    jumpWasHeld = controls.jump;
     const double height = playerHeight(power, crouched);
     const double width = power == Power::Small ? 5.0 : 10.0;
 
-    velocity.y = std::max(-38.0, velocity.y - (theme() == 3 ? 1.0 : 1.96));
-    if (theme() == 4) velocity.y = controls.jump ? 4 : std::max(-4.0, velocity.y);
+    if (player.x < -240) {
+        player.x = -220;
+        velocity.x = 18;
+    }
+    velocity.y -= currentTheme == 3 ? 1.0 : 1.96;
+    if (currentTheme == 4) velocity.y = controls.jump ? 4 : std::max(-4.0, velocity.y);
+    const bool rising = velocity.y > 0;
     grounded = false;
     move(player, velocity.y, false, width, height);
-    if (grounded && controls.jump && !crouched && theme() != 4) {
-        jumpTicks = 1;
-        sounds.push_back(Sound::Jump);
+    if (grounded) {
+        jumpHoldTicks = controls.jump && currentTheme != 4 ? 1 : 0;
+        if (jumpHoldTicks != 0) sounds.push_back(Sound::Jump);
+    } else if (rising && velocity.y == 0) {
+        jumpHoldTicks = 0;
     }
-    velocity.x = 0.8 * velocity.x + 4 * controls.move;
+    velocity.x = (velocity.x / 2.5 + 2 * controls.move) * 2;
     if (controls.move != 0) facing = controls.move < 0 ? -1 : 1;
     move(player, velocity.x, true, width, height);
     const double motion = std::abs(std::round(velocity.x));
     walkFrame = motion == 0 ? 0 : std::fmod(walkFrame + motion / 6, 5.0);
-    player.x = std::max(-220.0, player.x);
     if (player.y - upper < -300) {
         die();
         return;
@@ -451,6 +470,39 @@ bool checkCampaign(const Levels& levels) {
     for (const auto fps : {15u, 30u, 75u, 120u, 144u, 240u}) {
         if (simulate(fps) != baseline) return false;
     }
+
+    Levels movementLevels = levels;
+    movementLevels[0].objects = {{{40, 0}, 15}, {{0, 12}, 7}};
+    Campaign movement(movementLevels);
+    movement.start();
+    movement.scene = Scene::Play;
+    movement.player = {40, 20};
+    movement.velocity.y = -2;
+    movement.tick({});
+    if (movement.velocity.y != 32 || movement.actors.front().health != 0) return false;
+    for (int tick = 1; tick <= 15; ++tick) {
+        movement.player = {0, 0};
+        movement.velocity = {};
+        movement.tick({});
+        const auto expectedPower = tick < 15 ? Power::Full : Power::Big;
+        if (movement.power != expectedPower) return false;
+    }
+
+    movementLevels[0].objects = {{{0, -18}, 29}};
+    const auto jumpHeight = [&](bool holdJump) {
+        Campaign jumper(movementLevels);
+        jumper.collision[29].push_back({-18, 18, -18, 18});
+        jumper.start();
+        jumper.scene = Scene::Play;
+        jumper.player = {0, 0};
+        double apex = 0;
+        for (int tick = 0; tick < 30; ++tick) {
+            jumper.tick({0, holdJump || tick == 0, false});
+            apex = std::max(apex, jumper.player.y);
+        }
+        return apex;
+    };
+    if (jumpHeight(false) != 74 || jumpHeight(true) != 170) return false;
 
     Campaign game(levels);
     Campaign travel(levels);
