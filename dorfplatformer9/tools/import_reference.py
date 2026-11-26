@@ -23,8 +23,8 @@ def import_reference(samples, output):
     costumes = {
         "tile": ("Levels", range(2, 31)),
         "sky": ("Stage", range(1, 8)),
-        "player": ("Player body", range(1, 11)),
-        "enemy": ("Enemy", (2, 3, 6, 7)),
+        "player": ("Player body", (1, 2, 3, 4, 5, 7, 8, 9, 10)),
+        "enemy": ("Enemy", (2, 6, 7, 8, 9, 10)),
         "guard": ("Boss", range(1, 4)),
         "dragon": ("Dragon", range(1, 5)),
         "flag": ("fane", (1,)),

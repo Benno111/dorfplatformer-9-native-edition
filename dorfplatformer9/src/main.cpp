@@ -1,6 +1,6 @@
 #include "Campaign.h"
 #include "InputSystem.h"
-#include "SimulationTiming.h"
+#include "SimulationClock.h"
 
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
@@ -18,7 +18,6 @@ namespace {
 namespace fs = std::filesystem;
 constexpr int width = 480;
 constexpr int height = 360;
-constexpr double fixedStep = 1.0 / 60;
 using Key = std::pair<std::string, int>;
 
 template<class T, auto destroy>
@@ -263,14 +262,19 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
             break;
         }
     }
-    const int enemyFrames[] = {2, 3, 6, 7};
     for (const auto& actor : game.actors) {
-        if (actor.health <= 0 || game.theme() == 4 || std::abs(actor.position.x - game.camera) > 320) continue;
+        const bool defeated = actor.health <= 0;
+        if (game.theme() == 4 || std::abs(actor.position.x - game.camera) > 320 ||
+            (defeated && (actor.type == 24 || actor.cooldown <= 0))) continue;
         const auto x = xMid + static_cast<float>(actor.position.x);
         const auto y = yMid - static_cast<float>(actor.position.y) - 13;
         const auto frame = static_cast<int>(game.elapsed * 10);
         if (actor.type == 24) media.sprite({"guard", frame % 3 + 1}, x, y, 0.4f, actor.direction < 0);
-        else media.sprite({"enemy", enemyFrames[frame % 4]}, x, y, 0.48f);
+        else {
+            // Ball_1 is the live costume. Ball_3 through Ball_7 are the defeat sequence.
+            const int costume = defeated ? 6 + std::clamp(static_cast<int>((0.5 - actor.cooldown) * 10), 0, 4) : 2;
+            media.sprite({"enemy", costume}, x, y, 0.6f);
+        }
     }
     if (game.dragonActive()) {
         media.sprite({"dragon", 1 + static_cast<int>(game.dragonTime * 7) % 3},
@@ -289,9 +293,9 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
     } else if (game.invincible == 0 || static_cast<int>(game.invincible * 30) % 2 == 0) {
         const int frame = game.theme() == 4 ? 9 + static_cast<int>(game.elapsed * 6) % 2 :
                           game.crouched ? 8 : !game.grounded ? 7 :
-                          game.velocity.x == 0 ? 1 : 1 + static_cast<int>(game.walkFrame) % 6;
-        media.sprite({"player", frame}, playerX, playerY - (small ? 10 : game.crouched ? 15 : 23),
-                     playerScale, game.facing < 0);
+                          std::round(game.velocity.x) == 0 ? 1 : 1 + static_cast<int>(game.walkFrame) % 5;
+        const float pivotLift = 11.875f * (playerScale / 0.25f) - 1.0f - (game.crouched ? 7.0f : 0.0f);
+        media.sprite({"player", frame}, playerX, playerY - pivotLift, playerScale, game.facing < 0);
     }
     if (game.darkness() > 0) {
         fill(renderer, {0, 0, width, height}, {8, 12, 47, static_cast<Uint8>(game.darkness() * 146)});
@@ -382,7 +386,7 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
     if (!created || !SDL_SetRenderLogicalPresentation(renderer, width, height, SDL_LOGICAL_PRESENTATION_LETTERBOX)) {
         throw std::runtime_error(SDL_GetError());
     }
-    SDL_SetRenderVSync(renderer, 1);
+    const bool vsync = SDL_SetRenderVSync(renderer, 1);
     SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
     Media media(renderer);
     media.load(root, game);
@@ -423,7 +427,7 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
     bool running = true;
     SDL_SetHint(SDL_HINT_TOUCH_MOUSE_EVENTS, "0");
     auto previous = SDL_GetTicksNS();
-    double accumulator = 0;
+    SimulationClock simulation;
     while (running) {
         const auto frameStart = SDL_GetTicksNS();
         SDL_Event event;
@@ -478,14 +482,13 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
             }
         }
         const auto now = SDL_GetTicksNS();
-        accumulator += GameplayDeltaTime((now - previous) / 1e9);
+        const auto ticks = simulation.advance(now - previous);
         previous = now;
         const auto held = controls(pads, touch);
-        while (accumulator >= fixedStep) {
+        for (unsigned tick = 0; tick < ticks; ++tick) {
             const auto before = game.scene;
             game.tick(held);
             if (before == Scene::Ending && game.scene == Scene::Title) selected = std::min(game.unlocked, 5);
-            accumulator -= fixedStep;
         }
         updateAudio(media.audio, game);
         const auto code = game.exportSave();
@@ -499,8 +502,11 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
             if (file && !error) saved = code;
         }
         draw(media, game, selected, touch.visible, status);
-        const auto spent = SDL_GetTicksNS() - frameStart;
-        if (spent < 15'000'000) SDL_DelayNS(15'000'000 - spent);
+        if (!vsync) {
+            constexpr auto frameBudget = SimulationClock::nanosecondsPerSecond / SimulationClock::ticksPerSecond;
+            const auto spent = SDL_GetTicksNS() - frameStart;
+            if (spent < frameBudget) SDL_DelayNS(frameBudget - spent);
+        }
     }
     return 0;
 }

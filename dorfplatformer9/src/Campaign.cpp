@@ -1,4 +1,5 @@
 #include "Campaign.h"
+#include "SimulationClock.h"
 
 #include <algorithm>
 #include <charconv>
@@ -9,7 +10,7 @@
 #include <stdexcept>
 
 namespace {
-constexpr double tickSeconds = 1.0 / 60;
+constexpr double tickSeconds = SimulationClock::tickSeconds;
 constexpr double clockStep = 0.0513;
 constexpr double daylightLength = 1320 * clockStep;
 constexpr double sunset = 100 * clockStep;
@@ -226,19 +227,23 @@ void Campaign::interact(Controls controls) {
 void Campaign::updateActors() {
     if (theme() == 4) return;
     for (auto& actor : actors) {
-        if (actor.health <= 0 || std::abs(actor.position.x - camera) > 345) continue;
         actor.cooldown = std::max(0.0, actor.cooldown - tickSeconds);
+        if (actor.health <= 0 || std::abs(actor.position.x - camera) > 345) continue;
         actor.velocityY = std::max(-22.0, actor.velocityY - 1.96);
         move(actor.position, actor.velocityY, false, 10, 23);
         double walk = actor.direction * (actor.type == 24 ? 3.0 : 2.0);
         move(actor.position, walk, true, 10, 23);
         if (walk == 0) actor.direction *= -1;
-        if (actor.position.y < upper - 300) actor.health = 0;
+        if (actor.position.y < upper - 300) {
+            actor.health = 0;
+            actor.cooldown = 0;
+            continue;
+        }
         if (!near({player.x, player.y + 10}, {actor.position.x, actor.position.y + 13}, 23, 25)) continue;
         if ((player.y > actor.position.y + 12 && velocity.y < 0) || special) {
             if (actor.cooldown > 0) continue;
             --actor.health;
-            actor.cooldown = 0.22;
+            actor.cooldown = actor.type == 15 ? 0.5 : 0.22;
             velocity.y = 32;
             grounded = false;
             sounds.push_back(Sound::Stomp);
@@ -378,7 +383,8 @@ void Campaign::tick(Controls controls) {
     velocity.x = 0.8 * velocity.x + 4 * controls.move;
     if (controls.move != 0) facing = controls.move < 0 ? -1 : 1;
     move(player, velocity.x, true, width, height);
-    walkFrame += std::abs(std::round(velocity.x)) / 6;
+    const double motion = std::abs(std::round(velocity.x));
+    walkFrame = motion == 0 ? 0 : std::fmod(walkFrame + motion / 6, 5.0);
     player.x = std::max(-220.0, player.x);
     if (player.y - upper < -300) {
         die();
@@ -420,6 +426,32 @@ std::string Campaign::exportSave() const {
 }
 
 bool checkCampaign(const Levels& levels) {
+    const auto simulate = [&](unsigned fps) {
+        Campaign sample(levels);
+        sample.start();
+        sample.scene = Scene::Play;
+        sample.collision[29].push_back({-18, 18, -18, 18});
+        SimulationClock clock;
+        std::uint64_t previous = 0;
+        unsigned totalTicks = 0;
+        for (unsigned frame = 1; frame <= 2 * fps; ++frame) {
+            const auto now = frame * SimulationClock::nanosecondsPerSecond / fps;
+            const auto ticks = clock.advance(now - previous);
+            previous = now;
+            for (unsigned tick = 0; tick < ticks; ++tick) {
+                sample.tick({totalTicks < 30 ? 0.0f : 1.0f, totalTicks >= 30 && totalTicks < 42, false});
+                ++totalTicks;
+            }
+        }
+        return std::array<double, 5>{double(totalTicks), sample.player.x, sample.player.y,
+                                      sample.worldTime, sample.elapsed};
+    };
+    const auto baseline = simulate(60);
+    if (baseline[0] != 120 || baseline[1] <= -100) return false;
+    for (const auto fps : {15u, 30u, 75u, 120u, 144u, 240u}) {
+        if (simulate(fps) != baseline) return false;
+    }
+
     Campaign game(levels);
     Campaign travel(levels);
     travel.collision[16].push_back({-33, 33, -18, 18});
