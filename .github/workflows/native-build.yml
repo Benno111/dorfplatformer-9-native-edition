@@ -103,7 +103,11 @@ jobs:
       - name: Check out SDL and build universal APK
         run: |
           git clone --depth 1 --branch release-3.4.0 https://github.com/libsdl-org/SDL.git "$RUNNER_TEMP/SDL"
-          gradle --project-dir dorfplatformer9/android "-PsdlSource=$RUNNER_TEMP/SDL" :app:assembleDebug :app:assembleRelease
+          git clone --depth 1 --branch release-3.4.0 https://github.com/libsdl-org/SDL_image.git "$RUNNER_TEMP/SDL_image"
+          git clone --depth 1 --branch release-3.2.0 https://github.com/libsdl-org/SDL_mixer.git "$RUNNER_TEMP/SDL_mixer"
+          gradle --project-dir dorfplatformer9/android "-PsdlSource=$RUNNER_TEMP/SDL" \
+            "-PsdlImageSource=$RUNNER_TEMP/SDL_image" "-PsdlMixerSource=$RUNNER_TEMP/SDL_mixer" \
+            :app:assembleDebug :app:assembleRelease
       - name: Verify APK contents
         run: |
           python3 - <<'PY'

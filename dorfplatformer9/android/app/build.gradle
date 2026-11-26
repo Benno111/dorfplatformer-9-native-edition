@@ -1,3 +1,8 @@
+import org.gradle.api.file.ConfigurableFileCollection
+import org.gradle.api.file.DirectoryProperty
+import org.gradle.process.ExecOperations
+import javax.inject.Inject
+
 plugins {
     id 'com.android.application' version '8.11.1'
 }
@@ -13,18 +18,41 @@ if (!new File(sdlJava, 'org/libsdl/app/SDLActivity.java').isFile()) {
 }
 
 def port = rootProject.projectDir.parentFile
-def samples = new File(port.parentFile, 'samples')
-def importer = new File(port, 'tools/import_reference.py')
-def assetRoot = layout.buildDirectory.dir('generated/dorfAssets')
-def importAssets = tasks.register('importCampaignAssets', Exec) {
-    inputs.file(importer)
-    inputs.files(fileTree(samples) {
-        include 'source/project.json', 'documentation/port_reference/levels.json'
-        include 'assets/images/**', 'assets/audio/**'
-    })
-    outputs.dir(assetRoot)
-    commandLine(providers.gradleProperty('python').getOrElse('python3'), importer,
-                samples, assetRoot.get().dir('assets').asFile)
+def sampleRoot = new File(port.parentFile, 'samples')
+def importerScript = new File(port, 'tools/import_reference.py')
+abstract class ImportCampaignAssets extends DefaultTask {
+    @InputFiles
+    @PathSensitive(PathSensitivity.RELATIVE)
+    abstract ConfigurableFileCollection getReferenceFiles()
+
+    @InputFile
+    @PathSensitive(PathSensitivity.RELATIVE)
+    abstract RegularFileProperty getImporter()
+
+    @Internal
+    abstract DirectoryProperty getSamples()
+
+    @Input
+    abstract Property<String> getPython()
+
+    @OutputDirectory
+    abstract DirectoryProperty getOutputDirectory()
+
+    @Inject
+    abstract ExecOperations getExecOperations()
+
+    @TaskAction
+    void generate() {
+        execOperations.exec {
+            commandLine python.get(), importer.get().asFile, samples.get().asFile,
+                        outputDirectory.dir('assets').get().asFile
+        }
+    }
+}
+
+def dependencyArguments = ['SDL3_IMAGE': 'sdlImageSource', 'SDL3_MIXER': 'sdlMixerSource'].collectMany { name, property ->
+    def source = providers.gradleProperty(property).orNull
+    source ? ["-DFETCHCONTENT_SOURCE_DIR_${name}=${rootProject.file(source).absolutePath}"] : []
 }
 
 android {
@@ -46,6 +74,7 @@ android {
                 arguments '-DDORF_FETCH_SDL=ON',
                           "-DFETCHCONTENT_SOURCE_DIR_SDL3=${sdl.absolutePath}",
                           '-DANDROID_STL=c++_static'
+                arguments.addAll(dependencyArguments)
                 targets 'dorfplatformer9'
             }
         }
@@ -60,7 +89,6 @@ android {
 
     sourceSets.main {
         java.srcDir sdlJava
-        assets.srcDir assetRoot
     }
     buildTypes.release {
         // A release key can be supplied by the packaging environment.
@@ -75,8 +103,17 @@ android {
     }
 }
 
-tasks.configureEach {
-    if (name.startsWith('merge') && name.endsWith('Assets')) {
-        dependsOn importAssets
+androidComponents {
+    onVariants(selector().all()) { variant ->
+        def importAssets = tasks.register("import${variant.name.capitalize()}CampaignAssets", ImportCampaignAssets) {
+            importer.set(importerScript)
+            samples.set(sampleRoot)
+            python.set(providers.gradleProperty('python').getOrElse('python3'))
+            referenceFiles.from(fileTree(sampleRoot) {
+                include 'source/project.json', 'documentation/port_reference/levels.json'
+                include 'assets/images/**', 'assets/audio/**'
+            })
+        }
+        variant.sources.assets.addGeneratedSourceDirectory(importAssets) { task -> task.outputDirectory }
     }
 }
