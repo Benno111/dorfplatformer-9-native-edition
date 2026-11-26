@@ -98,6 +98,7 @@ private:
     bool downWasHeld = false;
     bool jumpWasHeld = false;
     int jumpHoldTicks = 0;
+    unsigned playerMovementPhase = 0;
     int bounceProtectionTicks = 0;
     int clearNext = 0;
 
@@ -107,6 +108,7 @@ private:
     void move(Point& point, double& speed, bool horizontal, double halfWidth, double height);
     bool blocked(const Box& bounds) const;
     void interact(Controls controls);
+    void updatePlayer(Controls controls);
     void updateActors();
     void updateDragon();
     void bounce(int protectionTicks);

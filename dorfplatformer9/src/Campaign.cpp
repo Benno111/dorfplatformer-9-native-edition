@@ -137,6 +137,7 @@ void Campaign::spawn() {
     invincible = 0;
     walkFrame = 0;
     jumpHoldTicks = 0;
+    playerMovementPhase = 0;
     bounceProtectionTicks = 0;
     dragonPhase = 0;
     dragonHealth = 0;
@@ -302,68 +303,7 @@ void Campaign::updateDragon() {
     }
 }
 
-void Campaign::tick(Controls controls) {
-    if (paused || scene == Scene::Title) return;
-    elapsed += tickSeconds;
-    switch (scene) {
-    case Scene::Title: return;
-    case Scene::Intro:
-        if (elapsed >= 1.2) changeScene(Scene::Play);
-        return;
-    case Scene::Pipe:
-        if (elapsed < 0.75) return;
-        if (pipeExit.x > 1e15) {
-            worldTime = 2 * dayLength + dawnLength;
-            finish(5);
-            return;
-        }
-        upper = pipeExit.y > 400 ? 1100 : 0;
-        player = {pipeExit.x, pipeExit.y + 24};
-        velocity = {};
-        camera = std::max(0.0, player.x);
-        grounded = false;
-        jumpHoldTicks = 0;
-        bounceProtectionTicks = 0;
-        resetActors();
-        downWasHeld = true;
-        changeScene(Scene::Play);
-        return;
-    case Scene::Death:
-        if (elapsed >= 1.15) {
-            power = Power::Big;
-            special = false;
-            spawn();
-            changeScene(Scene::Play);
-        }
-        return;
-    case Scene::Clear:
-        if (elapsed < 2) return;
-        if (levelIndex == 3 && special) worldTime = -6;
-        special = false;
-        if (clearNext == 6) {
-            changeScene(Scene::Ending);
-        } else {
-            levelIndex = clearNext;
-            spawn();
-            changeScene(Scene::Play);
-        }
-        return;
-    case Scene::Ending:
-        if (elapsed >= 200 * tickSeconds + 1) changeScene(Scene::Title);
-        return;
-    case Scene::Expired:
-        return;
-    case Scene::Play:
-        break;
-    }
-
-    if (!special) worldTime += tickSeconds;
-    if (worldTime >= campaignLength) {
-        changeScene(Scene::Expired);
-        return;
-    }
-    invincible = std::max(0.0, invincible - tickSeconds);
-    if (bounceProtectionTicks > 0) --bounceProtectionTicks;
+void Campaign::updatePlayer(Controls controls) {
     // The original applies the held jump from the previous tick before reading
     // movement for this tick. A press starts its hold on downward contact.
     if (jumpHoldTicks > 0 && jumpWasHeld && jumpHoldTicks < 8) {
@@ -405,6 +345,75 @@ void Campaign::tick(Controls controls) {
     move(player, velocity.x, true, width, height);
     const double motion = std::abs(std::round(velocity.x));
     walkFrame = motion == 0 ? 0 : std::fmod(walkFrame + motion / 6, 5.0);
+}
+
+void Campaign::tick(Controls controls) {
+    if (paused || scene == Scene::Title) return;
+    elapsed += tickSeconds;
+    switch (scene) {
+    case Scene::Title: return;
+    case Scene::Intro:
+        if (elapsed >= 1.2) changeScene(Scene::Play);
+        return;
+    case Scene::Pipe:
+        if (elapsed < 0.75) return;
+        if (pipeExit.x > 1e15) {
+            worldTime = 2 * dayLength + dawnLength;
+            finish(5);
+            return;
+        }
+        upper = pipeExit.y > 400 ? 1100 : 0;
+        player = {pipeExit.x, pipeExit.y + 24};
+        velocity = {};
+        camera = std::max(0.0, player.x);
+        grounded = false;
+        jumpHoldTicks = 0;
+        playerMovementPhase = 0;
+        bounceProtectionTicks = 0;
+        resetActors();
+        downWasHeld = true;
+        changeScene(Scene::Play);
+        return;
+    case Scene::Death:
+        if (elapsed >= 1.15) {
+            power = Power::Big;
+            special = false;
+            spawn();
+            changeScene(Scene::Play);
+        }
+        return;
+    case Scene::Clear:
+        if (elapsed < 2) return;
+        if (levelIndex == 3 && special) worldTime = -6;
+        special = false;
+        if (clearNext == 6) {
+            changeScene(Scene::Ending);
+        } else {
+            levelIndex = clearNext;
+            spawn();
+            changeScene(Scene::Play);
+        }
+        return;
+    case Scene::Ending:
+        if (elapsed >= 200 * tickSeconds + 1) changeScene(Scene::Title);
+        return;
+    case Scene::Expired:
+        return;
+    case Scene::Play:
+        break;
+    }
+
+    if (!special) worldTime += tickSeconds;
+    if (worldTime >= campaignLength) {
+        changeScene(Scene::Expired);
+        return;
+    }
+    invincible = std::max(0.0, invincible - tickSeconds);
+    if (bounceProtectionTicks > 0) --bounceProtectionTicks;
+    // Run movement at 30 Hz to preserve the per-step jump arc at a slower pace.
+    // Contact protection and campaign timers still use the 60 Hz simulation clock.
+    if (playerMovementPhase == 0) updatePlayer(controls);
+    playerMovementPhase = (playerMovementPhase + 1) % (SimulationClock::ticksPerSecond / 30);
     if (player.y - upper < -300) {
         die();
         return;
@@ -496,12 +505,24 @@ bool checkCampaign(const Levels& levels) {
         jumper.scene = Scene::Play;
         jumper.player = {0, 0};
         double apex = 0;
-        for (int tick = 0; tick < 30; ++tick) {
+        for (int tick = 0; tick < 60; ++tick) {
             jumper.tick({0, holdJump || tick == 0, false});
             apex = std::max(apex, jumper.player.y);
         }
         return apex;
     };
+    movementLevels[0].objects.clear();
+    Campaign walking(movementLevels);
+    walking.start();
+    walking.scene = Scene::Play;
+    walking.tick({1, false, false});
+    const double firstX = walking.player.x;
+    walking.tick({1, false, false});
+    if (firstX != -96 || walking.player.x != firstX) return false;
+    walking.tick({1, false, false});
+    if (walking.player.x != -89) return false;
+    movementLevels[0].objects = {{{0, -18}, 29}};
+
     if (jumpHeight(false) != 74 || jumpHeight(true) != 170) return false;
 
     Campaign game(levels);
