@@ -56,7 +56,8 @@ Levels loadLevels(const std::filesystem::path& path) {
         auto& level = levels[i];
         std::size_t count = 0;
         if (!(input >> level.name >> level.theme >> level.upperTheme >> count) ||
-            level.name != "1-" + std::to_string(i + 1) || count == 0 || count > 100000) {
+            level.name != "1-" + std::to_string(i + 1) || count == 0 || count > 100000 ||
+            level.theme < 1 || level.theme > 6 || level.upperTheme < 1 || level.upperTheme > 6) {
             throw std::runtime_error("Invalid campaign level header in " + path.string());
         }
         level.objects.resize(count);
@@ -88,6 +89,14 @@ int Campaign::theme() const {
     return upper == 0 ? level().theme : level().upperTheme;
 }
 
+Point Campaign::exitPosition() const {
+    const auto& objects = level().objects;
+    const auto exit = std::find_if(objects.begin(), objects.end(), [](const Object& object) {
+        return object.type == 19;
+    });
+    return exit == objects.end() ? Point{1500, double(upper)} : exit->position;
+}
+
 float Campaign::darkness() const {
     const double start = (day() - 1) * (dayLength + dawnLength);
     const double localTime = worldTime - start;
@@ -98,7 +107,9 @@ float Campaign::darkness() const {
 }
 
 bool Campaign::night() const {
-    return darkness() >= 0.5f;
+    const double start = (day() - 1) * (dayLength + dawnLength);
+    const double localTime = worldTime - start;
+    return (day() > 1 && localTime < 0) || localTime >= daylightLength;
 }
 
 void Campaign::changeScene(Scene next) {
@@ -217,16 +228,18 @@ void Campaign::finish(int next) {
 void Campaign::interact(Controls controls) {
     const auto& objects = level().objects;
     const Point body{player.x, player.y + playerHeight(power, crouched) / 2};
+    const auto exit = exitPosition();
+    const double halfWidth = power == Power::Small ? 5 : 10;
+    const Box bodyBounds{player.x - halfWidth, player.x + halfWidth, player.y,
+                         player.y + playerHeight(power, crouched)};
+    if (!dragonActive() && (exit.y > 400) == (upper != 0) &&
+        overlaps(bodyBounds, exitBounds, exit)) {
+        finish(levelIndex + 1);
+        return;
+    }
     for (std::size_t i = 0; i < objects.size(); ++i) {
         const auto& object = objects[i];
         const int type = object.type;
-        if (type == 19 && !dragonActive()) {
-            if (near(body, {object.position.x, object.position.y + 22}, 23, 44) ||
-                near(body, {object.position.x, object.position.y + 250}, 23, 34)) {
-                finish(levelIndex + 1);
-                return;
-            }
-        }
         if (type == 16 && controls.down && !downWasHeld && grounded &&
             (levelIndex != 5 || day() > 1) &&
             near(player, {object.position.x, object.position.y + 19}, 38, 26)) {
@@ -673,7 +686,18 @@ bool checkCampaign(const Levels& levels) {
         }
         game.start(index);
         game.scene = Scene::Play;
-        game.player = {goal->position.x, goal->position.y + 18};
+        game.player = {goal->position.x, goal->position.y + 250};
+        game.upper = goal->position.y > 400 ? 1100 : 0;
+        if (index == 5) game.dragonPhase = 4;
+        game.tick({});
+        if (game.scene != Scene::Play) return false;
+        game.upper = game.upper == 0 ? 1100 : 0;
+        if (game.upper == 0) {
+            game.player = {goal->position.x, goal->position.y + 65};
+            game.tick({});
+            if (game.scene != Scene::Play) return false;
+        }
+        game.player = {goal->position.x, goal->position.y + 65};
         game.upper = goal->position.y > 400 ? 1100 : 0;
         if (index == 5) game.dragonPhase = 4;
         game.tick({});
@@ -688,7 +712,7 @@ bool checkCampaign(const Levels& levels) {
     game.specialRemaining = invincibilityDuration;
     game.worldTime = 70;
     for (const auto& object : game.level().objects) {
-        if (object.type == 19) game.player = {object.position.x, object.position.y + 18};
+        if (object.type == 19) game.player = {object.position.x, object.position.y + 65};
     }
     game.tick({});
     if (game.scene != Scene::Clear || game.unlocked != 6) return false;

@@ -55,22 +55,30 @@ SDL_Color shiftHue(Uint8 red, Uint8 green, Uint8 blue, Uint8 alpha, int effect) 
 
 struct Audio {
     Owned<MIX_Mixer, MIX_DestroyMixer> mixer{nullptr, MIX_DestroyMixer};
-    Owned<MIX_Track, MIX_DestroyTrack> music{nullptr, MIX_DestroyTrack};
+    struct MusicTrack {
+        Owned<MIX_Track, MIX_DestroyTrack> track{nullptr, MIX_DestroyTrack};
+        Key current;
+        float gain = -1;
+        float frequency = 1;
+    };
+
+    MusicTrack dayMusic;
+    MusicTrack nightMusic;
     std::map<Key, Owned<MIX_Audio, MIX_DestroyAudio>> clips;
-    Key current;
 
     Audio() {
         if (MIX_Init()) {
             mixer.reset(MIX_CreateMixerDevice(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, nullptr));
             if (mixer) {
-                music.reset(MIX_CreateTrack(mixer.get()));
-                if (music) MIX_SetTrackGain(music.get(), 0.25f);
+                dayMusic.track.reset(MIX_CreateTrack(mixer.get()));
+                nightMusic.track.reset(MIX_CreateTrack(mixer.get()));
             }
         }
     }
 
     ~Audio() {
-        music.reset();
+        dayMusic.track.reset();
+        nightMusic.track.reset();
         clips.clear();
         mixer.reset();
         MIX_Quit();
@@ -85,16 +93,26 @@ struct Audio {
         if (auto* clip = get(key)) MIX_PlayAudio(mixer.get(), clip);
     }
 
-    void loop(const Key& key) {
-        if (!music || key == current) return;
-        current = key;
-        MIX_StopTrack(music.get(), 0);
+    void loop(MusicTrack& music, const Key& key, float gain, float frequency = 1) {
+        auto* track = music.track.get();
+        if (!track) return;
+        if (gain != music.gain) {
+            MIX_SetTrackGain(track, gain);
+            music.gain = gain;
+        }
+        if (frequency != music.frequency) {
+            MIX_SetTrackFrequencyRatio(track, frequency);
+            music.frequency = frequency;
+        }
+        if (key == music.current) return;
+        music.current = key;
+        MIX_StopTrack(track, 0);
         auto* clip = get(key);
-        if (!clip || !MIX_SetTrackAudio(music.get(), clip)) return;
+        if (!clip || !MIX_SetTrackAudio(track, clip)) return;
         const auto options = SDL_CreateProperties();
         if (options) {
             SDL_SetNumberProperty(options, MIX_PROP_PLAY_LOOPS_NUMBER, -1);
-            MIX_PlayTrack(music.get(), options);
+            MIX_PlayTrack(track, options);
             SDL_DestroyProperties(options);
         }
     }
@@ -309,10 +327,7 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
         const auto x = xMid + static_cast<float>(object.position.x);
         const auto y = yMid - static_cast<float>(object.position.y);
         switch (object.type) {
-        case 1: case 15: case 24: case 25: break;
-        case 19:
-            media.sprite({"flag", 1}, x, y, 0.6f);
-            break;
+        case 1: case 15: case 19: case 24: case 25: break;
         case 6:
             if (!game.collected[i]) media.sprite({"tile", 6}, x, y, 0.5f);
             break;
@@ -320,6 +335,13 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
             media.sprite({"tile", object.type}, x, y - (object.type == 16 ? 3 : 0), 0.5f);
             break;
         }
+    }
+    const Point exit = game.exitPosition();
+    if ((exit.y > 400) == (game.upper != 0) && std::abs(exit.x - game.camera) < 280) {
+        const auto x = xMid + static_cast<float>(exit.x);
+        const auto y = yMid - static_cast<float>(exit.y);
+        media.sprite({"flag", 1}, x, y);
+        media.sprite({"flag_icon", 1}, x, y);
     }
     for (const auto& actor : game.actors) {
         const bool defeated = actor.health <= 0;
@@ -423,12 +445,32 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
 }
 
 void updateAudio(Audio& audio, Campaign& game) {
-    const bool terminal = game.scene == Scene::Ending || game.scene == Scene::Expired;
-    if (game.paused || terminal || game.scene == Scene::Clear || game.scene == Scene::Death) audio.loop({});
-    else if (game.scene == Scene::Title || game.scene == Scene::Intro) audio.loop({"title_sound", 3});
-    else if (game.special()) audio.loop({"day", 7});
-    else if (game.dragonActive()) audio.loop({"day", 6});
-    else audio.loop({game.night() ? "night" : "day", game.levelIndex + 1});
+    Key dayTrack, nightTrack;
+    float dayGain = 0, nightGain = 0, pitch = 1;
+    constexpr float musicVolume = 0.25f;
+    if (!game.paused && (game.scene == Scene::Title || game.scene == Scene::Intro)) {
+        dayTrack = {"title_sound", 3};
+        dayGain = musicVolume;
+    } else if (!game.paused && game.scene == Scene::Play) {
+        if (game.special()) {
+            dayTrack = {"day", 7};
+            dayGain = musicVolume;
+        } else {
+            if (game.day() == 3) pitch = std::exp2(5.0f / 120);
+            if (game.dragonActive()) {
+                nightTrack = {"night", 6};
+                nightGain = musicVolume;
+            } else {
+                const int headerTrack = game.theme();
+                dayTrack = {"day", headerTrack};
+                nightTrack = {"night", headerTrack};
+                dayGain = game.night() ? 0 : musicVolume;
+                nightGain = game.night() ? musicVolume : 0;
+            }
+        }
+    }
+    audio.loop(audio.dayMusic, dayTrack, dayGain, pitch);
+    audio.loop(audio.nightMusic, nightTrack, nightGain, pitch);
     for (const auto sound : game.sounds) {
         switch (sound) {
         case Sound::Jump: audio.play({"player_sound", game.power == Power::Small ? 2 : 3}); break;
@@ -498,6 +540,22 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
             draw(media, game, i, false, {});
             updateAudio(media.audio, game);
         }
+        // Level 2's surface and upper world use different header selectors.
+        game.start(1);
+        game.scene = Scene::Play;
+        updateAudio(media.audio, game);
+        if (media.audio.dayMusic.current != Key{"day", 1} ||
+            media.audio.nightMusic.current != Key{"night", 1} ||
+            media.audio.dayMusic.gain <= 0 || media.audio.nightMusic.gain != 0) return 1;
+        game.upper = 1100;
+        game.worldTime = 68;
+        updateAudio(media.audio, game);
+        if (media.audio.dayMusic.current != Key{"day", 2} ||
+            media.audio.nightMusic.current != Key{"night", 2} ||
+            media.audio.dayMusic.gain != 0 || media.audio.nightMusic.gain <= 0) return 1;
+        game.dragonPhase = 1;
+        updateAudio(media.audio, game);
+        if (media.audio.nightMusic.current != Key{"night", 6}) return 1;
         return 0;
     }
 

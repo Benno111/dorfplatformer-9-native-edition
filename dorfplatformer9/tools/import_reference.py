@@ -34,6 +34,7 @@ def import_reference(samples, output):
         "fireball": ("Ball", (1,)),
         "fire_button": ("Phone Controls", (5,)),
         "flag": ("fane", (1,)),
+        "flag_icon": ("fane", (1,)),
         "menu": ("Menu", (1,)),
         "ending": ("Intro/BadEnding", (1, 2)),
         "transition": ("Died/Pipie", range(1, 7)),
@@ -82,8 +83,7 @@ def import_reference(samples, output):
                                                        ("rotationCenterX", "rotationCenterY",
                                                         "bitmapResolution"))
                     embedded_png = None
-                    if (group, index) in {("player", 7), ("player_face", 9)}:
-                        # These Scratch costumes wrap a single PNG covering the entire SVG canvas.
+                    if group == "flag_icon" or (group, index) in {("player", 7), ("player_face", 9)}:
                         # SDL_image's SVG decoder cannot draw embedded raster images.
                         svg = ET.parse(source).getroot()
                         image = svg.find(".//{http://www.w3.org/2000/svg}image")
@@ -92,7 +92,18 @@ def import_reference(samples, output):
                         if prefix != "data:image/png;base64":
                             raise ValueError(f"Expected an embedded PNG in {original}")
                         embedded_png = base64.b64decode(payload, validate=True)
-                        resolution = float(image.attrib["width"]) / float(svg.attrib["width"])
+                        if group == "flag_icon":
+                            translation = re.fullmatch(r"translate\(([^,]+),([^\)]+)\)", svg[0].attrib["transform"])
+                            scaling = re.fullmatch(r"scale\(([^,]+),([^\)]+)\)", image.attrib["transform"])
+                            offset_x, offset_y = map(float, translation.groups())
+                            scale_x, scale_y = map(float, scaling.groups())
+                            if scale_x != scale_y or scale_x <= 0:
+                                raise ValueError(f"Unsupported exit icon scale in {original}")
+                            pivot_x -= offset_x + float(image.attrib["x"]) * scale_x
+                            pivot_y -= offset_y + float(image.attrib["y"]) * scale_y
+                            resolution = 1 / scale_x
+                        else:
+                            resolution = float(image.attrib["width"]) / float(svg.attrib["width"])
                         pivot_x *= resolution
                         pivot_y *= resolution
                         suffix = ".png"
