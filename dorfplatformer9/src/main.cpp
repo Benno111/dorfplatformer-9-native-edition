@@ -28,8 +28,30 @@ using Owned = std::unique_ptr<T, decltype(destroy)>;
 
 struct Image {
     Owned<SDL_Texture, SDL_DestroyTexture> texture{nullptr, SDL_DestroyTexture};
+    Owned<SDL_Surface, SDL_DestroySurface> colorSource{nullptr, SDL_DestroySurface};
+    mutable std::map<int, Owned<SDL_Texture, SDL_DestroyTexture>> colors;
     float x = 0, y = 0, w = 0, h = 0;
 };
+
+SDL_Color shiftHue(Uint8 red, Uint8 green, Uint8 blue, Uint8 alpha, int effect) {
+    const float r = red / 255.0f;
+    const float g = green / 255.0f;
+    const float b = blue / 255.0f;
+    const float value = std::max({r, g, b});
+    const float chroma = value - std::min({r, g, b});
+    float hue = 0;
+    if (chroma > 0) {
+        hue = value == r ? (g - b) / chroma :
+              value == g ? (b - r) / chroma + 2 : (r - g) / chroma + 4;
+    }
+    hue += effect * (6.0f / 200.0f);
+    const auto channel = [&](float offset) {
+        const float k = std::fmod(hue + offset + 12, 6.0f);
+        return static_cast<Uint8>(std::lround(255 * (value - chroma * std::clamp(
+            std::min(k, 4 - k), 0.0f, 1.0f))));
+    };
+    return {channel(5), channel(3), channel(1), alpha};
+}
 
 struct Audio {
     Owned<MIX_Mixer, MIX_DestroyMixer> mixer{nullptr, MIX_DestroyMixer};
@@ -171,15 +193,37 @@ struct Media {
             image.texture.reset(SDL_CreateTextureFromSurface(renderer, surface.get()));
             if (!image.texture) throw std::runtime_error(SDL_GetError());
             if (group == "tile") importMask(surface.get(), image, index, game);
+            if (group == "player") image.colorSource = std::move(surface);
             images.emplace(key, std::move(image));
         }
     }
 
-    void sprite(const Key& key, float x, float y, float scale = 1, bool flip = false) const {
+    SDL_Texture* spriteTexture(const Image& image, int color) const {
+        if (color == 0 || !image.colorSource) return image.texture.get();
+        const auto existing = image.colors.find(color);
+        if (existing != image.colors.end()) return existing->second.get();
+        Owned<SDL_Surface, SDL_DestroySurface> surface(
+            SDL_ConvertSurface(image.colorSource.get(), SDL_PIXELFORMAT_RGBA32), SDL_DestroySurface);
+        if (!surface) return image.texture.get();
+        for (int y = 0; y < surface->h; ++y) {
+            for (int x = 0; x < surface->w; ++x) {
+                Uint8 r, g, b, a;
+                if (!SDL_ReadSurfacePixel(surface.get(), x, y, &r, &g, &b, &a) || a == 0) continue;
+                const auto pixel = shiftHue(r, g, b, a, color);
+                SDL_WriteSurfacePixel(surface.get(), x, y, pixel.r, pixel.g, pixel.b, pixel.a);
+            }
+        }
+        Owned<SDL_Texture, SDL_DestroyTexture> texture(SDL_CreateTextureFromSurface(renderer, surface.get()),
+                                                       SDL_DestroyTexture);
+        if (!texture) return image.texture.get();
+        return image.colors.emplace(color, std::move(texture)).first->second.get();
+    }
+
+    void sprite(const Key& key, float x, float y, float scale = 1, bool flip = false, int color = 0) const {
         const auto& image = images.at(key);
         const float pivot = flip ? image.w - image.x : image.x;
         const SDL_FRect rect{x - pivot * scale, y - image.y * scale, image.w * scale, image.h * scale};
-        SDL_RenderTextureRotated(renderer, image.texture.get(), nullptr, &rect, 0, nullptr,
+        SDL_RenderTextureRotated(renderer, spriteTexture(image, color), nullptr, &rect, 0, nullptr,
                                  flip ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE);
     }
 
@@ -298,6 +342,10 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
                      xMid + static_cast<float>(game.dragon.x), yMid - static_cast<float>(game.dragon.y),
                      fallingPhase ? 0.7f : 1.0f, game.dragonDirection > 0);
     }
+    for (const auto& meteor : game.meteors) {
+        media.sprite({"dragon", 4}, xMid + static_cast<float>(meteor.x),
+                     yMid - static_cast<float>(meteor.y), 0.4f);
+    }
     for (const auto& ball : game.fireballs) {
         if (ball.ticksLeft <= 0) continue;
         media.sprite({"fireball", 1}, xMid + static_cast<float>(ball.position.x),
@@ -312,7 +360,7 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
         media.sprite({"transition", game.scene == Scene::Pipe ? variant + 3 : variant},
                      playerX, playerY - (game.scene == Scene::Pipe ? 20.0f - 32.0f * static_cast<float>(game.elapsed) : 15),
                      0.5f, game.facing < 0);
-    } else if (game.invincible == 0 || static_cast<int>(game.invincible * 30) % 2 == 0) {
+    } else if (game.special() || game.invincible == 0 || static_cast<int>(game.invincible * 30) % 2 == 0) {
         const bool swimming = game.theme() == 4;
         const float pivotLift = 11.875f * (playerScale / 0.25f) - 1.0f -
                                 (game.crouched ? 7.0f : 0.0f);
@@ -324,7 +372,9 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
                               !game.grounded ? 8 : walk + 1;
         const bool flip = game.facing < 0;
         media.sprite({"player_face", faceFrame}, playerX, playerY - pivotLift, playerScale, flip);
-        media.sprite({"player", bodyFrame}, playerX, playerY - pivotLift, playerScale, flip);
+        const int invincibleColor = (1 + static_cast<int>(game.elapsed * 60)) % 40 * 5;
+        const int color = game.special() ? invincibleColor : game.power == Power::Full ? -54 : 0;
+        media.sprite({"player", bodyFrame}, playerX, playerY - pivotLift, playerScale, flip, color);
     }
     if (game.darkness() > 0) {
         fill(renderer, {0, 0, width, height}, {8, 12, 47, static_cast<Uint8>(game.darkness() * 146)});
@@ -333,7 +383,7 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
     text(renderer, 9, 8, game.level().name);
     text(renderer, 57, 8, "Day " + std::to_string(game.day()) + "/3");
     text(renderer, 155, 8, game.night() ? "Night" : "Daylight");
-    text(renderer, 388, 8, game.special ? "Powered" : game.power == Power::Full ? "Full" : small ? "Small" : "Big");
+    text(renderer, 388, 8, game.special() ? "Invincible" : game.power == Power::Full ? "Fire" : small ? "Small" : "Big");
     if (game.dragonActive()) {
         fill(renderer, {152, 31, 176, 6}, {20, 10, 30, 220});
         const auto limit = game.dragonPhase == 3 ? 5 : 3;
@@ -376,11 +426,13 @@ void updateAudio(Audio& audio, Campaign& game) {
     const bool terminal = game.scene == Scene::Ending || game.scene == Scene::Expired;
     if (game.paused || terminal || game.scene == Scene::Clear || game.scene == Scene::Death) audio.loop({});
     else if (game.scene == Scene::Title || game.scene == Scene::Intro) audio.loop({"title_sound", 3});
+    else if (game.special()) audio.loop({"day", 7});
     else if (game.dragonActive()) audio.loop({"day", 6});
     else audio.loop({game.night() ? "night" : "day", game.levelIndex + 1});
     for (const auto sound : game.sounds) {
         switch (sound) {
         case Sound::Jump: audio.play({"player_sound", game.power == Power::Small ? 2 : 3}); break;
+        case Sound::PowerUp: audio.play({"power_sound", 2}); break;
         case Sound::Fireball: audio.play({"fireball_sound", 1}); break;
         case Sound::FireballHit: audio.play({"dragon_sound", 2}); break;
         case Sound::Stomp: audio.play({"player_sound", 4}); break;
@@ -429,6 +481,8 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
     media.load(root, game, smoke);
 
     if (smoke) {
+        const auto fireColor = shiftHue(0, 255, 0, 128, -54);
+        if (fireColor.r != 255 || fireColor.g >= 110 || fireColor.b != 0 || fireColor.a != 128) return 1;
         if (!media.audio.mixer || media.audio.clips.size() != media.soundCount) return 1;
         draw(media, game, 0, false, {});
         game.start();

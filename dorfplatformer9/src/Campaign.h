@@ -30,7 +30,7 @@ Levels loadLevels(const std::filesystem::path& path);
 
 enum class Power : int { Small, Big, Full };
 enum class Scene { Title, Intro, Play, Pipe, Death, Clear, Ending, Expired };
-enum class Sound { Jump, Stomp, Pipe, Death, Clear, Dragon, DragonDefeated, Fireball, FireballHit };
+enum class Sound { Jump, Stomp, Pipe, Death, Clear, Dragon, DragonDefeated, Fireball, FireballHit, PowerUp };
 
 struct Controls {
     float move = 0;
@@ -83,10 +83,12 @@ struct Campaign {
     bool grounded = false;
     bool crouched = false;
     bool paused = false;
-    bool special = false;
+    double specialRemaining = 0;
+    bool special() const { return specialRemaining > 0; }
     double walkFrame = 0;
     std::vector<Actor> actors;
     std::vector<Fireball> fireballs;
+    std::vector<Point> meteors;
     std::vector<bool> collected;
     std::vector<Sound> sounds;
     std::array<std::vector<Box>, 31> collision;
@@ -112,6 +114,8 @@ private:
     int clearNext = 0;
     int fireCooldown = 0;
     unsigned dragonDrops = 0;
+    unsigned meteorDrops = 0;
+    int meteorCooldown = 0;
 
     void spawn();
     void resetActors();
@@ -123,6 +127,7 @@ private:
     void updateActors();
     void updateFireballs(bool fire);
     void updateDragon();
+    void updateMeteors();
     void bounce(int protectionTicks);
     void damage();
     void die();

@@ -39,7 +39,8 @@ def import_reference(samples, output):
         "transition": ("Died/Pipie", range(1, 7)),
     }
     sounds = {
-        "day": ("Teme Day", range(1, 7)),
+        "day": ("Teme Day", range(1, 8)),
+        "power_sound": ("Power up", (2,)),
         "night": ("Teme N", range(1, 7)),
         "player_sound": ("Player", range(1, 5)),
         "pipe_sound": ("Died/Pipie", (2,)),

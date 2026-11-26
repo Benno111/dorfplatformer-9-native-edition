@@ -10,6 +10,7 @@
 #include <stdexcept>
 
 namespace {
+constexpr double invincibilityDuration = 12 * 165879.0 / 48000; // Twelve Jungle loops.
 constexpr double tickSeconds = SimulationClock::tickSeconds;
 constexpr double clockStep = 0.0513;
 constexpr double daylightLength = 1320 * clockStep;
@@ -112,6 +113,7 @@ void Campaign::changeScene(Scene next) {
 void Campaign::start(int selected) {
     levelIndex = std::clamp(selected, 0, 5);
     worldTime = -6;
+    specialRemaining = 0;
     paused = false;
     downWasHeld = false;
     jumpWasHeld = false;
@@ -148,6 +150,9 @@ void Campaign::spawn() {
     dragonGrace = 0;
     dragonTransition = 0;
     dragonDrops = 0;
+    meteorDrops = 0;
+    meteorCooldown = 0;
+    meteors.clear();
     collected.assign(level().objects.size(), false);
     resetActors();
 }
@@ -188,7 +193,7 @@ void Campaign::bounce(int protectionTicks) {
 }
 
 void Campaign::damage() {
-    if (invincible > 0 || bounceProtectionTicks > 0 || special) return;
+    if (invincible > 0 || bounceProtectionTicks > 0 || special()) return;
     if (power == Power::Small) {
         die();
         return;
@@ -232,8 +237,13 @@ void Campaign::interact(Controls controls) {
         }
         if (type == 6 && !collected[i] && near(body, object.position, 26, 35)) {
             collected[i] = true;
-            if (power == Power::Full) special = true;
-            else power = static_cast<Power>(static_cast<int>(power) + 1);
+            if (power == Power::Full) {
+                if (special()) continue;
+                specialRemaining = invincibilityDuration;
+            } else {
+                power = static_cast<Power>(static_cast<int>(power) + 1);
+            }
+            sounds.push_back(Sound::PowerUp);
         }
         if (type == 7 && near(body, object.position, 23, 26)) damage();
     }
@@ -255,7 +265,7 @@ void Campaign::updateActors() {
             continue;
         }
         if (!near({player.x, player.y + 10}, {actor.position.x, actor.position.y + 13}, 23, 25)) continue;
-        if ((player.y > actor.position.y + 12 && velocity.y < 0) || bounceProtectionTicks > 0 || special) {
+        if ((player.y > actor.position.y + 12 && velocity.y < 0) || bounceProtectionTicks > 0 || special()) {
             if (actor.cooldown > 0) continue;
             --actor.health;
             actor.cooldown = actor.type == 15 ? 0.5 : 0.22;
@@ -334,7 +344,7 @@ void Campaign::updateDragon() {
             sounds.push_back(Sound::FireballHit);
         }
         if (near({player.x, player.y + 15}, dragon, 76, 63)) {
-            if (special) dragonHealth = 0;
+            if (special()) dragonHealth = 0;
             else damage();
         }
     } else {
@@ -342,8 +352,8 @@ void Campaign::updateDragon() {
         if (!blocked(next)) dragon.y -= 3;
         const bool touch = near({player.x, player.y + 15}, dragon, 31, 34);
         const bool stomp = player.y > dragon.y + 3 && velocity.y < 0;
-        if (touch && dragonGrace == 0 && (stomp || special)) {
-            dragonHealth -= special ? 3 : 1;
+        if (touch && dragonGrace == 0 && (stomp || special())) {
+            dragonHealth -= special() ? 3 : 1;
             bounce(15);
             dragonGrace = 0.25;
         } else if (touch && dragonGrace == 0 && invincible == 0 && bounceProtectionTicks == 0) {
@@ -369,6 +379,30 @@ void Campaign::updateDragon() {
         dragonHealth = 5;
         dragon = {9295, upper + 250.0};
     }
+}
+
+void Campaign::updateMeteors() {
+    if (dragonPhase != 3) {
+        meteors.clear();
+        return;
+    }
+    if (meteorCooldown > 0) --meteorCooldown;
+    if (meteorCooldown == 0) {
+        constexpr int offsets[] = {-158, 40, 174, -47, 111, -110};
+        meteors.push_back({9200.0 + offsets[meteorDrops++ % 6], upper + 220.0});
+        meteorCooldown = 42;
+    }
+    constexpr double radius = 9;
+    const Point body{player.x, player.y + playerHeight(power, crouched) / 2};
+    meteors.erase(std::remove_if(meteors.begin(), meteors.end(), [&](Point& meteor) {
+        meteor.y -= 4;
+        if (near(body, meteor, radius + 9, radius + playerHeight(power, crouched) / 2)) {
+            damage();
+            return true;
+        }
+        return meteor.y < upper - 180 ||
+               blocked({meteor.x - radius, meteor.x + radius, meteor.y - radius, meteor.y + radius});
+    }), meteors.end());
 }
 
 void Campaign::updatePlayer(Controls controls) {
@@ -445,15 +479,15 @@ void Campaign::tick(Controls controls) {
     case Scene::Death:
         if (elapsed >= 1.15) {
             power = Power::Big;
-            special = false;
+            specialRemaining = 0;
             spawn();
             changeScene(Scene::Play);
         }
         return;
     case Scene::Clear:
         if (elapsed < 2) return;
-        if (levelIndex == 3 && special) worldTime = -6;
-        special = false;
+        if (levelIndex == 3 && special()) worldTime = -6;
+        specialRemaining = 0;
         if (clearNext == 6) {
             changeScene(Scene::Ending);
         } else {
@@ -471,7 +505,8 @@ void Campaign::tick(Controls controls) {
         break;
     }
 
-    if (!special) worldTime += tickSeconds;
+    if (special()) specialRemaining = std::max(0.0, specialRemaining - tickSeconds);
+    else worldTime += tickSeconds;
     if (worldTime >= campaignLength) {
         changeScene(Scene::Expired);
         return;
@@ -490,6 +525,8 @@ void Campaign::tick(Controls controls) {
     camera = std::max(0.0, player.x);
     updateFireballs(controls.fire);
     updateDragon();
+    if (scene != Scene::Play) return;
+    updateMeteors();
     if (scene != Scene::Play) return;
     updateActors();
     if (scene != Scene::Play) return;
@@ -648,7 +685,7 @@ bool checkCampaign(const Levels& levels) {
     if (pipes != 20) return false;
     game.start(3);
     game.scene = Scene::Play;
-    game.special = true;
+    game.specialRemaining = invincibilityDuration;
     game.worldTime = 70;
     for (const auto& object : game.level().objects) {
         if (object.type == 19) game.player = {object.position.x, object.position.y + 18};
@@ -656,7 +693,25 @@ bool checkCampaign(const Levels& levels) {
     game.tick({});
     if (game.scene != Scene::Clear || game.unlocked != 6) return false;
     for (int frame = 0; frame < 125; ++frame) game.tick({});
-    if (game.levelIndex != 4 || game.special || game.worldTime >= 0) return false;
+    if (game.levelIndex != 4 || game.special() || game.worldTime >= 0) return false;
+
+    Levels poweredLevels = levels;
+    poweredLevels[0].objects = {{{0, 12}, 6}, {{0, 12}, 7}};
+    Campaign powered(poweredLevels);
+    powered.start();
+    powered.scene = Scene::Play;
+    powered.player = {0, 0};
+    powered.tick({});
+    if (!powered.special() || powered.specialRemaining != invincibilityDuration ||
+        powered.power != Power::Full) return false;
+    const double frozenTime = powered.worldTime;
+    powered.specialRemaining = tickSeconds;
+    powered.player = {0, 0};
+    powered.velocity = {};
+    powered.tick({});
+    if (powered.special() || powered.worldTime != frozenTime || powered.power != Power::Big) return false;
+    powered.tick({});
+    if (powered.worldTime <= frozenTime) return false;
 
     Levels projectileLevels = levels;
     projectileLevels[0].objects = {{{58, 16}, 15}};
@@ -687,14 +742,19 @@ bool checkCampaign(const Levels& levels) {
         game.tick({});
         if (game.dragonPhase != phase + 1) return false;
     }
-    if (game.dragon.y != 250 || game.dragonHealth != 5) return false;
+    if (game.dragon.y != 250 || game.dragonHealth != 5 || game.meteors.size() != 1) return false;
+    game.meteors.push_back({9200, 39});
+    game.player = {9200, 12};
+    game.velocity = {};
+    game.tick({});
+    if (game.power != Power::Big || game.meteors.size() != 1) return false;
     game.dragonHealth = 1;
     game.dragon = {9295, 41};
     game.player = {9295, 41};
     game.velocity = {};
-    game.special = true;
+    game.specialRemaining = invincibilityDuration;
     game.tick({});
-    if (game.dragonPhase != 4) return false;
+    if (game.dragonPhase != 4 || !game.meteors.empty()) return false;
     const auto code = game.exportSave();
     Campaign loaded(levels);
     if (!loaded.importSave(code) || loaded.unlocked != 6 ||
