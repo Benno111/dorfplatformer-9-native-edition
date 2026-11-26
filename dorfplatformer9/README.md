@@ -13,7 +13,7 @@ ctest --test-dir build -C Release --output-on-failure
 ./build/dorfplatformer9
 ```
 
-With a multi-configuration generator, launch the executable from `build/Release` and pass `build/assets` as its first argument. If using preinstalled SDL packages, leave `DORF_FETCH_SDL` off. SDL3_image needs PNG and SVG support, and SDL3_mixer needs WAV and MP3 support. The reference bundle includes MP3 streams with `.wav` filenames. The importer retains the source names, object order, duplicate positions, and costume pivots.
+With a multi-configuration generator, launch the executable from `build/Release` and pass `build/assets` as its first argument. If using preinstalled SDL packages, leave `DORF_FETCH_SDL` off. SDL3_image needs PNG and SVG support, and SDL3_mixer needs WAV and MP3 support. The reference bundle includes MP3 streams with `.wav` filenames. Packaged filenames use readable names and source indexes, for example `01-stage-image-001-blue-sky-2.svg`. The importer reads the exact names from the source project and preserves object order, duplicate positions, and costume pivots.
 
 ## Packages
 
