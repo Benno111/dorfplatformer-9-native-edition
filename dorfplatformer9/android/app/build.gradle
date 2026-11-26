@@ -1,0 +1,82 @@
+plugins {
+    id 'com.android.application' version '8.11.1'
+}
+
+def sdlProperty = providers.gradleProperty('sdlSource').orNull
+if (!sdlProperty) {
+    throw new GradleException('Pass -PsdlSource=/absolute/path/to/SDL (release-3.4.0)')
+}
+def sdl = rootProject.file(sdlProperty)
+def sdlJava = new File(sdl, 'android-project/app/src/main/java')
+if (!new File(sdlJava, 'org/libsdl/app/SDLActivity.java').isFile()) {
+    throw new GradleException("SDLActivity.java was not found under ${sdlJava}")
+}
+
+def port = rootProject.projectDir.parentFile
+def samples = new File(port.parentFile, 'samples')
+def importer = new File(port, 'tools/import_reference.py')
+def assetRoot = layout.buildDirectory.dir('generated/dorfAssets')
+def importAssets = tasks.register('importCampaignAssets', Exec) {
+    inputs.file(importer)
+    inputs.files(fileTree(samples) {
+        include 'source/project.json', 'documentation/port_reference/levels.json'
+        include 'assets/images/**', 'assets/audio/**'
+    })
+    outputs.dir(assetRoot)
+    commandLine(providers.gradleProperty('python').getOrElse('python3'), importer,
+                samples, assetRoot.get().dir('assets').asFile)
+}
+
+android {
+    namespace 'com.benno111.dorfplatformer9'
+    compileSdk 36
+    ndkVersion '28.2.13676358'
+
+    defaultConfig {
+        applicationId 'com.benno111.dorfplatformer9'
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName '0.1.0'
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86_64', 'x86'
+        }
+        externalNativeBuild {
+            cmake {
+                arguments '-DDORF_FETCH_SDL=ON',
+                          "-DFETCHCONTENT_SOURCE_DIR_SDL3=${sdl.absolutePath}",
+                          '-DANDROID_STL=c++_static'
+                targets 'dorfplatformer9'
+            }
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path new File(port, 'CMakeLists.txt')
+            version '3.31.6'
+        }
+    }
+
+    sourceSets.main {
+        java.srcDir sdlJava
+        assets.srcDir assetRoot
+    }
+    buildTypes.release {
+        // A release key can be supplied by the packaging environment.
+        if (System.getenv('DORF_ANDROID_KEYSTORE')) {
+            signingConfig signingConfigs.create('distribution') {
+                storeFile file(System.getenv('DORF_ANDROID_KEYSTORE'))
+                storePassword System.getenv('DORF_ANDROID_STORE_PASSWORD')
+                keyAlias System.getenv('DORF_ANDROID_KEY_ALIAS')
+                keyPassword System.getenv('DORF_ANDROID_KEY_PASSWORD')
+            }
+        }
+    }
+}
+
+tasks.configureEach {
+    if (name.startsWith('merge') && name.endsWith('Assets')) {
+        dependsOn importAssets
+    }
+}

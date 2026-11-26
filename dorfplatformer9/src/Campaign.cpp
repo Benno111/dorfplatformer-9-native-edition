@@ -3,7 +3,9 @@
 #include <algorithm>
 #include <charconv>
 #include <cmath>
-#include <fstream>
+#include <SDL3/SDL.h>
+
+#include <memory>
 #include <stdexcept>
 
 namespace {
@@ -37,8 +39,16 @@ int readInt(std::string_view value, int fallback) {
 }
 }
 
+std::istringstream openGameData(const std::filesystem::path& path) {
+    std::size_t length = 0;
+    const std::unique_ptr<char, decltype(&SDL_free)> content(
+        static_cast<char*>(SDL_LoadFile(path.string().c_str(), &length)), SDL_free);
+    if (!content) throw std::runtime_error(path.string() + ": " + SDL_GetError());
+    return std::istringstream(std::string(content.get(), length));
+}
+
 Levels loadLevels(const std::filesystem::path& path) {
-    std::ifstream input(path);
+    auto input = openGameData(path);
     Levels levels;
     for (std::size_t i = 0; i < levels.size(); ++i) {
         auto& level = levels[i];

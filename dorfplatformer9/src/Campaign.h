@@ -2,6 +2,7 @@
 
 #include <array>
 #include <filesystem>
+#include <sstream>
 #include <string>
 #include <string_view>
 #include <vector>
@@ -24,6 +25,7 @@ struct Level {
 };
 
 using Levels = std::array<Level, 6>;
+std::istringstream openGameData(const std::filesystem::path& path);
 Levels loadLevels(const std::filesystem::path& path);
 
 enum class Power : int { Small, Big, Full };

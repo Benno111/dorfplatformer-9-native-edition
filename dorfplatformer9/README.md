@@ -1,19 +1,66 @@
 # Dorfplatformer 9 Native Edition
 
-A C++17 desktop port that loads the six campaign layouts and the original artwork and audio from Benno111's reference bundle. It uses the SDL3, SDL3_image and SDL3_mixer stack from Dorfplatformer-Timetravel. The controller input and frame timing headers are reused from Timetravel commit `37b82e95317ed50f40abf48fab5b6ff18d8b5260` under the license in `third_party`.
+A C++17 native port that loads the six campaign layouts and the original artwork and audio from Benno111's reference bundle. It uses the SDL3, SDL3_image and SDL3_mixer stack from Dorfplatformer-Timetravel. The controller input and frame timing headers are reused from Timetravel commit `37b82e95317ed50f40abf48fab5b6ff18d8b5260` under the license in `third_party`.
 
 ## Build and run
 
-Install a C++17 toolchain, Git, CMake 3.24 or later, and Python 3. On Linux, install the development libraries for the X11 or Wayland driver you want SDL to build. From this directory:
+Install a C++17 toolchain, Git, CMake 3.24 or later, and Python 3. Build commands below run from this directory unless stated otherwise. On Linux, install the development libraries for the X11 or Wayland driver you want SDL to build.
 
 ```sh
-cmake -S . -B build -DDORF_FETCH_SDL=ON -DDORF_SAMPLES=../samples
+cmake -S . -B build -DDORF_FETCH_SDL=ON
 cmake --build build --config Release
 ctest --test-dir build -C Release --output-on-failure
 ./build/dorfplatformer9
 ```
 
 With a multi-configuration generator, launch the executable from `build/Release` and pass `build/assets` as its first argument. If using preinstalled SDL packages, leave `DORF_FETCH_SDL` off. SDL3_image needs PNG and SVG support, and SDL3_mixer needs WAV and MP3 support. The reference bundle includes MP3 streams with `.wav` filenames. The importer retains the source names, object order, duplicate positions, and costume pivots.
+
+## Packages
+
+The Native builds GitHub Actions workflow produces these artifacts.
+
+| Platform | Targets | Package |
+| --- | --- | --- |
+| Linux | x64 | Portable tar.gz |
+| Windows | x64 and x86 | Portable ZIP and NSIS installer |
+| Android | arm64-v8a, armeabi-v7a, x86_64, x86 | Universal debug APK and unsigned release APK |
+| iOS | arm64 device and arm64 simulator | Unsigned device IPA and simulator app ZIP |
+
+### Linux and Windows
+
+After building, run the following on Linux:
+
+```sh
+cpack --config build/CPackConfig.cmake -C Release -G TGZ -B artifacts
+```
+
+Use Visual Studio's `-A x64` or `-A Win32` when configuring Windows, each with its own build directory. Run CPack with `-G ZIP` for a portable package or `-G NSIS` for an installer. The installer requires NSIS. Use `-DDORF_FETCH_SDL=ON` for portable packages with static SDL dependencies.
+
+### Android
+
+Install JDK 17, Gradle 8.13, and Android SDK command-line tools. Use an absolute SDL source path.
+
+```sh
+sdkmanager "platforms;android-36" "ndk;28.2.13676358" "cmake;3.31.6"
+git clone --depth 1 --branch release-3.4.0 https://github.com/libsdl-org/SDL.git /path/to/SDL
+gradle --project-dir android -PsdlSource=/path/to/SDL :app:assembleDebug :app:assembleRelease
+```
+
+APKs are under `android/app/build/outputs/apk`. Use `-Ppython=python` if the Python executable is named `python`. To sign a release APK locally, set `DORF_ANDROID_KEYSTORE` to the absolute keystore path and set `DORF_ANDROID_KEY_ALIAS`, `DORF_ANDROID_STORE_PASSWORD`, and `DORF_ANDROID_KEY_PASSWORD` in the build environment.
+
+### iOS
+
+Use Xcode on a Mac and choose `iphonesimulator` or `iphoneos` for the SDK. Use a separate build directory per SDK.
+
+```sh
+cmake -S . -B build-ios-sim -G Xcode -DDORF_FETCH_SDL=ON \
+  -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphonesimulator \
+  -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0 \
+  -DCMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED=NO
+cmake --build build-ios-sim --config Release --target dorfplatformer9
+```
+
+The simulator ZIP contains a `.app` for an arm64 simulator. The device IPA contains an unsigned app. Device installation requires signing with a provisioning profile. To build a signed device app, use `iphoneos`, omit the flag disabling signing, and configure your development team and signing settings in Xcode.
 
 ## Play
 

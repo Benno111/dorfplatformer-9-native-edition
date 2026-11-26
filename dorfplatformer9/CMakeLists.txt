@@ -1,9 +1,15 @@
 cmake_minimum_required(VERSION 3.24)
-project(Dorfplatformer9 LANGUAGES C CXX)
+project(Dorfplatformer9 VERSION 0.1.0 LANGUAGES C CXX)
 
 option(DORF_FETCH_SDL "Build the pinned SDL libraries from source" OFF)
 if(DORF_FETCH_SDL)
   include(FetchContent)
+  set(BUILD_SHARED_LIBS OFF CACHE BOOL "Build SDL_image and SDL_mixer as shared libraries")
+  if(ANDROID)
+    set(SDL_SHARED ON CACHE BOOL "")
+  endif()
+  set(SDLIMAGE_PNG ON CACHE BOOL "")
+  set(SDLIMAGE_SVG ON CACHE BOOL "")
   set(SDL_TESTS OFF CACHE BOOL "")
   set(SDL_TEST_LIBRARY OFF CACHE BOOL "")
   set(SDLIMAGE_AVIF OFF CACHE BOOL "")
@@ -32,29 +38,97 @@ else()
   find_package(SDL3_mixer 3.2 CONFIG REQUIRED)
 endif()
 
-find_package(Python3 REQUIRED COMPONENTS Interpreter)
-set(DORF_SAMPLES "" CACHE PATH "Path to samples in dorfplatformer-9-native-edition")
-if(NOT EXISTS "${DORF_SAMPLES}/source/project.json")
-  message(FATAL_ERROR "Set DORF_SAMPLES to the reference repository's samples directory")
+set(DORF_SAMPLES "${CMAKE_CURRENT_SOURCE_DIR}/../samples" CACHE PATH "Path to the campaign reference samples")
+if(NOT ANDROID)
+  find_package(Python3 REQUIRED COMPONENTS Interpreter)
+  if(NOT EXISTS "${DORF_SAMPLES}/source/project.json")
+    message(FATAL_ERROR "Set DORF_SAMPLES to the reference repository's samples directory")
+  endif()
+
+  set(DORF_DATA "${CMAKE_CURRENT_BINARY_DIR}/assets")
+  file(GLOB DORF_REFERENCE_MEDIA CONFIGURE_DEPENDS
+    "${DORF_SAMPLES}/assets/images/*" "${DORF_SAMPLES}/assets/audio/*")
+  set(dorf_importer "${CMAKE_CURRENT_SOURCE_DIR}/tools/import_reference.py")
+  set(dorf_inputs "${dorf_importer}" "${DORF_SAMPLES}/source/project.json"
+      "${DORF_SAMPLES}/documentation/port_reference/levels.json" ${DORF_REFERENCE_MEDIA})
+  if(APPLE)
+    # Xcode needs each bundle resource at generation time so it can copy
+    # resources before code signing and track them on subsequent builds.
+    set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS ${dorf_inputs})
+    execute_process(COMMAND "${Python3_EXECUTABLE}" "${dorf_importer}"
+      "${DORF_SAMPLES}" "${DORF_DATA}" COMMAND_ERROR_IS_FATAL ANY)
+    file(STRINGS "${DORF_DATA}/media.txt" dorf_media_lines)
+    set(dorf_resources "${DORF_DATA}/levels.txt" "${DORF_DATA}/media.txt")
+    foreach(line IN LISTS dorf_media_lines)
+      string(REGEX MATCH "^[^ ]+ [^ ]+ [0-9]+ ([^ ]+)" entry "${line}")
+      list(APPEND dorf_resources "${DORF_DATA}/${CMAKE_MATCH_1}")
+    endforeach()
+    list(REMOVE_DUPLICATES dorf_resources)
+    set_source_files_properties(${dorf_resources} PROPERTIES MACOSX_PACKAGE_LOCATION Resources/assets)
+  else()
+    add_custom_command(OUTPUT "${DORF_DATA}/ready"
+      COMMAND "${Python3_EXECUTABLE}" "${dorf_importer}" "${DORF_SAMPLES}" "${DORF_DATA}"
+      DEPENDS ${dorf_inputs} VERBATIM)
+    add_custom_target(dorf_assets DEPENDS "${DORF_DATA}/ready")
+  endif()
 endif()
 
-set(DORF_DATA "${CMAKE_CURRENT_BINARY_DIR}/assets")
-file(GLOB DORF_REFERENCE_MEDIA CONFIGURE_DEPENDS
-  "${DORF_SAMPLES}/assets/images/*" "${DORF_SAMPLES}/assets/audio/*")
-add_custom_command(OUTPUT "${DORF_DATA}/ready"
-  COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tools/import_reference.py"
-    "${DORF_SAMPLES}" "${DORF_DATA}"
-  DEPENDS tools/import_reference.py "${DORF_SAMPLES}/source/project.json"
-    "${DORF_SAMPLES}/documentation/port_reference/levels.json" ${DORF_REFERENCE_MEDIA}
-  VERBATIM)
-add_custom_target(dorf_assets DEPENDS "${DORF_DATA}/ready")
+set(DORF_SOURCES src/main.cpp src/Campaign.cpp)
+if(ANDROID)
+  add_library(dorfplatformer9 SHARED ${DORF_SOURCES})
+  set_target_properties(dorfplatformer9 PROPERTIES OUTPUT_NAME main)
+elseif(APPLE)
+  add_executable(dorfplatformer9 MACOSX_BUNDLE ${DORF_SOURCES})
+  set_target_properties(dorfplatformer9 PROPERTIES
+    MACOSX_BUNDLE_BUNDLE_NAME "Dorfplatformer 9"
+    MACOSX_BUNDLE_GUI_IDENTIFIER com.benno111.dorfplatformer9
+    MACOSX_BUNDLE_SHORT_VERSION_STRING "${PROJECT_VERSION}"
+    MACOSX_BUNDLE_BUNDLE_VERSION "${PROJECT_VERSION}")
+  if(CMAKE_SYSTEM_NAME STREQUAL "iOS")
+    set_target_properties(dorfplatformer9 PROPERTIES
+      MACOSX_BUNDLE_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/cmake/iOSInfo.plist.in"
+      XCODE_ATTRIBUTE_TARGETED_DEVICE_FAMILY "1,2")
+  endif()
+else()
+  add_executable(dorfplatformer9 ${DORF_SOURCES})
+endif()
 
-add_executable(dorfplatformer9 src/main.cpp src/Campaign.cpp)
-add_dependencies(dorfplatformer9 dorf_assets)
 target_compile_features(dorfplatformer9 PRIVATE cxx_std_17)
 target_include_directories(dorfplatformer9 PRIVATE third_party)
 target_link_libraries(dorfplatformer9 PRIVATE SDL3::SDL3 SDL3_image::SDL3_image SDL3_mixer::SDL3_mixer)
-enable_testing()
-add_test(NAME campaign COMMAND dorfplatformer9 --check "${DORF_DATA}")
-add_test(NAME startup COMMAND dorfplatformer9 --smoke "${DORF_DATA}")
-set_tests_properties(startup PROPERTIES ENVIRONMENT "SDL_VIDEO_DRIVER=dummy;SDL_AUDIO_DRIVER=dummy")
+
+if(NOT ANDROID)
+  if(APPLE)
+    target_sources(dorfplatformer9 PRIVATE ${dorf_resources})
+  else()
+    add_dependencies(dorfplatformer9 dorf_assets)
+  endif()
+
+  include(CTest)
+  if(BUILD_TESTING AND NOT CMAKE_CROSSCOMPILING)
+    add_test(NAME campaign COMMAND dorfplatformer9 --check "${DORF_DATA}")
+    add_test(NAME startup COMMAND dorfplatformer9 --smoke "${DORF_DATA}")
+    set_tests_properties(startup PROPERTIES ENVIRONMENT "SDL_VIDEO_DRIVER=dummy;SDL_AUDIO_DRIVER=dummy")
+  endif()
+
+  if(NOT APPLE)
+    install(TARGETS dorfplatformer9 RUNTIME DESTINATION .)
+    install(DIRECTORY "${DORF_DATA}/" DESTINATION assets PATTERN ready EXCLUDE)
+    if(WIN32)
+      install(FILES $<TARGET_RUNTIME_DLLS:dorfplatformer9> DESTINATION . OPTIONAL)
+    endif()
+  else()
+    install(TARGETS dorfplatformer9 BUNDLE DESTINATION .)
+  endif()
+  install(FILES README.md third_party/TIMETRAVEL-LICENSE DESTINATION .)
+
+  set(CPACK_PACKAGE_NAME "Dorfplatformer9")
+  set(CPACK_PACKAGE_VENDOR "Benno111")
+  set(CPACK_GENERATOR TGZ)
+  if(WIN32)
+    set(CPACK_GENERATOR "ZIP;NSIS")
+    set(CPACK_NSIS_EXECUTABLES_DIRECTORY ".")
+    set(CPACK_PACKAGE_EXECUTABLES dorfplatformer9 "Dorfplatformer 9")
+  endif()
+  include(CPack)
+endif()

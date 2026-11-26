@@ -129,8 +129,7 @@ struct Media {
     explicit Media(SDL_Renderer* renderer) : renderer(renderer) {}
 
     void load(const fs::path& root, Campaign& game) {
-        std::ifstream file(root / "media.txt");
-        if (!file) throw std::runtime_error("Missing media manifest in " + root.string());
+        auto file = openGameData(root / "media.txt");
         std::string kind, group, path;
         int index;
         while (file >> kind >> group >> index >> path) {
@@ -512,9 +511,14 @@ int main(int argc, char** argv) {
         const bool check = argc > 1 && std::string_view(argv[1]) == "--check";
         const bool smoke = argc > 1 && std::string_view(argv[1]) == "--smoke";
         const int pathArg = check || smoke ? 2 : 1;
+#if defined(SDL_PLATFORM_ANDROID)
+        // Android's asset manager resolves paths relative to the APK asset directory.
+        const fs::path defaultRoot = "assets";
+#else
         const char* base = SDL_GetBasePath();
-        const fs::path root = argc > pathArg ? fs::path(argv[pathArg]) :
-                              (base ? fs::path(base) : fs::current_path()) / "assets";
+        const fs::path defaultRoot = (base ? fs::path(base) : fs::current_path()) / "assets";
+#endif
+        const fs::path root = argc > pathArg ? fs::path(argv[pathArg]) : defaultRoot;
         const auto levels = loadLevels(root / "levels.txt");
         if (check) return checkCampaign(levels) ? 0 : 1;
         const auto result = run(levels, root, smoke);

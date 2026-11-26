@@ -1,0 +1,174 @@
+name: Native builds
+
+on:
+  push:
+    paths:
+      - 'dorfplatformer9/**'
+      - 'samples/**'
+      - '.github/workflows/native-build.yml'
+  pull_request:
+    paths:
+      - 'dorfplatformer9/**'
+      - 'samples/**'
+      - '.github/workflows/native-build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  desktop:
+    name: ${{ matrix.platform }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: linux-x64
+            runner: ubuntu-24.04
+          - platform: windows-x64
+            runner: windows-2022
+            arch: x64
+          - platform: windows-x86
+            runner: windows-2022
+            arch: Win32
+    runs-on: ${{ matrix.runner }}
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Linux video and audio headers
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libasound2-dev libpulse-dev libudev-dev libgl1-mesa-dev libegl1-mesa-dev libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libxkbcommon-dev libwayland-dev wayland-protocols
+      - name: Install NSIS
+        if: runner.os == 'Windows'
+        run: choco install nsis --yes --no-progress
+      - name: Configure
+        env:
+          DORF_ARCH: ${{ matrix.arch }}
+        run: |
+          $configure = @('-S', 'dorfplatformer9', '-B', 'build', '-DDORF_FETCH_SDL=ON', '-DCMAKE_BUILD_TYPE=Release')
+          if ($env:DORF_ARCH) { $configure += @('-A', $env:DORF_ARCH) }
+          cmake @configure
+      - name: Build and test
+        run: |
+          cmake --build build --config Release --parallel 4
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          ctest --test-dir build -C Release --output-on-failure
+      - name: Package desktop build
+        env:
+          DORF_PLATFORM: ${{ matrix.platform }}
+        run: |
+          $generators = if ($IsWindows) { @('ZIP', 'NSIS') } else { @('TGZ') }
+          foreach ($generator in $generators) {
+            cpack --config build/CPackConfig.cmake -C Release -G $generator -B artifacts -D "CPACK_PACKAGE_FILE_NAME=Dorfplatformer9-$env:DORF_PLATFORM"
+            if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dorfplatformer9-${{ matrix.platform }}
+          path: |
+            artifacts/*.zip
+            artifacts/*.exe
+            artifacts/*.tar.gz
+          if-no-files-found: error
+
+  android:
+    name: android-universal
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.13'
+      - name: Install Android SDK tools
+        run: sdkmanager "platforms;android-36" "ndk;28.2.13676358" "cmake;3.31.6"
+      - name: Check out SDL and build universal APK
+        run: |
+          git clone --depth 1 --branch release-3.4.0 https://github.com/libsdl-org/SDL.git "$RUNNER_TEMP/SDL"
+          gradle --project-dir dorfplatformer9/android "-PsdlSource=$RUNNER_TEMP/SDL" :app:assembleDebug :app:assembleRelease
+      - name: Verify APK contents
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+
+          apks = sorted(Path('dorfplatformer9/android/app/build/outputs/apk').glob('*/*.apk'))
+          assert len(apks) == 2, apks
+          abis = ('arm64-v8a', 'armeabi-v7a', 'x86_64', 'x86')
+          for apk in apks:
+              with ZipFile(apk) as archive:
+                  names = set(archive.namelist())
+                  assert {'assets/assets/levels.txt', 'assets/assets/media.txt'} <= names, apk
+                  for abi in abis:
+                      for library in ('libSDL3.so', 'libmain.so'):
+                          assert f'lib/{abi}/{library}' in names, (apk, abi, library)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dorfplatformer9-android-universal
+          path: dorfplatformer9/android/app/build/outputs/apk/*/*.apk
+          if-no-files-found: error
+
+  ios:
+    name: ios-${{ matrix.target }}-arm64
+    runs-on: macos-15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: simulator
+            sdk: iphonesimulator
+          - target: device
+            sdk: iphoneos
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build iOS app
+        env:
+          DORF_IOS_SDK: ${{ matrix.sdk }}
+        run: |
+          cmake -S dorfplatformer9 -B build -G Xcode \
+            -DDORF_FETCH_SDL=ON -DCMAKE_SYSTEM_NAME=iOS \
+            "-DCMAKE_OSX_SYSROOT=$DORF_IOS_SDK" -DCMAKE_OSX_ARCHITECTURES=arm64 \
+            -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0 -DCMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED=NO
+          cmake --build build --config Release --target dorfplatformer9
+      - name: Verify and package app
+        env:
+          DORF_TARGET: ${{ matrix.target }}
+        run: |
+          app="$(find build -type d -name dorfplatformer9.app -print -quit)"
+          test -n "$app"
+          test -s "$app/dorfplatformer9"
+          test -s "$app/assets/levels.txt"
+          test -s "$app/assets/media.txt"
+          plutil -lint "$app/Info.plist"
+          lipo -verify_arch arm64 "$app/dorfplatformer9"
+          mkdir artifacts
+          if [ "$DORF_TARGET" = device ]; then
+            mkdir Payload
+            cp -R "$app" Payload/
+            ditto -c -k --keepParent Payload artifacts/Dorfplatformer9-ios-device-unsigned.ipa
+          else
+            ditto -c -k --keepParent "$app" artifacts/Dorfplatformer9-ios-simulator.zip
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dorfplatformer9-ios-${{ matrix.target }}-arm64
+          path: artifacts/*
+          if-no-files-found: error
