@@ -228,6 +228,7 @@ struct Touch {
             if (p.y < 288 || p.y > height) continue;
             left |= p.x >= 0 && p.x < 64;
             right |= p.x >= 64 && p.x < 126;
+            result.fire |= p.x >= 294 && p.x <= 350;
             result.down |= p.x > 350 && p.x <= 414;
             result.jump |= p.x > 414 && p.x <= width;
         }
@@ -279,21 +280,28 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
     for (const auto& actor : game.actors) {
         const bool defeated = actor.health <= 0;
         if (game.theme() == 4 || std::abs(actor.position.x - game.camera) > 320 ||
-            (defeated && (actor.type == 24 || actor.cooldown <= 0))) continue;
+            (defeated && (actor.type != 15 || actor.cooldown <= 0))) continue;
         const auto x = xMid + static_cast<float>(actor.position.x);
         const auto y = yMid - static_cast<float>(actor.position.y) - 13;
         const auto frame = static_cast<int>(game.elapsed * 10);
-        if (actor.type == 24) media.sprite({"guard", frame % 3 + 1}, x, y, 0.4f, actor.direction < 0);
+        if (actor.type == 25) media.sprite({"boss_guard", 1}, x, y + 13, 0.6f, actor.direction < 0);
+        else if (actor.type == 24) media.sprite({"guard", frame % 3 + 1}, x, y, 0.4f, actor.direction < 0);
         else {
             // Ball_1 is the live costume. Ball_3 through Ball_7 are the defeat sequence.
             const int costume = defeated ? 6 + std::clamp(static_cast<int>((0.5 - actor.cooldown) * 10), 0, 4) : 2;
             media.sprite({"enemy", costume}, x, y, 0.6f);
         }
     }
-    if (game.dragonActive()) {
-        media.sprite({"dragon", 1 + static_cast<int>(game.dragonTime * 7) % 3},
+    if (game.dragonActive() && game.dragonTransition == 0) {
+        const bool fallingPhase = game.dragonPhase == 3;
+        media.sprite({"dragon", fallingPhase ? 4 : 1},
                      xMid + static_cast<float>(game.dragon.x), yMid - static_cast<float>(game.dragon.y),
-                     0.4f + 0.08f * game.dragonPhase, game.player.x > game.dragon.x);
+                     fallingPhase ? 0.7f : 1.0f, game.dragonDirection > 0);
+    }
+    for (const auto& ball : game.fireballs) {
+        if (ball.ticksLeft <= 0) continue;
+        media.sprite({"fireball", 1}, xMid + static_cast<float>(ball.position.x),
+                     yMid - static_cast<float>(ball.position.y), 0.6f, ball.velocity.x < 0);
     }
     const auto playerX = xMid + static_cast<float>(game.player.x);
     const auto playerY = yMid - static_cast<float>(game.player.y);
@@ -354,6 +362,10 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
         fill(renderer, {417, 300, 55, 51}, {10, 15, 31, 160});
         text(renderer, 26, 321, "<");
         text(renderer, 85, 321, ">");
+        if (game.power == Power::Full) {
+            const SDL_FRect fireButton{296, 300, 51, 51};
+            SDL_RenderTexture(renderer, media.images.at({"fire_button", 5}).texture.get(), nullptr, &fireButton);
+        }
         text(renderer, 367, 321, "DOWN");
         text(renderer, 428, 321, "JUMP");
     }
@@ -369,6 +381,8 @@ void updateAudio(Audio& audio, Campaign& game) {
     for (const auto sound : game.sounds) {
         switch (sound) {
         case Sound::Jump: audio.play({"player_sound", game.power == Power::Small ? 2 : 3}); break;
+        case Sound::Fireball: audio.play({"fireball_sound", 1}); break;
+        case Sound::FireballHit: audio.play({"dragon_sound", 2}); break;
         case Sound::Stomp: audio.play({"player_sound", 4}); break;
         case Sound::Pipe: audio.play({"pipe_sound", 2}); break;
         case Sound::Death: audio.play({"player_sound", 1}); break;
@@ -387,9 +401,10 @@ Controls controls(const InputSystem& pads, const Touch& touch) {
                        float(keys[SDL_SCANCODE_LEFT] || keys[SDL_SCANCODE_A]);
     const float padMove = pads.gameplayMoveX();
     return {padMove != 0 ? padMove : std::clamp(move + fingers.move, -1.0f, 1.0f),
-            keys[SDL_SCANCODE_UP] || keys[SDL_SCANCODE_W] || keys[SDL_SCANCODE_SPACE] ||
+            keys[SDL_SCANCODE_UP] || keys[SDL_SCANCODE_W] ||
               pads.gameplayJumpHeld() || fingers.jump,
-            keys[SDL_SCANCODE_DOWN] || keys[SDL_SCANCODE_S] || pads.gameplayDownHeld() || fingers.down};
+            keys[SDL_SCANCODE_DOWN] || keys[SDL_SCANCODE_S] || pads.gameplayDownHeld() || fingers.down,
+            keys[SDL_SCANCODE_X] || keys[SDL_SCANCODE_SPACE] || pads.gameplayFireHeld() || fingers.fire};
 }
 
 int run(const Levels& levels, const fs::path& root, bool smoke) {

@@ -86,6 +86,11 @@ public:
                SDL_GetGamepadButton(activePad_, SDL_GAMEPAD_BUTTON_EAST);
     }
 
+    bool gameplayFireHeld() const {
+        return activePad_ && (SDL_GetGamepadButton(activePad_, SDL_GAMEPAD_BUTTON_WEST) ||
+                              SDL_GetGamepadButton(activePad_, SDL_GAMEPAD_BUTTON_NORTH));
+    }
+
     bool freeMoveHeld() const {
         if (!activePad_) return false;
         return SDL_GetGamepadButton(activePad_, SDL_GAMEPAD_BUTTON_LEFT_SHOULDER);

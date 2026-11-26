@@ -103,6 +103,10 @@ bool Campaign::night() const {
 void Campaign::changeScene(Scene next) {
     scene = next;
     elapsed = 0;
+    if (next != Scene::Play) {
+        fireballs.clear();
+        fireCooldown = 0;
+    }
 }
 
 void Campaign::start(int selected) {
@@ -119,7 +123,7 @@ void Campaign::start(int selected) {
 void Campaign::resetActors() {
     actors.clear();
     for (const auto& object : level().objects) {
-        if ((object.type == 15 || object.type == 24) &&
+        if ((object.type == 15 || object.type == 24 || object.type == 25) &&
             (object.position.y > 400) == (upper != 0)) {
             actors.push_back({object.position, object.type, -1, 0, 0, object.type == 24 ? 3 : 1});
         }
@@ -142,7 +146,8 @@ void Campaign::spawn() {
     dragonPhase = 0;
     dragonHealth = 0;
     dragonGrace = 0;
-    dragonTime = 0;
+    dragonTransition = 0;
+    dragonDrops = 0;
     collected.assign(level().objects.size(), false);
     resetActors();
 }
@@ -262,44 +267,107 @@ void Campaign::updateActors() {
     }
 }
 
+void Campaign::updateFireballs(bool fire) {
+    if (fireCooldown > 0) --fireCooldown;
+    if (fire && power == Power::Full && fireCooldown == 0) {
+        fireCooldown = 12;
+        fireballs.push_back({{player.x, player.y + 22}, {14.0 * facing, 9}, 120});
+        sounds.push_back(Sound::Fireball);
+    }
+
+    for (auto& ball : fireballs) {
+        if (ball.ticksLeft <= 0) continue;
+        --ball.ticksLeft;
+        move(ball.position, ball.velocity.x, true, 4, 8);
+        if (ball.velocity.x == 0 || std::abs(ball.position.x - camera) > 240 ||
+            ball.position.y < upper - 180 || ball.position.y > upper + 180) {
+            ball.ticksLeft = 0;
+            continue;
+        }
+        ball.velocity.y -= 2;
+        const bool falling = ball.velocity.y < 0;
+        move(ball.position, ball.velocity.y, false, 4, 8);
+        if (falling && ball.velocity.y == 0) ball.velocity.y = 13;
+
+        for (auto& actor : actors) {
+            if (actor.health <= 0 || !near(ball.position, {actor.position.x, actor.position.y + 12}, 18, 22)) continue;
+            actor.health = 0;
+            actor.cooldown = 0.5;
+            ball.ticksLeft = 0;
+            sounds.push_back(Sound::Stomp);
+            break;
+        }
+    }
+    fireballs.erase(std::remove_if(fireballs.begin(), fireballs.end(),
+                                   [](const Fireball& ball) { return ball.ticksLeft <= 0; }),
+                    fireballs.end());
+}
+
 void Campaign::updateDragon() {
     if (levelIndex != 5) return;
     if (dragonPhase == 0 && player.x > 9200) {
         dragonPhase = 1;
         dragonHealth = 3;
-        dragonTime = 0;
+        dragonDirection = 1;
+        dragon = {9295, upper + 41.0};
         power = Power::Full;
         sounds.push_back(Sound::Dragon);
     }
     if (!dragonActive()) return;
     camera = 9200;
     player.x = std::clamp(player.x, camera - 222, camera + 222);
-    dragonTime += tickSeconds;
-    dragonGrace = std::max(0.0, dragonGrace - tickSeconds);
-    dragon = {9295 + std::sin(dragonTime * (1.4 + 0.45 * dragonPhase)) * 86,
-              upper + 41 + std::sin(dragonTime * (2.3 + 0.45 * dragonPhase)) * 28};
-    if (dragonGrace > 0 || !near({player.x, player.y + 15}, dragon, 42, 34)) return;
-    const bool stomp = player.y > dragon.y + 3 && velocity.y < 0;
-    if (dragonPhase < 3) {
-        const bool strong = stomp || special;
-        dragonHealth -= dragonPhase == 1 ? (strong ? 0.3 : 0.1) : (strong ? 0.05 : 0.01);
-        if (!strong) damage();
-    } else if (stomp || special) {
-        dragonHealth -= special ? 3 : 1;
-        bounce(15);
-        dragonGrace = 0.25;
-    } else if (invincible == 0 && bounceProtectionTicks == 0) {
-        dragonHealth -= 1;
-        damage();
-        dragonGrace = 0.75;
+    if (dragonTransition > 0) {
+        dragonTransition = std::max(0.0, dragonTransition - tickSeconds);
+        return;
     }
-    if (dragonHealth >= 1) return;
+
+    dragonGrace = std::max(0.0, dragonGrace - tickSeconds);
+    if (dragonPhase < 3) {
+        dragon.x += dragonDirection;
+        if (dragon.x >= 9403 || dragon.x <= 9245) dragonDirection *= -1;
+        for (auto& ball : fireballs) {
+            if (ball.ticksLeft <= 0 || !near(ball.position, dragon, 88, 70)) continue;
+            const bool movingRight = dragonDirection > 0;
+            dragonHealth -= dragonPhase == 1 ? (movingRight ? 0.10 : 0.30)
+                                             : (movingRight ? 0.01 : 0.05);
+            ball.ticksLeft = 0;
+            sounds.push_back(Sound::FireballHit);
+        }
+        if (near({player.x, player.y + 15}, dragon, 76, 63)) {
+            if (special) dragonHealth = 0;
+            else damage();
+        }
+    } else {
+        const Box next{dragon.x - 15, dragon.x + 15, dragon.y - 17, dragon.y + 13};
+        if (!blocked(next)) dragon.y -= 3;
+        const bool touch = near({player.x, player.y + 15}, dragon, 31, 34);
+        const bool stomp = player.y > dragon.y + 3 && velocity.y < 0;
+        if (touch && dragonGrace == 0 && (stomp || special)) {
+            dragonHealth -= special ? 3 : 1;
+            bounce(15);
+            dragonGrace = 0.25;
+        } else if (touch && dragonGrace == 0 && invincible == 0 && bounceProtectionTicks == 0) {
+            dragonHealth -= 1;
+            damage();
+            dragonGrace = 0.75;
+        }
+        if (dragon.y < upper - 180 || touch || blocked(next)) {
+            // Cycle across the arena so falls are reproducible across render rates.
+            constexpr int dropOffsets[] = {95, -90, 155, -150, 25};
+            dragon = {camera + dropOffsets[dragonDrops++ % 5], upper + 250.0};
+        }
+    }
+    if (dragonHealth >= 1 || scene != Scene::Play) return;
     ++dragonPhase;
-    dragonGrace = 1;
     if (dragonPhase == 4) {
         sounds.push_back(Sound::DragonDefeated);
+    } else if (dragonPhase == 2) {
+        dragonHealth = 3;
+        dragonTransition = 1;
+        dragonDirection = 1;
     } else {
-        dragonHealth = dragonPhase == 3 ? 5 : 3;
+        dragonHealth = 5;
+        dragon = {9295, upper + 250.0};
     }
 }
 
@@ -420,6 +488,7 @@ void Campaign::tick(Controls controls) {
     }
 
     camera = std::max(0.0, player.x);
+    updateFireballs(controls.fire);
     updateDragon();
     if (scene != Scene::Play) return;
     updateActors();
@@ -589,20 +658,43 @@ bool checkCampaign(const Levels& levels) {
     for (int frame = 0; frame < 125; ++frame) game.tick({});
     if (game.levelIndex != 4 || game.special || game.worldTime >= 0) return false;
 
+    Levels projectileLevels = levels;
+    projectileLevels[0].objects = {{{58, 16}, 15}};
+    Campaign shooting(projectileLevels);
+    shooting.start();
+    shooting.scene = Scene::Play;
+    shooting.player = {0, 0};
+    shooting.power = Power::Big;
+    shooting.tick({0, false, false, true});
+    if (!shooting.fireballs.empty()) return false;
+    shooting.power = Power::Full;
+    shooting.tick({0, false, false, true});
+    if (shooting.fireballs.size() != 1 || shooting.fireballs.front().position.x != 14) return false;
+    for (int i = 0; i < 4; ++i) shooting.tick({});
+    if (shooting.actors.front().health != 0 || !shooting.fireballs.empty()) return false;
+
     game.start(5);
     game.scene = Scene::Play;
     game.player = {9201, 120};
     game.tick({});
-    if (!game.dragonActive() || game.dragonPhase != 1 || game.camera != 9200) return false;
-    for (int phase = 1; phase <= 3; ++phase) {
-        game.dragonGrace = 0;
+    if (!game.dragonActive() || game.dragonPhase != 1 || game.camera != 9200 ||
+        game.dragon.x != 9296 || game.dragon.y != 41) return false;
+    for (int phase = 1; phase <= 2; ++phase) {
+        game.dragonTransition = 0;
         game.dragonHealth = 1;
-        game.player = {9295, 41};
-        game.velocity = {};
-        game.special = true;
+        game.player = {9200, 5};
+        game.fireballs.push_back({game.dragon, {14, 0}, 12});
         game.tick({});
         if (game.dragonPhase != phase + 1) return false;
     }
+    if (game.dragon.y != 250 || game.dragonHealth != 5) return false;
+    game.dragonHealth = 1;
+    game.dragon = {9295, 41};
+    game.player = {9295, 41};
+    game.velocity = {};
+    game.special = true;
+    game.tick({});
+    if (game.dragonPhase != 4) return false;
     const auto code = game.exportSave();
     Campaign loaded(levels);
     if (!loaded.importSave(code) || loaded.unlocked != 6 ||

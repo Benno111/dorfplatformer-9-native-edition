@@ -68,8 +68,9 @@ The simulator ZIP contains a `.app` for an arm64 simulator. The device IPA conta
 | --- | --- | --- |
 | Start or choose an unlocked level | Enter / Left / Right | A / D-pad |
 | Move | A / D or Left / Right | Left stick or D-pad |
-| Jump | W, Up or Space | A or B |
+| Jump | W or Up | A or B |
 | Crouch and enter pipes | S or Down | Down |
+| Fireball (full power) | X or Space | X or Y |
 | Pause | Esc | Start or Back |
 
 Touch controls appear during gameplay after touch input. Progress saves locally. At the title screen, F5 copies a compatible save code and F9 imports one. Import uses the original progression and power fields. Legacy map coordinates and costume fields have no native equivalent and export with default values.

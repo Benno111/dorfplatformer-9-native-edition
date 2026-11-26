@@ -30,12 +30,13 @@ Levels loadLevels(const std::filesystem::path& path);
 
 enum class Power : int { Small, Big, Full };
 enum class Scene { Title, Intro, Play, Pipe, Death, Clear, Ending, Expired };
-enum class Sound { Jump, Stomp, Pipe, Death, Clear, Dragon, DragonDefeated };
+enum class Sound { Jump, Stomp, Pipe, Death, Clear, Dragon, DragonDefeated, Fireball, FireballHit };
 
 struct Controls {
     float move = 0;
     bool jump = false;
     bool down = false;
+    bool fire = false;
 };
 
 struct Box {
@@ -49,6 +50,12 @@ struct Actor {
     double velocityY = 0;
     double cooldown = 0;
     int health;
+};
+
+struct Fireball {
+    Point position;
+    Point velocity;
+    int ticksLeft;
 };
 
 struct Campaign {
@@ -66,10 +73,11 @@ struct Campaign {
     double worldTime = -6;
     double elapsed = 0;
     double invincible = 0;
-    double dragonTime = 0;
     double dragonHealth = 0;
     double dragonGrace = 0;
     Point dragon;
+    int dragonDirection = 1;
+    double dragonTransition = 0;
     int dragonPhase = 0;
     int facing = 1;
     bool grounded = false;
@@ -78,6 +86,7 @@ struct Campaign {
     bool special = false;
     double walkFrame = 0;
     std::vector<Actor> actors;
+    std::vector<Fireball> fireballs;
     std::vector<bool> collected;
     std::vector<Sound> sounds;
     std::array<std::vector<Box>, 31> collision;
@@ -101,6 +110,8 @@ private:
     unsigned playerMovementPhase = 0;
     int bounceProtectionTicks = 0;
     int clearNext = 0;
+    int fireCooldown = 0;
+    unsigned dragonDrops = 0;
 
     void spawn();
     void resetActors();
@@ -110,6 +121,7 @@ private:
     void interact(Controls controls);
     void updatePlayer(Controls controls);
     void updateActors();
+    void updateFireballs(bool fire);
     void updateDragon();
     void bounce(int protectionTicks);
     void damage();
