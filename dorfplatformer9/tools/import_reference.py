@@ -1,10 +1,12 @@
 """Import runtime data from the supplied Dorfplatformer9 reference bundle."""
 import argparse
+import base64
 import json
 from pathlib import Path
 import re
 import shutil
 import unicodedata
+import xml.etree.ElementTree as ET
 
 
 def filename_part(name):
@@ -24,6 +26,7 @@ def import_reference(samples, output):
         "tile": ("Levels", range(2, 31)),
         "sky": ("Stage", range(1, 8)),
         "player": ("Player body", (1, 2, 3, 4, 5, 7, 8, 9, 10)),
+        "player_face": ("Player out", range(2, 12)),
         "enemy": ("Enemy", (2, 6, 7, 8, 9, 10)),
         "guard": ("Boss", range(1, 4)),
         "dragon": ("Dragon", range(1, 5)),
@@ -67,15 +70,37 @@ def import_reference(samples, output):
                     original = asset["md5ext"]
                     if Path(original).name != original:
                         raise ValueError(f"Invalid asset filename {original}")
+                    source = samples / "assets" / source_folder / original
+                    suffix = source.suffix
+                    if kind == "image":
+                        pivot_x, pivot_y, resolution = (asset[key] for key in
+                                                       ("rotationCenterX", "rotationCenterY",
+                                                        "bitmapResolution"))
+                    embedded_png = None
+                    if (group, index) in {("player", 7), ("player_face", 9)}:
+                        # These Scratch costumes wrap a single PNG covering the entire SVG canvas.
+                        # SDL_image's SVG decoder cannot draw embedded raster images.
+                        svg = ET.parse(source).getroot()
+                        image = svg.find(".//{http://www.w3.org/2000/svg}image")
+                        href = image.attrib["{http://www.w3.org/1999/xlink}href"]
+                        prefix, payload = href.split(",", 1)
+                        if prefix != "data:image/png;base64":
+                            raise ValueError(f"Expected an embedded PNG in {original}")
+                        embedded_png = base64.b64decode(payload, validate=True)
+                        resolution = float(image.attrib["width"]) / float(svg.attrib["width"])
+                        pivot_x *= resolution
+                        pivot_y *= resolution
+                        suffix = ".png"
                     filename = (f"{target_index:02}-{filename_part(target_name)}-"
-                                f"{kind}-{index:03}-{filename_part(asset['name'])}"
-                                f"{Path(original).suffix}")
-                    shutil.copyfile(samples / "assets" / source_folder / original, output / filename)
+                                f"{kind}-{index:03}-{filename_part(asset['name'])}{suffix}")
+                    if embedded_png is None:
+                        shutil.copyfile(source, output / filename)
+                    else:
+                        (output / filename).write_bytes(embedded_png)
                     new_files.add(filename)
                     fields = [kind, group, index, filename]
                     if kind == "image":
-                        fields.extend(asset[key] for key in
-                                      ("rotationCenterX", "rotationCenterY", "bitmapResolution"))
+                        fields.extend((pivot_x, pivot_y, resolution))
                     print(*fields, file=media)
 
     pending_manifest.replace(manifest)

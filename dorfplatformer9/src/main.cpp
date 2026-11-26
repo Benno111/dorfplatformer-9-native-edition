@@ -127,7 +127,7 @@ struct Media {
 
     explicit Media(SDL_Renderer* renderer) : renderer(renderer) {}
 
-    void load(const fs::path& root, Campaign& game) {
+    void load(const fs::path& root, Campaign& game, bool verifyPlayerPixels) {
         auto file = openGameData(root / "media.txt");
         std::string kind, group, path;
         int index;
@@ -150,6 +150,17 @@ struct Media {
             }
             Owned<SDL_Surface, SDL_DestroySurface> surface(IMG_Load(fullPath.c_str()), SDL_DestroySurface);
             if (!surface) throw std::runtime_error("Could not load " + fullPath + " (" + SDL_GetError() + ")");
+            if (verifyPlayerPixels && (group == "player" || group == "player_face")) {
+                Uint8 alpha = 0;
+                for (int y = 0; y < surface->h && alpha == 0; ++y) {
+                    for (int x = 0; x < surface->w && alpha == 0; ++x) {
+                        if (!SDL_ReadSurfacePixel(surface.get(), x, y, nullptr, nullptr, nullptr, &alpha)) {
+                            throw std::runtime_error(SDL_GetError());
+                        }
+                    }
+                }
+                if (alpha == 0) throw std::runtime_error("Transparent player costume: " + fullPath);
+            }
             image.x /= resolution;
             image.y /= resolution;
             image.w = surface->w / resolution;
@@ -291,11 +302,18 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
                      playerX, playerY - (game.scene == Scene::Pipe ? 20.0f - 32.0f * static_cast<float>(game.elapsed) : 15),
                      0.5f, game.facing < 0);
     } else if (game.invincible == 0 || static_cast<int>(game.invincible * 30) % 2 == 0) {
-        const int frame = game.theme() == 4 ? 9 + static_cast<int>(game.elapsed * 6) % 2 :
-                          game.crouched ? 8 : !game.grounded ? 7 :
-                          std::round(game.velocity.x) == 0 ? 1 : 1 + static_cast<int>(game.walkFrame) % 5;
-        const float pivotLift = 11.875f * (playerScale / 0.25f) - 1.0f - (game.crouched ? 7.0f : 0.0f);
-        media.sprite({"player", frame}, playerX, playerY - pivotLift, playerScale, game.facing < 0);
+        const bool swimming = game.theme() == 4;
+        const float pivotLift = 11.875f * (playerScale / 0.25f) - 1.0f -
+                                (game.crouched ? 7.0f : 0.0f);
+        const int walk = 1 + static_cast<int>(game.walkFrame);
+        const int stroke = static_cast<int>(game.elapsed * 6) % 2;
+        const int bodyFrame = swimming ? 9 + stroke : game.crouched ? 8 :
+                              !game.grounded ? 7 : walk;
+        const int faceFrame = swimming ? 10 + stroke : game.crouched ? 9 :
+                              !game.grounded ? 8 : walk + 1;
+        const bool flip = game.facing < 0;
+        media.sprite({"player_face", faceFrame}, playerX, playerY - pivotLift, playerScale, flip);
+        media.sprite({"player", bodyFrame}, playerX, playerY - pivotLift, playerScale, flip);
     }
     if (game.darkness() > 0) {
         fill(renderer, {0, 0, width, height}, {8, 12, 47, static_cast<Uint8>(game.darkness() * 146)});
@@ -389,7 +407,7 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
     const bool vsync = SDL_SetRenderVSync(renderer, 1);
     SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
     Media media(renderer);
-    media.load(root, game);
+    media.load(root, game, smoke);
 
     if (smoke) {
         if (!media.audio.mixer || media.audio.clips.size() != media.soundCount) return 1;
