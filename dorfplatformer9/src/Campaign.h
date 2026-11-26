@@ -95,6 +95,7 @@ struct Campaign {
 
     int day() const;
     int theme() const;
+    int backdropIndex() const { return dragonPhase == 3 ? 7 : theme(); }
     Point exitPosition() const;
     static constexpr Box exitBounds{-30.261, 30.261, 59.945, 120.467};
     bool night() const;

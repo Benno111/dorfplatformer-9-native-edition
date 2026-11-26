@@ -25,6 +25,7 @@ def import_reference(samples, output):
     costumes = {
         "tile": ("Levels", range(2, 31)),
         "sky": ("Stage", range(1, 8)),
+        "boss_sky": ("Stage", (7,)),
         "player": ("Player body", (1, 2, 3, 4, 5, 7, 8, 9, 10)),
         "player_face": ("Player out", range(2, 12)),
         "enemy": ("Enemy", (2, 6, 7, 8, 9, 10)),
@@ -87,7 +88,7 @@ def import_reference(samples, output):
                                                        ("rotationCenterX", "rotationCenterY",
                                                         "bitmapResolution"))
                     embedded_png = None
-                    if group == "flag_icon" or (group, index) in {("player", 7), ("player_face", 9)}:
+                    if group in {"flag_icon", "sky"} or (group, index) in {("player", 7), ("player_face", 9)}:
                         # SDL_image's SVG decoder cannot draw embedded raster images.
                         svg = ET.parse(source).getroot()
                         image = svg.find(".//{http://www.w3.org/2000/svg}image")
@@ -106,6 +107,8 @@ def import_reference(samples, output):
                             pivot_x -= offset_x + float(image.attrib["x"]) * scale_x
                             pivot_y -= offset_y + float(image.attrib["y"]) * scale_y
                             resolution = 1 / scale_x
+                        elif group == "sky":
+                            resolution = 2
                         else:
                             resolution = float(image.attrib["width"]) / float(svg.attrib["width"])
                         pivot_x *= resolution

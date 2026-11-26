@@ -194,7 +194,8 @@ struct Media {
             Owned<SDL_Surface, SDL_DestroySurface> surface(IMG_Load(fullPath.c_str()), SDL_DestroySurface);
             if (!surface) throw std::runtime_error("Could not load " + fullPath + " (" + SDL_GetError() + ")");
             if (verifyUiPixels && (group == "player" || group == "player_face" ||
-                                   group == "hud_day" || group == "hud_digit" || group == "touch_button")) {
+                                   group == "hud_day" || group == "hud_digit" || group == "touch_button" ||
+                                   group == "sky" || group == "boss_sky")) {
                 Uint8 alpha = 0;
                 for (int y = 0; y < surface->h && alpha == 0; ++y) {
                     for (int x = 0; x < surface->w && alpha == 0; ++x) {
@@ -329,8 +330,9 @@ void draw(const Media& media, const Campaign& game, int selected, bool touch, co
 
     const float xMid = width / 2.0f - static_cast<float>(game.camera);
     const float yMid = height / 2.0f + game.upper;
-    const auto sky = std::clamp(game.theme(), 1, 6);
+    const int sky = game.backdropIndex();
     media.backdrop({"sky", sky});
+    if (sky == 7) media.sprite({"boss_sky", 7}, width / 2.0f, height / 2.0f);
     const auto& objects = game.level().objects;
     for (std::size_t i = 0; i < objects.size(); ++i) {
         const auto& object = objects[i];
@@ -586,6 +588,20 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
         touchControls.points.emplace(3, SDL_FPoint{fireButton.x + 4, fireButton.y + 4});
         const auto pressed = touchControls.controls();
         if (pressed.move != -1 || !pressed.jump || !pressed.fire || pressed.down) return 1;
+        game.start(5);
+        game.scene = Scene::Play;
+        game.player = {9200, 110};
+        if (game.backdropIndex() != 6) return 1;
+        game.upper = 1100;
+        if (game.backdropIndex() != 2) return 1;
+        game.upper = 0;
+        game.dragonPhase = 3;
+        game.dragonHealth = 5;
+        game.dragon = {9295, 250};
+        for (int tick = 0; tick < 31; ++tick) game.tick({});
+        if (game.backdropIndex() != 7 || game.meteors.empty() ||
+            game.meteors.front().y >= 170 || game.dragon.y >= 170) return 1;
+        draw(media, game, 5, false, {});
         return 0;
     }
 

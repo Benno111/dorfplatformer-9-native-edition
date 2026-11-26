@@ -375,7 +375,9 @@ void Campaign::updateDragon() {
         }
     } else {
         const Box next{dragon.x - 15, dragon.x + 15, dragon.y - 17, dragon.y + 13};
-        if (!blocked(next)) dragon.y -= 3;
+        // The original falling phase passes through the ceiling before terrain contact starts.
+        const bool hitsTerrain = dragon.y < upper + 170 && blocked(next);
+        if (!hitsTerrain) dragon.y -= 3;
         const bool touch = near({player.x, player.y + 15}, dragon, 31, 34);
         const bool stomp = player.y > dragon.y + 3 && velocity.y < 0;
         if (touch && dragonGrace == 0 && (stomp || special())) {
@@ -387,7 +389,7 @@ void Campaign::updateDragon() {
             damage();
             dragonGrace = 0.75;
         }
-        if (dragon.y < upper - 180 || touch || blocked(next)) {
+        if (dragon.y < upper - 180 || touch || hitsTerrain) {
             // Cycle across the arena so falls are reproducible across render rates.
             constexpr int dropOffsets[] = {95, -90, 155, -150, 25};
             dragon = {camera + dropOffsets[dragonDrops++ % 5], upper + 250.0};
@@ -427,7 +429,8 @@ void Campaign::updateMeteors() {
             return true;
         }
         return meteor.y < upper - 180 ||
-               blocked({meteor.x - radius, meteor.x + radius, meteor.y - radius, meteor.y + radius});
+               (meteor.y < upper + 170 &&
+                blocked({meteor.x - radius, meteor.x + radius, meteor.y - radius, meteor.y + radius}));
     }), meteors.end());
 }
 
@@ -457,7 +460,7 @@ void Campaign::updatePlayer(Controls controls) {
         player.x = -220;
         velocity.x = 18;
     }
-    velocity.y -= currentTheme == 3 ? 1.0 : 1.96;
+    velocity.y -= backdropIndex() == 3 ? 1.0 : 1.96;
     if (currentTheme == 4) velocity.y = controls.jump ? 4 : std::max(-4.0, velocity.y);
     const bool rising = velocity.y > 0;
     grounded = false;
