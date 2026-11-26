@@ -5,7 +5,7 @@
 
 class SimulationClock {
 public:
-    static constexpr std::uint64_t ticksPerSecond = 30;
+    static constexpr std::uint64_t ticksPerSecond = 60;
     static constexpr std::uint64_t nanosecondsPerSecond = 1'000'000'000;
     static constexpr double tickSeconds = 1.0 / ticksPerSecond;
 

@@ -18,6 +18,9 @@ namespace {
 namespace fs = std::filesystem;
 constexpr int width = 480;
 constexpr int height = 360;
+constexpr Uint64 renderFramesPerSecond = 30;
+constexpr Uint64 renderFrameBudget =
+    (SDL_NS_PER_SECOND + renderFramesPerSecond - 1) / renderFramesPerSecond;
 using Key = std::pair<std::string, int>;
 
 template<class T, auto destroy>
@@ -404,7 +407,7 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
     if (!created || !SDL_SetRenderLogicalPresentation(renderer, width, height, SDL_LOGICAL_PRESENTATION_LETTERBOX)) {
         throw std::runtime_error(SDL_GetError());
     }
-    const bool vsync = SDL_SetRenderVSync(renderer, 1);
+    SDL_SetRenderVSync(renderer, SDL_RENDERER_VSYNC_DISABLED);
     SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
     Media media(renderer);
     media.load(root, game, smoke);
@@ -520,11 +523,8 @@ int run(const Levels& levels, const fs::path& root, bool smoke) {
             if (file && !error) saved = code;
         }
         draw(media, game, selected, touch.visible, status);
-        if (!vsync) {
-            constexpr auto frameBudget = SimulationClock::nanosecondsPerSecond / SimulationClock::ticksPerSecond;
-            const auto spent = SDL_GetTicksNS() - frameStart;
-            if (spent < frameBudget) SDL_DelayNS(frameBudget - spent);
-        }
+        const auto spent = SDL_GetTicksNS() - frameStart;
+        if (spent < renderFrameBudget) SDL_DelayNS(renderFrameBudget - spent);
     }
     return 0;
 }
