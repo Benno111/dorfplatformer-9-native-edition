@@ -162,7 +162,7 @@ jobs:
           test -s "$app/assets/levels.txt"
           test -s "$app/assets/media.txt"
           plutil -lint "$app/Info.plist"
-          lipo -verify_arch arm64 "$app/dorfplatformer9"
+          lipo "$app/dorfplatformer9" -verify_arch arm64
           mkdir artifacts
           if [ "$DORF_TARGET" = device ]; then
             mkdir Payload
